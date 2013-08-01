@@ -32,4 +32,55 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+/**
+ * Define qual o nome da loja.
+ */
+	public $storeName = 'Ben Trovato';
+
+/**
+ * Construtor geral.
+ */
+	public function beforeFilter() {
+
+		/**
+		 * Envia para as views qual o nome da loja.
+		 */
+		$this->setStoreName();
+		
+		/**
+		 * Verifica se está na rota padrão ou na rota de admin.
+		 * Se estiver na rota de admin, é usado o layout de admin.
+		 */
+		$this->setLayoutBasedOnRoute();
+	}
+
+/**
+ * Envia para as views qual o nome da loja.
+ */
+	public function setStoreName() {
+		$this->set('storeName', $this->storeName);
+	}
+
+/**
+ * Verifica se está na rota padrão ou na rota de admin.
+ * Se estiver na rota de admin, é usado o layout de admin.
+ */
+	public function setLayoutBasedOnRoute() {
+		// Define todas as rotas que a aplicação usará
+		$routes = array('admin');
+
+		// Recupera o prefixo a ser visualizado
+		$prefix = $this->params['prefix'];
+
+		/**
+		 * Verifica se o prefixo encontra-se na lista de rotas.
+		 * Se encontrar, é usado o layout do prefixo.
+		 * Do contrário, é usado o layout padrão.
+		 */
+		if(in_array($prefix, $routes)) {
+			$this->layout = $prefix;
+		} else {
+			$this->layout = 'default';
+		}
+	}
 }
