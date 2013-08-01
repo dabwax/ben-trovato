@@ -1,19 +1,31 @@
-<div class="banners form">
-<?php echo $this->Form->create('Banner'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Banner'); ?></legend>
-	<?php
-		echo $this->Form->input('image');
-		echo $this->Form->input('image_dir');
-		echo $this->Form->input('link');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<div class="banners index">
+	<div class="row">
+		<div class="span12">
+			<div class="panel">
 
-		<li><?php echo $this->Html->link(__('List Banners'), array('action' => 'index')); ?></li>
-	</ul>
+				<div class="panel-heading">
+					<h3 class="panel-title"><?php echo __('Banners'); ?> 
+						<small><?php echo __('Gerenciamento do Módulo de Banners'); ?></small>
+
+						<a href="<?php echo $this->Html->url( array('action' => 'index') ); ?>" class="btn btn-primary">Listar</a>
+					</h3> <!-- .panel-title -->
+				</div> <!-- .panel-heading -->
+
+				<div class="form">
+				<?php echo $this->Form->create('Banner', array('type' => 'file') ); ?>
+					<fieldset>
+						<legend><?php echo __('Add Banner'); ?></legend>
+					<?php
+						echo $this->Form->input('image', array('type' => 'file') );
+						echo $this->Form->input('link');
+					?>
+					</fieldset>
+				<?php echo $this->Form->end(__('Submit')); ?>
+				</div>
+
+			</div> <!-- .panel -->
+		</div> <!-- .span12 -->
+	</div> <!-- .row -->
+
+	
 </div>

@@ -8,6 +8,12 @@
 	<?php echo $this->Html->css('bootstrap.min.css'); ?>
 	<?php echo $this->Html->css('bootstrap-glyphicons.css'); ?>
 	<?php echo $this->Html->css('admin.css'); ?>
+
+	<!-- JS -->
+	<?php echo $this->Html->script('jquery-1.10.2.min.js'); ?>
+	<?php echo $this->Html->script('jquery-migrate-1.2.1.min.js'); ?>
+	<?php echo $this->Html->script('bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('admin.js'); ?>
 </head>
 <body>
 	<div class="navbar">
@@ -20,11 +26,23 @@
 			  <ul class="nav navbar-nav">
 			    <li 
 			    <?php if($this->params['controller'] == 'home' && $this->params['action'] == 'admin_index') { ?>class="active"<?php } ?>>
-			    	<a href="<?php echo $this->Html->url('/admin'); ?>"><span class="glyphicon glyphicon-globe"></span> Home</a>
+			    	<a href="<?php echo $this->Html->url('/admin'); ?>">
+			    		<span class="glyphicon glyphicon-globe"></span> Home
+			    	</a>
 			    </li>
 			    <li 
-			    <?php if($this->params['controller'] == 'banners') { ?>class="active"<?php } ?>>
-			    	<a href="<?php echo $this->Html->url( array('controller' => 'banners', 'action' => 'index') ); ?>"><span class="glyphicon glyphicon-picture"></span> Banners</a>
+			    class="<?php if($this->params['controller'] == 'banners') { ?>active<?php } ?> dropdown">
+			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			    		<span class="glyphicon glyphicon-picture"></span> Banners <b class="caret"></b>
+			    	</a>
+			    	<ul class="dropdown-menu">
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'banners', 'action' => 'add') ); ?>">Adicionar</a>
+			    		</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'banners', 'action' => 'index') ); ?>">Listar</a>
+			    		</li>
+			    	</ul>
 			    </li>
 			  </ul>
 

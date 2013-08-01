@@ -6,3 +6,12 @@ msgstr "Anterior"
 
 msgid "next"
 msgstr "Próximo"
+
+msgid "Add Banner"
+msgstr "Adicionar Banner"
+
+msgid "Image"
+msgstr "Imagem"
+
+msgid "Submit"
+msgstr "Enviar"
