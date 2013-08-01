@@ -69,7 +69,7 @@
 					
 					<ul class="span4">
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Feminino</a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Feminino <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="#">Grau</a>
@@ -80,7 +80,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Masculino</a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Masculino <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="#">Grau</a>
