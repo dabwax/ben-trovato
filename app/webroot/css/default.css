@@ -216,3 +216,8 @@ margin-top: 30px;
 	position: relative;
 	top: -20px;
 }
+.banners-embaixo {
+	float: left;
+	display: inline;
+	height: 400px;
+}

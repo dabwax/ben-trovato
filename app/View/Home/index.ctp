@@ -66,4 +66,17 @@
 	     </div>
 
 	</aside> <!-- #sidebar-home -->
+
+</div>
+
+<div class="row">
+	
+	<section id="texto-chamada-home" class="span12" style="margin-left: 0px; margin-top: 20px;">
+		<p>
+			Ben Trovato é o destino virtual para amantes da moda. Nós somos apaixonados por óculos e adoramos ter um para cada humor. Estamos cansados de usar apenas um par que custou muito caro, todo dia, até quebrar. Com apenas alguns cliques, monte uma coleção de óculos para combinar com cada momento!
+			<br /><br />
+			Nossos óculos possuem design exclusivo, com armações tão sofisticadas quanto as melhores marcas do mercado e recebem lentes oftálmicas de alta qualidade, tudo isso a um preço revolucionário. Nós ficaremos muito felizes em enviar nossos óculos para qualquer canto do Brasil, de norte ao sul do país. O frete é por nossa conta, claro!
+		</p>
+	</section>
+
 </div>
