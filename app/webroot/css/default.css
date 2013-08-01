@@ -3,6 +3,7 @@
 }
 header {
 	margin-top: 20px;
+	margin-bottom: 30px;
 }
 #header-meta {
 	text-align: right;
@@ -83,4 +84,52 @@ header {
 	margin-top: 20px;
 	margin-left: 0px;
 	margin-right: 20px;
+}
+.banners-encima {
+	float: left;
+	display: inline;
+	width: 620px;
+	height: 410px;
+}
+.banners-encima ul {
+	margin: 0px;
+}
+.banners-encima li {
+	float: left;
+	display: inline;
+	width: 620px;
+	height: 380px;
+}
+#banners-home {
+	margin: 0px;
+}
+.banners-encima .slidesjs-navigation {
+	display: none;
+}
+.slidesjs-pagination {
+	float: left;
+	display: inline;
+	clear: both;
+	margin-top: 6px !important;
+}
+.banners-encima .slidesjs-pagination-item {
+	float: left;
+	display: inline;
+	width: 118px;
+	height: 5px;
+	margin-right: 6px;
+}
+.banners-encima .slidesjs-pagination-item a {
+	float: left;
+	display: inline;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	text-indent: -9999px;
+}
+.banners-encima .slidesjs-pagination-item a.active {
+	background: #A4C400;
+}
+.slidesjs-play, .slidesjs-stop {
+	display: none !important;
 }

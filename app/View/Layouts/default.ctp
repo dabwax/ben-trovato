@@ -16,6 +16,7 @@
 	<?php echo $this->Html->script('jquery-1.10.2.min.js'); ?>
 	<?php echo $this->Html->script('jquery-migrate-1.2.1.min.js'); ?>
 	<?php echo $this->Html->script('/bootstrap/js/bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('jquery.slides.min.js'); ?>
 	<?php echo $this->Html->script('default.js'); ?>
 </head>
 <body>
