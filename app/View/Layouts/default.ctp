@@ -74,10 +74,10 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Feminino <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="#">Grau</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau' ) ); ?>">Grau</a>
 								</li>
 								<li>
-									<a href="#">Solar</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar' ) ); ?>">Solar</a>
 								</li>
 							</ul>
 						</li>
@@ -85,10 +85,10 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Masculino <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="#">Grau</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau' ) ); ?>">Grau</a>
 								</li>
 								<li>
-									<a href="#">Solar</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar' ) ); ?>">Solar</a>
 								</li>
 							</ul>
 						</li>
