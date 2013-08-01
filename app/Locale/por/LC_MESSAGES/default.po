@@ -15,3 +15,9 @@ msgstr "Imagem"
 
 msgid "Submit"
 msgstr "Enviar"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Delete"
+msgstr "Excluir"

@@ -30,7 +30,6 @@
 							<td><?php echo h($banner['Banner']['image']); ?>&nbsp;</td>
 							<td><?php echo h($banner['Banner']['link']); ?>&nbsp;</td>
 							<td class="actions">
-								<?php echo $this->Html->link(__('View'), array('action' => 'view', $banner['Banner']['id'])); ?>
 								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $banner['Banner']['id'])); ?>
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $banner['Banner']['id']), null, __('Are you sure you want to delete # %s?', $banner['Banner']['id'])); ?>
 							</td>
