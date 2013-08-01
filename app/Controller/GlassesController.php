@@ -42,6 +42,22 @@ class GlassesController extends AppController {
 		$this->set('glasses', $this->paginate());
 	}
 
+	public function admin_clone($id = null) {
+		$this->autoRender = false;
+
+		if (!$this->Glass->exists($id)) {
+			throw new NotFoundException(__('Invalid glass'));
+		}
+
+		$this->request->data = $this->Glass->find('first', array('conditions' => array('Glass.id' => $id) ) );
+
+		unset($this->request->data['Glass']['id']);
+
+		$this->Glass->save($this->request->data);
+
+		return $this->redirect(array('action' => 'edit', $this->Glass->getInsertID()));
+	}
+
 /**
  * add method
  *
@@ -95,16 +111,16 @@ class GlassesController extends AppController {
  * @return void
  */
 	public function admin_delete($id = null) {
-		$this->Banner->id = $id;
-		if (!$this->Banner->exists()) {
-			throw new NotFoundException(__('Invalid banner'));
+		$this->Glass->id = $id;
+		if (!$this->Glass->exists()) {
+			throw new NotFoundException(__('Invalid glass'));
 		}
 		$this->request->onlyAllow('post', 'delete');
-		if ($this->Banner->delete()) {
-			$this->Session->setFlash(__('Banner deleted'));
+		if ($this->Glass->delete()) {
+			$this->Session->setFlash(__('Glass deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Banner was not deleted'));
+		$this->Session->setFlash(__('Glass was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

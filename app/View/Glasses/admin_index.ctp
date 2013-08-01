@@ -35,7 +35,8 @@
 							<td><?php echo h($glass['Glass']['sku']); ?>&nbsp;</td>
 							<td class="actions">
 								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $glass['Glass']['id'])); ?>
-								<?php echo $this->Html->link(__('Clonar'), array('action' => 'clone', $glass['Glass']['id']), array('class' => 'btn btn-success')); ?>
+								<?php
+								// echo $this->Html->link(__('Clonar'), array('action' => 'clone', $glass['Glass']['id']), array('class' => 'btn btn-success')); ?>
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $glass['Glass']['id']), null, __('Are you sure you want to delete # %s?', $glass['Glass']['id'])); ?>
 							</td>
 						</tr>

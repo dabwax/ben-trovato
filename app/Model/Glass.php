@@ -178,8 +178,12 @@ class Glass extends AppModel {
  */
 	public function formatPrice($price = 'R$ 0,00') {
 		$price = $this->data[$this->alias]['price'];
-		$price = explode('R$ ', $price);
-		$price = str_replace(',', '.', $price[1]);
+
+		$new_price = explode('R$ ', $price);
+
+		if(isset($new_price[1])) {
+			$price = str_replace(',', '.', $new_price[1]);
+		}
 
 		return $price;
 	}
@@ -192,9 +196,6 @@ class Glass extends AppModel {
 		// Trata o campo de preço
 		$this->data[$this->alias]['price'] = $this->formatPrice($this->data[$this->alias]['price']);
 
-		print_r($this->data);
-
-		#exit;
 		return true;
 	}
 	
