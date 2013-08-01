@@ -7,13 +7,16 @@
 	<!-- CSS -->
 	<?php echo $this->Html->css('bootstrap.min.css'); ?>
 	<?php echo $this->Html->css('bootstrap-glyphicons.css'); ?>
+	<?php echo $this->Html->css('admin.css'); ?>
 </head>
 <body>
 	<div class="navbar">
 		<div class="container">
 
 			<div class="row">
+
 			  <a class="navbar-brand" href="<?php echo $this->Html->url('/admin'); ?>"><?php echo $storeName; ?></a>
+			  
 			  <ul class="nav navbar-nav">
 			    <li 
 			    <?php if($this->params['controller'] == 'home' && $this->params['action'] == 'admin_index') { ?>class="active"<?php } ?>>
@@ -24,8 +27,10 @@
 			    	<a href="<?php echo $this->Html->url( array('controller' => 'banners', 'action' => 'index') ); ?>"><span class="glyphicon glyphicon-picture"></span> Banners</a>
 			    </li>
 			  </ul>
-		  	</div>
-		</div>
+
+		  	</div> <!-- .row -->
+
+		</div> <!-- .container -->
 	</div> <!-- .navbar -->
 
 	<div class="container">
