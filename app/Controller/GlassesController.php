@@ -7,6 +7,25 @@ App::uses('AppController', 'Controller');
 class GlassesController extends AppController {
 
 /**
+ * Método para recuperar todos os atributos usados.
+ */
+	private function getAttributes() {
+		
+		/**
+		 * Atributos do model para gerar o formulário mais DRY.
+		 */
+		$options['sex'] = $this->Glass->sex;
+		$options['color'] = $this->Glass->color;
+		$options['material'] = $this->Glass->material;
+		$options['format'] = $this->Glass->format;
+		$options['size'] = $this->Glass->size;
+		$options['type'] = $this->Glass->type;
+
+		// Envia os atributos do model para a view
+		$this->set(compact('options'));
+	}
+
+/**
  * index method
  *
  * @return void
@@ -39,18 +58,7 @@ class GlassesController extends AppController {
 			}
 		}
 
-		/**
-		 * Atributos do model para gerar o formulário mais DRY.
-		 */
-		$options['sex'] = $this->Glass->sex;
-		$options['color'] = $this->Glass->color;
-		$options['material'] = $this->Glass->material;
-		$options['format'] = $this->Glass->format;
-		$options['size'] = $this->Glass->size;
-		$options['type'] = $this->Glass->type;
-
-		// Envia os atributos do model para a view
-		$this->set(compact('options'));
+		$this->getAttributes();
 	}
 
 /**
@@ -61,20 +69,22 @@ class GlassesController extends AppController {
  * @return void
  */
 	public function admin_edit($id = null) {
-		if (!$this->Banner->exists($id)) {
-			throw new NotFoundException(__('Invalid banner'));
+		if (!$this->Glass->exists($id)) {
+			throw new NotFoundException(__('Invalid glass'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Banner->save($this->request->data)) {
-				$this->Session->setFlash(__('The banner has been saved'));
+			if ($this->Glass->save($this->request->data)) {
+				$this->Session->setFlash(__('The glass has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The banner could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The glass could not be saved. Please, try again.'));
 			}
 		} else {
-			$options = array('conditions' => array('Banner.' . $this->Banner->primaryKey => $id));
-			$this->request->data = $this->Banner->find('first', $options);
+			$options = array('conditions' => array('Glass.' . $this->Glass->primaryKey => $id));
+			$this->request->data = $this->Glass->find('first', $options);
 		}
+
+		$this->getAttributes();
 	}
 
 /**

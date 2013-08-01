@@ -192,6 +192,9 @@ class Glass extends AppModel {
 		// Trata o campo de preço
 		$this->data[$this->alias]['price'] = $this->formatPrice($this->data[$this->alias]['price']);
 
+		print_r($this->data);
+
+		#exit;
 		return true;
 	}
 	
