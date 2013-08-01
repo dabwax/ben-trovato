@@ -30,12 +30,12 @@ class GlassesController extends AppController {
  */
 	public function admin_add() {
 		if ($this->request->is('post')) {
-			$this->Glasses->create();
-			if ($this->Glasses->save($this->request->data)) {
-				$this->Session->setFlash(__('The banner has been saved'));
+			$this->Glass->create();
+			if ($this->Glass->save($this->request->data)) {
+				$this->Session->setFlash(__('The glass has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The banner could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The glass could not be saved. Please, try again.'));
 			}
 		}
 

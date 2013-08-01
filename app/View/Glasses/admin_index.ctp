@@ -29,13 +29,14 @@
 					</tr>
 					<?php foreach ($glasses as $glass): ?>
 						<tr>
-							<td><?php echo $this->Loja->imagem('/glass/image/' . $glass['Glass']['id'] . '/' . $glass['Glass']['photo_1'], array('w' => '240') ); ?>&nbsp;</td>
+							<td><?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '240') ); ?>&nbsp;</td>
 							<td><?php echo h($glass['Glass']['name']); ?>&nbsp;</td>
-							<td><?php echo h($glass['Glass']['price']); ?>&nbsp;</td>
+							<td><?php echo $this->Loja->preco($glass['Glass']['price']); ?>&nbsp;</td>
 							<td><?php echo h($glass['Glass']['sku']); ?>&nbsp;</td>
 							<td class="actions">
-								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $banner['Banner']['id'])); ?>
-								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $banner['Banner']['id']), null, __('Are you sure you want to delete # %s?', $banner['Banner']['id'])); ?>
+								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $glass['Glass']['id'])); ?>
+								<?php echo $this->Html->link(__('Clonar'), array('action' => 'clone', $glass['Glass']['id']), array('class' => 'btn btn-success')); ?>
+								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $glass['Glass']['id']), null, __('Are you sure you want to delete # %s?', $glass['Glass']['id'])); ?>
 							</td>
 						</tr>
 					<?php endforeach; ?>

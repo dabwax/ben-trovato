@@ -13,9 +13,8 @@
 
 				<ul class="nav nav-tabs" id="tabs-glass">
 				  <li class="active"><a href="#geral" data-toggle="tab">Geral</a></li>
+				  <li><a href="#informacoes" data-toggle="tab">Informações</a></li>
 				  <li><a href="#caracteristicas" data-toggle="tab">Características</a></li>
-				  <li><a href="#messages" data-toggle="tab">Messages</a></li>
-				  <li><a href="#settings" data-toggle="tab">Settings</a></li>
 				</ul>
 
 				<?php echo $this->Form->create('Glass', array('type' => 'file') ); ?>
@@ -30,9 +29,28 @@
 						
 						<div class="form">
 							<?php
-								echo $this->Form->input('name');
-								echo $this->Form->input('sku');
-								echo $this->Form->input('price');
+								echo $this->Form->input('name', array('required' => false) );
+								echo $this->Form->input('sku', array('required' => false) );
+								echo $this->Form->input('price', array('type' => 'text', 'required' => false) );
+								echo $this->Form->input('photo_1', array('type' => 'file', 'label' => 'Foto (ângulo: frontal)') );
+								echo $this->Form->input('photo_2', array('type' => 'file', 'label' => 'Foto (ângulo: lateral)') );
+								echo $this->Form->input('image_hover', array('type' => 'file', 'label' => 'Foto (efeito de mouseover)') );
+							?>
+						</div> <!-- .form -->
+
+					</div> <!-- .tab-pane -->
+
+					<div class="tab-pane" id="informacoes">
+
+						<p class="label" style="margin-bottom: 20px; display: inline-block;">
+							Aqui encontram-se todas as informações extras do óculos, como a descrição do seu estilo e as características da lente e da armação.
+						</p>
+						
+						<div class="form">
+							<?php
+								echo $this->Form->input('the_style', array('class' => 'ckeditor') );
+								echo $this->Form->input('character_frame', array('class' => 'ckeditor') );
+								echo $this->Form->input('character_lenses', array('class' => 'ckeditor') );
 							?>
 						</div> <!-- .form -->
 
@@ -58,9 +76,21 @@
 					<?php echo $this->Form->end(__('Submit')); ?>
 				</div> <!-- .form -->
 
-				<script>
+				<?php echo $this->Html->script('jquery.price_format.min.js'); ?>
+				<?php echo $this->Html->script('/ckeditor/ckeditor.js'); ?>
+
+				<script type="text/javascript">
 				  $(function () {
+
+				  	// Efeito de Tabs
 				    $('#tabs-glass a:first').tab('show');
+
+				    // Máscara de Preço
+				    $("#GlassPrice").priceFormat({
+						prefix: 'R$ ',
+						centsSeparator: ',',
+						thousandsSeparator: ''
+					});
 				  })
 				</script>
 

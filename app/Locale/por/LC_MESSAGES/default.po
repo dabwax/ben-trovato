@@ -61,20 +61,20 @@ msgstr "SKU"
 msgid "Price"
 msgstr "Preço"
 
-msgid ""
-msgstr ""
+msgid "The Style"
+msgstr "O Estilo"
 
-msgid ""
-msgstr ""
+msgid "Character Frame"
+msgstr "Características da Armação"
 
-msgid ""
-msgstr ""
+msgid "Character Lenses"
+msgstr "Características da Lente"
 
-msgid ""
-msgstr ""
+msgid "required"
+msgstr "Este campo é obrigatório"
 
-msgid ""
-msgstr ""
+msgid "enum"
+msgstr "Você deve selecionar um valor válido para este campo"
 
 msgid ""
 msgstr ""

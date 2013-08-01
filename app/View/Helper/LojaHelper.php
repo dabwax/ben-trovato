@@ -37,4 +37,13 @@ class LojaHelper extends AppHelper {
 			return $this->Html->image($url, $options);
 		}
 	}
+
+/**
+ * Formata um preço em formato FLOAT para um formato amigável (humano).
+ */
+	public function preco($preco = '0.00') {
+		$preco = 'R$ ' . number_format($preco, 2, ',', '.');
+		
+		return $preco;
+	}
 }
