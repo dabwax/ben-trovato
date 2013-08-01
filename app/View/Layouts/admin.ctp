@@ -44,6 +44,20 @@
 			    		</li>
 			    	</ul>
 			    </li>
+			    <li 
+			    class="<?php if($this->params['controller'] == 'glasses') { ?>active<?php } ?> dropdown">
+			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			    		<span class="glyphicon glyphicon-eye-open"></span> Óculos <b class="caret"></b>
+			    	</a>
+			    	<ul class="dropdown-menu">
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'add') ); ?>">Adicionar</a>
+			    		</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'index') ); ?>">Listar</a>
+			    		</li>
+			    	</ul>
+			    </li>
 			  </ul>
 
 		  	</div> <!-- .row -->

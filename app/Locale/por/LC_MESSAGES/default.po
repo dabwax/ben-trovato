@@ -27,3 +27,84 @@ msgstr "Editar Banner"
 
 msgid "Position"
 msgstr "Posição"
+
+msgid "Are you sure you want to delete # %s?"
+msgstr "Você tem certeza que quer excluir este registro? Esta ação é PERMANENTE!"
+
+msgid "Add Glass"
+msgstr "Adicionar Óculos"
+
+msgid "Edit Glass"
+msgstr "Editar Óculos"
+
+msgid "Sex"
+msgstr "Sexo"
+
+msgid "Color"
+msgstr "Cor"
+
+msgid "Format"
+msgstr "Formato"
+
+msgid "Size"
+msgstr "Tamanho"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Sku"
+msgstr "SKU"
+
+msgid "Price"
+msgstr "Preço"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
