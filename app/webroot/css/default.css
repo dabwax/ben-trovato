@@ -1,0 +1,71 @@
+* {
+	font-family: 'Ubuntu';
+}
+header {
+	margin-top: 20px;
+}
+#header-meta {
+	text-align: right;
+}
+#header-meta a {
+	color: #000;
+	font-size: 15px;
+	margin-right: 6px;
+	text-decoration: none;
+}
+#header-meta a.verde {
+	color: #A4C400;
+}
+.verde {
+	color: #A4C400;
+}
+#header-meta #slogan {
+	margin-right: 6px;
+	margin-top: 6px;
+	font-size: 13px;
+}
+.btn-rede-social img {
+	width: 32px;
+}
+#menu-principal {
+	float: left;
+	display: inline;
+	width: 100%;
+	height: 40px;
+	background: #464646;
+	margin-top: 20px;
+}
+#menu-principal ul:first-child {
+	margin: 0px;
+	margin-left: 20px;
+}
+#menu-principal li {
+	float: left;
+	display: inline;
+	list-style: none;
+}
+#menu-principal a {
+	float: left;
+	display: inline;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 12px;
+	margin-right: 12px;
+	color: #FFF;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+#menu-principal .dropdown-menu li {
+	float: left;
+	display: inline;
+	width: 160px;
+}
+#menu-principal .dropdown-menu a {
+	color: #000;
+	width: 75%;
+	margin: 0px;
+}
+#menu-principal .dropdown-menu a:hover {
+	color: #FFF;
+}

@@ -1,62 +1,120 @@
-<?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-?>
 <!DOCTYPE html>
-<html>
+<html charset="pt-BR" dir="ltr">
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+	<meta charset="UTF-8">
+	<title>Ben Trovato - Handmade Eyewear</title>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="<?php echo $this->Html->url('/img/favicon.ico'); ?>">
 
-		echo $this->Html->css('cake.generic');
+	<!-- CSS -->
+	<?php echo $this->Html->css('/bootstrap/css/bootstrap.min.css'); ?>
+	<?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Ubuntu:300,400'); ?>
+	<?php echo $this->Html->css('default.css'); ?>
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+	<!-- JS -->
+	<?php echo $this->Html->script('jquery-1.10.2.min.js'); ?>
+	<?php echo $this->Html->script('jquery-migrate-1.2.1.min.js'); ?>
+	<?php echo $this->Html->script('/bootstrap/js/bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('default.js'); ?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+	<div class="container">
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+		<header>
+			<div class="row">
+
+				<a id="logo" class="span5" href="<?php echo $this->Html->url('/'); ?>">
+					<?php echo $this->Html->image('logo.png'); ?>
+				</a> <!-- #logo -->
+
+				<div id="header-meta" class="span4 offset3">
+					
+					<a href="#" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [0 armações]</a> <!-- #btn-carrinho -->
+
+					<a href="#" class="pull-right" id="btn-login">LOGIN</a> <!-- #btn-login -->
+
+					<div class="clear clearfix"></div>
+
+					<p id="slogan">
+						GRÁTIS <span class="verde">frete, home try-on & retorno</span>
+					</p> <!-- #slogan -->
+
+					<div class="clear clearfix"></div>
+
+					<a href="http://www.facebook.com/byBenTrovato" target="_blank" class="btn-rede-social">
+						<?php echo $this->Html->image('icone-facebook.png'); ?>
+					</a> <!-- .btn-rede-social -->
+
+					<a href="http://twitter.com/byBenTrovato" target="_blank" class="btn-rede-social">
+						<?php echo $this->Html->image('icone-twitter.png'); ?>
+					</a> <!-- .btn-rede-social -->
+
+					<a href="http://instagram.com/bybentrovato" target="_blank" class="btn-rede-social">
+						<?php echo $this->Html->image('icone-instagram.png'); ?>
+					</a> <!-- .btn-rede-social -->
+
+					<a href="http://pinterest.com/bybentrovato" target="_blank" class="btn-rede-social">
+						<?php echo $this->Html->image('icone-pinterest.png'); ?>
+					</a> <!-- .btn-rede-social -->
+
+				</div> <!-- #header-meta -->
+
+			</div> <!-- .row -->
+
+			<div class="row">
+				
+				<nav id="menu-principal">
+					
+					<ul class="span4">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Feminino</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Grau</a>
+								</li>
+								<li>
+									<a href="#">Solar</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Masculino</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Grau</a>
+								</li>
+								<li>
+									<a href="#">Solar</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<ul class="span4 offset4">
+						<li>
+							<a href="#">Sobre</a>
+						</li>
+						<li>
+							<a href="#">Preço</a>
+						</li>
+						<li>
+							<a href="#">FAQ</a>
+						</li>
+						<li>
+							<a href="#">Contato</a>
+						</li>
+					</ul>
+
+				</nav> <!-- #menu-principal -->
+			</div>
+		</header>
+
+		<?php echo $this->Session->flash(); ?>
+
+		<?php echo $this->fetch('content'); ?>
+	</div> <!-- .container -->
+		
 </body>
 </html>
