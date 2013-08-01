@@ -13,13 +13,13 @@ class Banner extends AppModel {
  */
 	public $validate = array(
 		'image' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+			'extension' => array(
+				'rule' => array('extension'),
+				'message' => 'Forneça uma imagem num formato válido (jpg, png ou gif).',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 		'image_dir' => array(
