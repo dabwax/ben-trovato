@@ -27,6 +27,11 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+
+/**
+ * Rotas da loja.
+ */
+	Router::connect('/admin', array('controller' => 'home', 'admin' => true, 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
