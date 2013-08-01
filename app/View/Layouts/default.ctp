@@ -17,6 +17,7 @@
 	<?php echo $this->Html->script('jquery-migrate-1.2.1.min.js'); ?>
 	<?php echo $this->Html->script('/bootstrap/js/bootstrap.min.js'); ?>
 	<?php echo $this->Html->script('jquery.slides.min.js'); ?>
+	<?php echo $this->Html->script('socialite.min.js'); ?>
 	<?php echo $this->Html->script('default.js'); ?>
 </head>
 <body>
@@ -129,10 +130,10 @@
 
 				<div class="span2">
 					<h3 class="footer-title">Comece</h3>
-					<a href="#">Óculos de Grau</a>
+					<a>Óculos de Grau</a>
 					<a href="#">Masculino</a>
 					<a href="#">Feminino</a>
-					<a href="#">Óculos de Sol</a>
+					<a>Óculos de Sol</a>
 					<a href="#">Masculino</a>
 					<a href="#">Feminino</a>
 					<a href="#">Espelho Virtual</a>
@@ -148,13 +149,17 @@
 
 				<div class="span2">
 					<h3 class="footer-title">Siga</h3>
-					<a href="#">Facebook</a>
-					<a href="#">Twitter</a>
-					<a href="#">Instagram</a>
-					<a href="#">Pinterest</a>
+					<a href="http://www.facebook.com/byBenTrovato">Facebook</a>
+					<a href="http://twitter.com/byBenTrovato">Twitter</a>
+					<a href="http://instagram.com/bybentrovato">Instagram</a>
+					<a href="http://pinterest.com/bybentrovato">Pinterest</a>
 				</div>
 
-				<div class="span4">
+				<div class="span4 ultimo-bloco-footer">
+
+					<a class="socialite facebook-like" data-href="http://www.bentrovato.com.br/">
+						Share on Facebook
+					</a>
 					
 					<div id="newsletter-footer">
 						<p>Mantenha-se informado!</p>
@@ -172,7 +177,28 @@
 
 						<?php echo $this->Form->end(); ?>
 					</div> <!-- #newsletter-footer -->
-				</div>
+
+				</div> <!-- .ultimo-bloco-footer -->
+
+				<div class="clear clearfix"></div>
+
+				<p class="span12 text-center" style="font-size: 11px; margin-top: 20px;">
+					Razão Social: Centro Ótico Américas 700 Ltda. CNPJ: 05.050.375/0001-80. Endereço: Av. das Américas, 700, Bloco 8 – Loja 108-B - Barra da Tijuca - RJ, Brasil. CEP: 22640-100.
+				</p>
+
+			</div>
+
+			<div class="row" style="margin-top: 8px; border-top: 1px solid #000; margin-bottom: 14px;">
+				
+				<p class="copyright span4" style="font-size: 12px; margin-top: 12px;">
+					Ben Trovato <?php echo date('Y'); ?> - Todos os Direitos Reservados.
+				</p> <!-- .copyright -->
+
+				<p class="infos-seguranca pull-right span6 text-right" style="margin-top: 10px;">
+					<?php echo $this->Html->image('cadeado.png', array('class' => '', 'style' => 'display: inline-block; width: 32px;') ); ?>
+					<span style="margin-top: 6px; margin-left: 6px; margin-right: 6px; display: inline-block; ">Segurança: </span>
+					<?php echo $this->Html->image('formas-de-pagamento.jpg', array('class' => '', 'style' => 'display: inline-block;') ); ?>
+				</p>
 
 			</div>
 		</footer>
