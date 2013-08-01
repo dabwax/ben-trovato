@@ -115,6 +115,67 @@
 		<?php echo $this->Session->flash(); ?>
 
 		<?php echo $this->fetch('content'); ?>
+
+		<footer>
+			<div class="row">
+
+				<div class="span2">
+					<h3 class="footer-title">Perguntas</h3>
+					<a href="#">Preço</a>
+					<a href="#">Garantia</a>
+					<a href="#">Troca e Devolução</a>
+					<a href="#">FAQ</a>
+				</div>
+
+				<div class="span2">
+					<h3 class="footer-title">Comece</h3>
+					<a href="#">Óculos de Grau</a>
+					<a href="#">Masculino</a>
+					<a href="#">Feminino</a>
+					<a href="#">Óculos de Sol</a>
+					<a href="#">Masculino</a>
+					<a href="#">Feminino</a>
+					<a href="#">Espelho Virtual</a>
+				</div>
+
+				<div class="span2">
+					<h3 class="footer-title">Sobre</h3>
+					<a href="#">Quem Somos</a>
+					<a href="#">Depoimentos</a>
+					<a href="#">Entre em Contato</a>
+					<a href="#">Termos de Uso</a>
+				</div>
+
+				<div class="span2">
+					<h3 class="footer-title">Siga</h3>
+					<a href="#">Facebook</a>
+					<a href="#">Twitter</a>
+					<a href="#">Instagram</a>
+					<a href="#">Pinterest</a>
+				</div>
+
+				<div class="span4">
+					
+					<div id="newsletter-footer">
+						<p>Mantenha-se informado!</p>
+
+						<?php echo $this->Form->create('Subscription', array('style' => 'margin-bottom: 12px;') ); ?>
+
+						<div class="input-append">
+							<?php echo $this->Form->input('email', array('div' => false, 'label' => false, 'style' => 'width: 180px;') ); ?>
+							<?php echo $this->Form->submit('Enviar', array('class' => 'btn', 'label' => false, 'div' => false, 'style' => 'background: #A4C400; text-transform: uppercase; color: #FFF; text-shadow: none;') ); ?>
+						</div>
+
+						<p class="verde" style="font-size: 13px;">
+							Receba alertas de estilos e ofertas especiais
+						</p>
+
+						<?php echo $this->Form->end(); ?>
+					</div> <!-- #newsletter-footer -->
+				</div>
+
+			</div>
+		</footer>
 	</div> <!-- .container -->
 		
 </body>

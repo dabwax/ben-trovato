@@ -221,3 +221,34 @@ margin-top: 30px;
 	display: inline;
 	height: 400px;
 }
+footer {
+	border-top: 1px solid #000;
+	margin-left: 0px;
+	width: 960px;
+	position: relative;
+	left: -20px;
+}
+footer .span2 .footer-title {
+	font-size: 18px;
+	line-height: 28px;
+	color: #A4C400;
+	margin: 0px;
+	text-align: left;
+	text-transform: uppercase;
+	margin-top: 12px;
+}
+footer .span2 a {
+	float: left;
+	display: inline;
+	clear: both;
+	color: #999;
+	font-size: 14px;
+	margin-top: 6px;
+}
+footer #newsletter-footer {
+	margin-top: 20px;
+	border: 1px solid #A4C400;
+	width: 100%;
+	padding: 8px;
+	padding-left: 16px;
+}
