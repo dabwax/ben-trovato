@@ -63,7 +63,27 @@
 	          <h3 style="margin: 0px; line-height: 26px; font-size: 14px; margin-left: 44px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Reembolso integral até 30 dias</h3>
 	          <h3 style="margin: 0px; line-height: 26px; font-size: 13px; margin-left: 58px; text-align: left; color: #CCC;">* Consulte nossos parâmetros</h3>
 	       </div>
-	     </div>
+	     </div> <!-- #banner-preco -->
+
+		<?php foreach($glassesRandom as $glass) : ?>
+
+			<div class="oculos-sidebar">
+
+				<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'view', $glass['Glass']['id']) ); ?>">
+					<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '270', 'h' => '134') ); ?>
+
+					<p><?php echo $glass['Glass']['name']; ?></p>
+				</a>
+
+				<?php if($glass['Glass']['sku'] != '') { ?>
+				<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'fittingbox', $glass['Glass']['id']) ); ?>" class="btn-espelho-virtual">
+					<?php echo __('Espelho virtual'); ?>
+				</a>
+				<?php } ?>
+
+			</div> <!-- .oculos-sidebar -->
+
+		<?php endforeach; ?>
 
 	</aside> <!-- #sidebar-home -->
 

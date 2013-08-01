@@ -10,7 +10,7 @@ class HomeController extends AppController {
  */
 	public function index() {
 		// Models a serem usados
-		$this->uses = array('Banner');
+		$this->uses = array('Banner', 'Glass');
 
 		// Recupera todos os banners da posição encima
 		$bannersEncima = $this->Banner->find('all', array(
@@ -32,7 +32,13 @@ class HomeController extends AppController {
 			)
 		));
 
-		$this->set(compact('bannersEncima', 'bannersEmbaixo'));
+		// Recupera 3 óculos aleatórios
+		$glassesRandom = $this->Glass->find('all', array(
+			'order' => 'rand()',
+			'limit' => 3
+		));
+
+		$this->set(compact('bannersEncima', 'bannersEmbaixo', 'glassesRandom'));
 	}
 
 /**
