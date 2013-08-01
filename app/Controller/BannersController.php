@@ -14,6 +14,13 @@ class BannersController extends AppController {
  */
 	public function admin_index() {
 		$this->Banner->recursive = 0;
+
+		$this->paginate = array(
+			'order' => array(
+				'Banner.created' => 'DESC'
+			)
+		);
+		
 		$this->set('banners', $this->paginate());
 	}
 

@@ -21,3 +21,9 @@ msgstr "Editar"
 
 msgid "Delete"
 msgstr "Excluir"
+
+msgid "Edit Banner"
+msgstr "Editar Banner"
+
+msgid "Position"
+msgstr "Posição"

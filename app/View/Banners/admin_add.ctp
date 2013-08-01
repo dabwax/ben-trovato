@@ -16,6 +16,7 @@
 					<fieldset>
 						<legend><?php echo __('Add Banner'); ?></legend>
 					<?php
+						echo $this->Form->input('position', array('options' => array('encima' => 'Encima', 'embaixo' => 'Embaixo'), 'empty' => 'Selecionar') );
 						echo $this->Form->input('image', array('type' => 'file') );
 						echo $this->Form->input('link');
 					?>

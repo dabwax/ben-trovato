@@ -12,6 +12,12 @@ class Banner extends AppModel {
  * @var array
  */
 	public $validate = array(
+		'position' => array(
+			'inList' => array(
+				'rule' => array('inList', array('encima', 'embaixo') ),
+				'message' => 'Você deve selecionar uma opção válida.'
+			)
+		),
 		'image' => array(
 			'extension' => array(
 				'rule' => array('extension'),
