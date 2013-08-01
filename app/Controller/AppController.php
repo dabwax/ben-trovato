@@ -37,6 +37,13 @@ class AppController extends Controller {
  */
 	public $storeName = 'Ben Trovato';
 
+	public $helpers = array(
+		'Html',
+		'Form',
+		'Session',
+		'Loja'
+	);
+
 /**
  * Construtor geral.
  */

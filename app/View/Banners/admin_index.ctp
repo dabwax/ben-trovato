@@ -27,7 +27,7 @@
 					</tr>
 					<?php foreach ($banners as $banner): ?>
 						<tr>
-							<td><?php echo h($banner['Banner']['image']); ?>&nbsp;</td>
+							<td><?php echo $this->Loja->imagem('/banner/image/' . $banner['Banner']['id'] . '/' . $banner['Banner']['image'], array('w' => '240') ); ?>&nbsp;</td>
 							<td><?php echo h($banner['Banner']['link']); ?>&nbsp;</td>
 							<td class="actions">
 								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $banner['Banner']['id'])); ?>

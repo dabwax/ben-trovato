@@ -9,6 +9,7 @@
 /dist
 /tags
 /app/webroot/files
+/app/webroot/cache
 
 # OS generated files #
 ######################
