@@ -33,7 +33,12 @@
  */
 	Router::connect('/oculos-masculino/*', array('controller' => 'glasses', 'action' => 'all', 'masculino') );
 	Router::connect('/oculos-feminino/*', array('controller' => 'glasses', 'action' => 'all', 'feminino') );
+	Router::connect('/quem-somos', array('controller' => 'pages', 'action' => 'display', 'quem-somos') );
+	Router::connect('/preco', array('controller' => 'pages', 'action' => 'display', 'preco') );
+	Router::connect('/faq', array('controller' => 'pages', 'action' => 'display', 'faq') );
+	Router::connect('/contato', array('controller' => 'pages', 'action' => 'display', 'contato') );
 	Router::connect('/admin', array('controller' => 'home', 'admin' => true, 'action' => 'index'));
+	
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

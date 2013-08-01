@@ -96,16 +96,16 @@
 
 					<ul class="span4 offset4">
 						<li>
-							<a href="#">Sobre</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos' ) ); ?>">Sobre</a>
 						</li>
 						<li>
-							<a href="#">Preço</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'preco' ) ); ?>">Preço</a>
 						</li>
 						<li>
-							<a href="#">FAQ</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq' ) ); ?>">FAQ</a>
 						</li>
 						<li>
-							<a href="#">Contato</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'contato' ) ); ?>">Contato</a>
 						</li>
 					</ul>
 
