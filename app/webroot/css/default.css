@@ -133,3 +133,10 @@ header {
 .slidesjs-play, .slidesjs-stop {
 	display: none !important;
 }
+.banners-embaixo a {
+	float: left;
+	display: inline;
+	width: 300px;
+	height: 300px;
+	margin-right: 10px;
+}

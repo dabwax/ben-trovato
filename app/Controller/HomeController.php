@@ -22,7 +22,17 @@ class HomeController extends AppController {
 			)
 		));
 
-		$this->set(compact('bannersEncima'));
+		// Recupera todos os banners da posição embaixo
+		$bannersEmbaixo = $this->Banner->find('all', array(
+			'conditions' => array(
+				'Banner.position' => 'embaixo'
+			),
+			'order' => array(
+				'Banner.modified' => 'DESC'
+			)
+		));
+
+		$this->set(compact('bannersEncima', 'bannersEmbaixo'));
 	}
 
 /**
