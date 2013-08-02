@@ -8,12 +8,14 @@
 	<!-- CSS -->
 	<?php echo $this->Html->css('bootstrap.min.css'); ?>
 	<?php echo $this->Html->css('bootstrap-glyphicons.css'); ?>
+	<?php echo $this->Html->css('multi-select.css'); ?>
 	<?php echo $this->Html->css('admin.css'); ?>
 
 	<!-- JS -->
 	<?php echo $this->Html->script('jquery-1.10.2.min.js'); ?>
 	<?php echo $this->Html->script('jquery-migrate-1.2.1.min.js'); ?>
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('jquery.multi-select.js'); ?>
 	<?php echo $this->Html->script('admin.js'); ?>
 </head>
 <body>
@@ -58,6 +60,12 @@
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'index') ); ?>">Listar</a>
 			    		</li>
 			    	</ul>
+			    </li>
+			    <li 
+			    class="<?php if($this->params['controller'] == 'settings') { ?>active<?php } ?>">
+			    	<a href="<?php echo $this->Html->url( array('controller' => 'settings', 'action' => 'index') ); ?>">
+			    		<span class="glyphicon glyphicon-wrench"></span> Configurações</b>
+			    	</a>
 			    </li>
 			  </ul>
 

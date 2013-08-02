@@ -32,6 +32,9 @@
 								echo $this->Form->input('name', array('required' => false) );
 								echo $this->Form->input('sku', array('required' => false) );
 								echo $this->Form->input('price', array('type' => 'text', 'required' => false) );
+								
+								echo $this->Form->input('Related', array('options' => $options['related'], 'class' => 'multiSelect') );
+
 								echo $this->Form->input('photo_1', array('type' => 'file', 'label' => 'Foto (ângulo: frontal)') );
 								echo $this->Form->input('photo_2', array('type' => 'file', 'label' => 'Foto (ângulo: lateral)') );
 								echo $this->Form->input('image_hover', array('type' => 'file', 'label' => 'Foto (efeito de mouseover)') );

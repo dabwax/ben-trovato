@@ -168,7 +168,7 @@ class Glass extends AppModel {
 			'joinTable' => 'related_glasses',
 			'foreignKey' => 'glass_id',
 			'associationForeignKey' => 'related_id',
-			'unique' => 'keepExisting'
+			'unique' => true
 		)
 	);
 

@@ -14,4 +14,5 @@ $(document).ready(function() {
 	 divError.addClass('label label-danger').css('margin-top', '12px').css('display', 'inline-block');
 	 divActions.find('a:first-child').addClass('btn btn-primary');
 	 divActions.find('a:last-child').addClass('btn btn-danger');
+	 $('.multiSelect').multiSelect();
 });

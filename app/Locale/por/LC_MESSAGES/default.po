@@ -79,11 +79,11 @@ msgstr "Você deve selecionar um valor válido para este campo"
 msgid "Related"
 msgstr "Óculos Relacionados"
 
-msgid ""
-msgstr ""
+msgid "Key"
+msgstr "Chave"
 
-msgid ""
-msgstr ""
+msgid "Value"
+msgstr "Valor"
 
 msgid ""
 msgstr ""

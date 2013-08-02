@@ -34,6 +34,8 @@
 								echo $this->Form->input('sku', array('required' => false) );
 								echo $this->Form->input('price', array('type' => 'text', 'required' => false) );
 
+								echo $this->Form->input('Related', array('options' => $options['related'], 'class' => 'multiSelect') );
+
 								$glass = $this->request->data;
 
 								echo $this->Form->input('photo_1', array('type' => 'file', 'label' => 'Foto (ângulo: frontal)') );
@@ -58,8 +60,6 @@
 
 									echo '<p class="label" style="margin-left: 12px;">Imagem atual</p>';
 								}
-
-								echo $this->Form->input('Related', array('options' => $options['related']) );
 							?>
 						</div> <!-- .form -->
 
