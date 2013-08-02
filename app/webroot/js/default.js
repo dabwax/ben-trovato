@@ -54,13 +54,44 @@ $(document).ready(function() {
 	  /**
 	   * AJAX do Formulário de Cadastre-se da Modal de Login.
 	   */
-	   $(".form-add form").ajaxForm({
-	 	success: function(responseText) {
-	 		if(responseText == 'sucesso') {
-	 			window.location.reload();
-	 		} else {
-	 			alert(responseText);
-	 		}
-	 	}
+		$(".form-add form").ajaxForm({
+			success: function(responseText) {
+				if(responseText == 'sucesso') {
+					window.location.reload();
+				} else {
+					alert(responseText);
+				}
+			}
+		});
+
+	/**
+	 * Botão de "Esqueci minha senha".
+	 */
+	 $("#btn-esqueceu-sua-senha").click(function() {
+		$("#modal-login").find('.modal-body').hide();
+
+		$("#modal-login").find('.form-forgot').show();
+
+		$("#modal-login").find('.modal-header h3').html('ESQUECI MINHA SENHA');
 	 });
+
+	 /**
+	   * AJAX do Formulário de "Esqueci minha Senha" da Modal de Login.
+	   */
+		$(".form-forgot form").ajaxForm({
+			success: function(responseText) {
+
+				console.log(responseText);
+
+				if(responseText == 'sucesso') {
+					if(confirm('Foi enviado um e-mail para você com uma nova senha temporária.')) {
+						window.location.reload();
+					} else {
+						window.location.reload();
+					}
+				} else {
+					alert('O e-mail digitado não foi encontrado no sistema.');
+				}
+			}
+		});
 });

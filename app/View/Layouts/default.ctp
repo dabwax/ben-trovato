@@ -79,7 +79,21 @@
 		</div>
 
 		<div class="control-group">
-			<?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 180px;') ) ); ?>
+			<?php echo $this->Form->submit('Cadastrar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 180px;') ) ); ?>
+		</div>
+
+		<?php echo $this->Form->end(); ?>
+	</div> <!-- .modal-body -->
+
+	<div class="modal-body hide form-forgot">
+		<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'ajax_forgot') ) ); ?>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('Client.email', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->submit('Recuperar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 180px;') ) ); ?>
 		</div>
 
 		<?php echo $this->Form->end(); ?>
@@ -94,7 +108,7 @@
 
 		<p class="label label-inverse">
 			<span>Esqueceu sua senha?</span> 
-			<?php echo $this->Html->link('clique aqui.', array('controller' => 'users', 'action' => 'add'), array('style' => 'color: #FFF; text-decoration: underline;') ); ?>
+			<a href="javascript:;" id="btn-esqueceu-sua-senha" style="color: #FFF; text-decoration: underline;">clique aqui</a>.
 		</p>
 	</div>
 

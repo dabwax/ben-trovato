@@ -11,18 +11,21 @@ class User extends AppModel {
 		'name' => array(
 			'notEmpty' => array(
 				'rule' => 'notEmpty',
-				'message' => 'O nome é obrigatório'
+				'message' => 'O nome é obrigatório',
+				'on' => 'create'
 			)
 		),
 		'username' => array(
 			'unique' => array(
 				'rule' => 'isUnique',
-				'message' => 'Esse usuário já existe'
+				'message' => 'Esse usuário já existe',
+				'on' => 'create'
 			),
 			'alphaNumeric' => array(
                 'rule'     => 'alphaNumeric',
                 'required' => true,
-                'message'  => 'O usuário só pode ter letras e números apenas'
+                'message'  => 'O usuário só pode ter letras e números apenas',
+                'on' => 'create'
             ),
 		),
 		'password' => array(
@@ -32,7 +35,8 @@ class User extends AppModel {
 			),
             'between' => array(
                 'rule'    => array('between', 5, 15),
-                'message' => 'A senha precisa ter entre 5 e 15 caracteres'
+                'message' => 'A senha precisa ter entre 5 e 15 caracteres',
+                'on' => 'create'
             )
 		)
 	);

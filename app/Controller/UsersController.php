@@ -167,5 +167,45 @@ class UsersController extends AppController {
 			echo $retorno;
 		}
 	}
+
+	public function ajax_forgot() {
+		// Configurações para action ser usada como AJAX
+		$this->layout = "ajax";
+		$this->autoRender = false;
+
+		// Pesquisa um cliente com o e-mail inserido
+		$client = $this->User->Client->findByEmail($this->request->data['Client']['email']);
+
+		// Se o cliente existir
+		if($client) {
+			// É modificado a senha dele
+			$newPassword = mt_rand(100000,999999);
+
+			// Armazena os dados novos para poder atualizar a senha dele
+			$this->request->data['User']['id'] = $client['User']['id'];
+			$this->request->data['User']['password'] = $newPassword;
+
+			$name = $client['User']['name'];
+			$username = $client['User']['username'];
+
+			// Os novos dados são atualizados no usuário
+			$this->User->save($this->request->data);
+
+			App::uses('CakeEmail', 'Network/Email');
+
+			$email = new CakeEmail('smtp');
+
+			$email->from(array('no-reply@bentrovato.com.br' => 'Ben Trovato'));
+
+			$email->to($this->request->data['Client']['email']);
+
+			$email->subject('Recuperação de Senha - Loja Ben Trovato');
+
+			$email->send('Olá, ' . $name . '! A sua senha da Loja Ben Trovato foi modificada para: ' . $newPassword . "\n" . 'O seu usuário é: ' . $username);
+
+			// É retornado sucesso
+			echo 'sucesso';
+		}
+	}
 }
  ?>
