@@ -88,7 +88,7 @@ class AppController extends Controller {
 	public function onlyAdminAccessAdmin() {
 		if($this->params['prefix'] == 'admin' && AuthComponent::user() && AuthComponent::user('role') != 'admin') {
 
-			$this->Session->setFlash(__("You can't access this page."));
+			$this->Session->setFlash(__("You can't access this page."), 'error');
 
 			return $this->redirect('/');
 

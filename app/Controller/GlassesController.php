@@ -68,10 +68,10 @@ class GlassesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Glass->create();
 			if ($this->Glass->save($this->request->data)) {
-				$this->Session->setFlash(__('The glass has been saved'));
+				$this->Session->setFlash(__('The glass has been saved'), 'success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The glass could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The glass could not be saved. Please, try again.'), 'error');
 			}
 		}
 
@@ -91,10 +91,10 @@ class GlassesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Glass->save($this->request->data)) {
-				$this->Session->setFlash(__('The glass has been saved'));
+				$this->Session->setFlash(__('The glass has been saved'), 'success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The glass could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The glass could not be saved. Please, try again.'), 'error');
 			}
 		} else {
 			$options = array('conditions' => array('Glass.' . $this->Glass->primaryKey => $id));
@@ -118,10 +118,10 @@ class GlassesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Glass->delete()) {
-			$this->Session->setFlash(__('Glass deleted'));
+			$this->Session->setFlash(__('Glass deleted'), 'success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Glass was not deleted'));
+		$this->Session->setFlash(__('Glass was not deleted'), 'error');
 		$this->redirect(array('action' => 'index'));
 	}
 }

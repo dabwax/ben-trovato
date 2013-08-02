@@ -91,20 +91,62 @@ msgstr "Usuário"
 msgid "Password"
 msgstr "Senha"
 
-msgid ""
-msgstr ""
+msgid "The banner has been saved"
+msgstr "O banner foi salvo com sucesso"
 
-msgid ""
-msgstr ""
+msgid "The banner could not be saved. Please, try again."
+msgstr "O banner não pôde ser salvo. Por favor, tente novamente."
 
-msgid ""
-msgstr ""
+msgid "Invalid banner"
+msgstr "Banner inválido"
 
-msgid ""
-msgstr ""
+msgid "Banner deleted"
+msgstr "O banner foi removido com sucesso"
 
-msgid ""
-msgstr ""
+msgid "Banner was not deleted"
+msgstr "O banner não pôde ter sido removido."
 
-msgid ""
-msgstr ""
+msgid "The glass has been saved"
+msgstr "O óculos foi salvo com sucesso"
+
+msgid "The glass could not be saved. Please, try again."
+msgstr "O óculos não pôde ser salvo. Por favor, tente novamente."
+
+msgid "Invalid glass"
+msgstr "Óculos inválido"
+
+msgid "Glass deleted"
+msgstr "O óculos foi removido com sucesso"
+
+msgid "GLass was not deleted"
+msgstr "O óculos não pôde ter sido removido."
+
+msgid "The setting has been saved"
+msgstr "A configuração foi salva com sucesso"
+
+msgid "The setting could not be saved. Please, try again."
+msgstr "A configuração não pôde ser salva. Por favor, tente novamente."
+
+msgid "Invalid setting"
+msgstr "Configuração inválida"
+
+msgid "Setting deleted"
+msgstr "A configuração foi removida com sucesso"
+
+msgid "Setting was not deleted"
+msgstr "A configuração não pôde ter sido removida."
+
+msgid "The user has been saved"
+msgstr "O usuário foi salvo com sucesso"
+
+msgid "The user could not be saved. Please, try again."
+msgstr "O usuário não pôde ser salvo. Por favor, tente novamente."
+
+msgid "Invalid user"
+msgstr "Usuário inválido"
+
+msgid "User deleted"
+msgstr "O usuário foi removido com sucesso"
+
+msgid "User was not deleted"
+msgstr "O usuário não pôde ter sido removido."

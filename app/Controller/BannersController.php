@@ -33,10 +33,10 @@ class BannersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Banner->create();
 			if ($this->Banner->save($this->request->data)) {
-				$this->Session->setFlash(__('The banner has been saved'));
+				$this->Session->setFlash(__('The banner has been saved'), 'success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The banner could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The banner could not be saved. Please, try again.'), 'error');
 			}
 		}
 	}
@@ -54,10 +54,10 @@ class BannersController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Banner->save($this->request->data)) {
-				$this->Session->setFlash(__('The banner has been saved'));
+				$this->Session->setFlash(__('The banner has been saved'), 'success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The banner could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The banner could not be saved. Please, try again.'), 'error');
 			}
 		} else {
 			$options = array('conditions' => array('Banner.' . $this->Banner->primaryKey => $id));
@@ -79,10 +79,10 @@ class BannersController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Banner->delete()) {
-			$this->Session->setFlash(__('Banner deleted'));
+			$this->Session->setFlash(__('Banner deleted'), 'success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Banner was not deleted'));
+		$this->Session->setFlash(__('Banner was not deleted'), 'error');
 		$this->redirect(array('action' => 'index'));
 	}
 }
