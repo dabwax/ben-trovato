@@ -98,5 +98,51 @@ class UsersController extends AppController {
 	public function admin_logout() {
 	    $this->redirect($this->Auth->logout());
 	}
+
+	public function ajax_add() {
+		// Configurações para action ser usada como AJAX
+		$this->layout = "ajax";
+		$this->autoRender = false;
+
+		$this->request->data['User']['role'] = 'client';
+
+		// Define os dados recebidos ao Model
+		$this->User->set($this->request->data);
+
+		// Condicional que verifica se o Model valida ou não
+		if($this->User->saveAll($this->request->data, array('validate' => 'only'))) {
+			
+			// Se validar, o usuário é salvo
+			$this->User->saveAll($this->request->data);
+
+			// É armazenado o ID do usuário
+			$id = $this->user->id;
+
+			// É inserido o ID do usuário no array de dados
+			$this->request->data['User'] = array_merge($this->request->data['User'], array('id' => $id));
+
+			// É efetuado um login com os dados do usuário
+			$this->Auth->login($this->request->data['User']);
+
+			// Retorno de string que é usado na requisição AJAX
+			echo 'sucesso';
+		// Do contrário, se a validação não passar
+		} else {
+			// É recuperado os erros da validação
+			$erros = $this->User->validationErrors;
+
+			// Os erros são tratados para ser exibido ao usuário
+			$retorno = 'Não foi possível cadastrar você, pois:' . "\n\n";
+
+			foreach($erros as $erro) {
+				foreach($erro as $erro_msg) {
+					$retorno .= $erro_msg . ".\n";
+				}
+			}
+
+			// Retorno de string com os erros de validação
+			echo $retorno;
+		}
+	}
 }
  ?>

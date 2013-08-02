@@ -296,3 +296,9 @@ footer .ultimo-bloco-footer div.socialite {
 	position: relative;
 	top: -6px;
 }
+.form-horizontal .control-label {
+	margin-right: 20px;
+}
+.form-horizontal .controls {
+	margin-left: 0px;
+}

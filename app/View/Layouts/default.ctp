@@ -26,6 +26,78 @@
 <?php echo $configuracoes['clicktale_before_body_tag']; ?>
 <body>
 
+<!-- Modal do Botão de Login -->
+<div id="modal-login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 style="text-align: left; font-size: 24px;">LOGIN</h3>
+	</div> <!-- .modal-header -->
+
+	<div class="modal-body form-login">
+		<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'login') ) ); ?>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('username', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('password', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 180px;') ) ); ?>
+		</div>
+
+		<?php echo $this->Form->end(); ?>
+	</div> <!-- .modal-body -->
+
+	<div class="modal-body hide form-add">
+
+		<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'ajax_add') ) ); ?>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('name', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('username', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('password', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('Client.phone', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->input('Client.email', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+		</div>
+
+		<div class="control-group">
+			<?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 180px;') ) ); ?>
+		</div>
+
+		<?php echo $this->Form->end(); ?>
+	</div> <!-- .modal-body -->
+
+	<div class="modal-footer" style="text-align: center !important;">
+
+		<p class="label">
+			<span>Não tem uma conta?</span>
+			<a href="javascript:;" id="btn-cadastre-se" style="color: #FFF; text-decoration: underline;">clique aqui</a>.
+		</p>
+
+		<p class="label label-inverse">
+			<span>Esqueceu sua senha?</span> 
+			<?php echo $this->Html->link('clique aqui.', array('controller' => 'users', 'action' => 'add'), array('style' => 'color: #FFF; text-decoration: underline;') ); ?>
+		</p>
+	</div>
+
+</div> <!-- #modal-login -->
+
 	<div class="container">
 
 		<header>
@@ -39,7 +111,7 @@
 					
 					<a href="#" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [0 armações]</a> <!-- #btn-carrinho -->
 
-					<a href="#" class="pull-right" id="btn-login">LOGIN</a> <!-- #btn-login -->
+					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">LOGIN</a> <!-- #btn-login -->
 
 					<div class="clear clearfix"></div>
 

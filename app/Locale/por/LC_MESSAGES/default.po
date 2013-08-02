@@ -150,3 +150,9 @@ msgstr "O usuário foi removido com sucesso"
 
 msgid "User was not deleted"
 msgstr "O usuário não pôde ter sido removido."
+
+msgid "Phone"
+msgstr "Telefone"
+
+msgid "Email"
+msgstr "E-mail"

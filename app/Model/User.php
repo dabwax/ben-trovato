@@ -3,6 +3,10 @@ App::uses('AuthComponent', 'Controller/Component');
 
 class User extends AppModel {
 
+	public $hasOne = array(
+		'Client'
+	);
+
 	public $validate = array(
 		'name' => array(
 			'notEmpty' => array(
