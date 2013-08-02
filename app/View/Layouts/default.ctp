@@ -27,6 +27,7 @@
 <?php echo $configuracoes['clicktale_before_body_tag']; ?>
 <body>
 
+<?php if(!AuthComponent::user()) { ?>
 <!-- Modal do Botão de Login -->
 <div id="modal-login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	
@@ -98,6 +99,7 @@
 	</div>
 
 </div> <!-- #modal-login -->
+<?php } ?>
 
 	<div class="container">
 
@@ -112,7 +114,15 @@
 					
 					<a href="#" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [0 armações]</a> <!-- #btn-carrinho -->
 
-					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">LOGIN <?php echo AuthComponent::user('id'); ?></a> <!-- #btn-login -->
+					<?php if(!AuthComponent::user()) { ?>
+
+					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">LOGIN</a> <!-- #btn-login -->
+
+					<?php } else { ?>
+
+					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>" class="pull-right" id="btn-login">SAIR</a> <!-- #btn-login -->
+
+					<?php } ?>
 
 					<div class="clear clearfix"></div>
 

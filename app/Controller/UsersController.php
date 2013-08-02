@@ -99,6 +99,14 @@ class UsersController extends AppController {
 	    $this->redirect($this->Auth->logout());
 	}
 
+	public function logout() {
+		$this->Auth->logout();
+
+		$this->Session->setFlash('A sua sessão foi expirada. Até logo.', 'error');
+
+	    $this->redirect('/');
+	}
+
 	public function ajax_add() {
 		// Configurações para action ser usada como AJAX
 		$this->layout = "ajax";
