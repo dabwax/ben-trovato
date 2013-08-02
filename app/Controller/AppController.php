@@ -37,12 +37,26 @@ class AppController extends Controller {
  */
 	public $storeName = 'Ben Trovato';
 
+/**
+ * Helpers.
+ */
 	public $helpers = array(
 		'Html',
 		'Form',
 		'Session',
 		'Loja'
 	);
+
+/**
+ * Componentes.
+ */
+	public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array('controller' => 'home', 'admin' => 'true', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'home', 'admin' => false, 'action' => 'index')
+        )
+    );
 
 /**
  * Construtor geral.
@@ -59,6 +73,39 @@ class AppController extends Controller {
 		 * Se estiver na rota de admin, é usado o layout de admin.
 		 */
 		$this->setLayoutBasedOnRoute();
+
+		/**
+		 * Define as actions públicas (qualquer um pode acessar).
+		 */
+		$this->setPublicActions();
+
+		/**
+		 * Apenas usuários com cargo administrativo podem acessar a rota de admin.
+		 */
+		$this->onlyAdminAccessAdmin();
+	}
+
+	public function onlyAdminAccessAdmin() {
+		if($this->params['prefix'] == 'admin') {
+
+			if($this->params['action'] == 'admin_login') {
+			} else {
+
+				if(AuthComponent::user('role') != 'admin') {
+
+					$this->Session->setFlash(__("You can't access this page."));
+
+					return $this->redirect('/');
+				}
+			}
+		}
+	}
+
+/**
+ * Define as actions públicas (qualquer um pode acessar).
+ */
+	public function setPublicActions() {
+		$this->Auth->allow('index', 'view', 'display');
 	}
 
 /**
