@@ -85,11 +85,11 @@ msgstr "Chave"
 msgid "Value"
 msgstr "Valor"
 
-msgid ""
-msgstr ""
+msgid "Username"
+msgstr "Usuário"
 
-msgid ""
-msgstr ""
+msgid "Password"
+msgstr "Senha"
 
 msgid ""
 msgstr ""

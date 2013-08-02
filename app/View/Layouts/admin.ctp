@@ -62,9 +62,33 @@
 			    	</ul>
 			    </li>
 			    <li 
+			    class="<?php if($this->params['controller'] == 'users') { ?>active<?php } ?> dropdown">
+			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			    		<span class="glyphicon glyphicon-user"></span> Usuários <b class="caret"></b>
+			    	</a>
+			    	<ul class="dropdown-menu">
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'index', 'admin') ); ?>">Administradores</a>
+			    		</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'index', 'client') ); ?>">Clientes</a>
+			    		</li>
+			    	</ul>
+			    </li>
+			    <li 
 			    class="<?php if($this->params['controller'] == 'settings') { ?>active<?php } ?>">
 			    	<a href="<?php echo $this->Html->url( array('controller' => 'settings', 'action' => 'index') ); ?>">
 			    		<span class="glyphicon glyphicon-wrench"></span> Configurações</b>
+			    	</a>
+			    </li>
+			    <li>
+			    	<a href="<?php echo $this->Html->url('/'); ?>" target="_blank">
+			    		<span class="glyphicon glyphicon-search"></span> Ver Loja</b>
+			    	</a>
+			    </li>
+			    <li>
+			    	<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>">
+			    		<span class="glyphicon glyphicon-remove"></span> Sair</b>
 			    	</a>
 			    </li>
 			  </ul>
