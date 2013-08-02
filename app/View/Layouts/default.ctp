@@ -18,6 +18,7 @@
 	<?php echo $this->Html->script('/bootstrap/js/bootstrap.min.js'); ?>
 	<?php echo $this->Html->script('jquery.slides.min.js'); ?>
 	<?php echo $this->Html->script('socialite.min.js'); ?>
+	<?php echo $this->Html->script('jquery.form.min.js'); ?>
 	<?php echo $this->Html->script('default.js'); ?>
 
 	<?php echo $configuracoes['google_analytics']; ?>
@@ -167,7 +168,7 @@
 					<div id="newsletter-footer">
 						<p>Mantenha-se informado!</p>
 
-						<?php echo $this->Form->create('Subscription', array('style' => 'margin-bottom: 12px;') ); ?>
+						<?php echo $this->Form->create('Subscription', array('id' => 'formNewsletter', 'style' => 'margin-bottom: 12px;', 'url' => array('controller' => 'subscriptions', 'action' => 'ajax_add') ) ); ?>
 
 						<div class="input-append">
 							<?php echo $this->Form->input('email', array('div' => false, 'label' => false, 'style' => 'width: 180px;') ); ?>

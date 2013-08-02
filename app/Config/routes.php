@@ -38,6 +38,8 @@
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'display', 'faq') );
 	Router::connect('/contato', array('controller' => 'pages', 'action' => 'display', 'contato') );
 	Router::connect('/admin', array('controller' => 'home', 'admin' => true, 'action' => 'index'));
+
+	Router::parseExtensions('xls');
 	
 /**
  * ...and connect the rest of 'Pages' controller's urls.

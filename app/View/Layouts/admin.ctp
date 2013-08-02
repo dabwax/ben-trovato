@@ -81,6 +81,17 @@
 			    		<span class="glyphicon glyphicon-wrench"></span> Configurações</b>
 			    	</a>
 			    </li>
+			    <li 
+			    class="<?php if($this->params['controller'] == 'users') { ?>active<?php } ?> dropdown">
+			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			    		<span class="glyphicon glyphicon-share-alt"></span> Exportar... <b class="caret"></b>
+			    	</a>
+			    	<ul class="dropdown-menu">
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'subscriptions', 'action' => 'export', 'ext' => 'xls') ); ?>">Newsletter</a>
+			    		</li>
+			    	</ul>
+			    </li>
 			    <li>
 			    	<a href="<?php echo $this->Html->url('/'); ?>" target="_blank">
 			    		<span class="glyphicon glyphicon-search"></span> Ver Loja</b>
