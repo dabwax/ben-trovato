@@ -156,3 +156,6 @@ msgstr "Telefone"
 
 msgid "Email"
 msgstr "E-mail"
+
+msgid "You can't access this page."
+msgstr "A página que você tentou acessar não lhe permitiu o acesso."

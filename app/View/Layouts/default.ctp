@@ -19,6 +19,7 @@
 	<?php echo $this->Html->script('jquery.slides.min.js'); ?>
 	<?php echo $this->Html->script('socialite.min.js'); ?>
 	<?php echo $this->Html->script('jquery.form.min.js'); ?>
+	<?php echo $this->Html->script('jquery.maskedinput.min.js'); ?>
 	<?php echo $this->Html->script('default.js'); ?>
 
 	<?php echo $configuracoes['google_analytics']; ?>
@@ -69,7 +70,7 @@
 		</div>
 
 		<div class="control-group">
-			<?php echo $this->Form->input('Client.phone', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+			<?php echo $this->Form->input('Client.phone', array('class' => 'campo-de-telefone', 'div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
 		</div>
 
 		<div class="control-group">
@@ -111,7 +112,7 @@
 					
 					<a href="#" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [0 armações]</a> <!-- #btn-carrinho -->
 
-					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">LOGIN</a> <!-- #btn-login -->
+					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">LOGIN <?php echo AuthComponent::user('id'); ?></a> <!-- #btn-login -->
 
 					<div class="clear clearfix"></div>
 

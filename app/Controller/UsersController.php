@@ -116,7 +116,7 @@ class UsersController extends AppController {
 			$this->User->saveAll($this->request->data);
 
 			// É armazenado o ID do usuário
-			$id = $this->user->id;
+			$id = $this->User->id;
 
 			// É inserido o ID do usuário no array de dados
 			$this->request->data['User'] = array_merge($this->request->data['User'], array('id' => $id));

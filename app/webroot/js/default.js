@@ -47,6 +47,11 @@ $(document).ready(function() {
 	  });
 
 	  /**
+	   * Máscaras de input.
+	   */
+	  $(".campo-de-telefone").mask("(99) 9999-9999?9");
+	  
+	  /**
 	   * AJAX do Formulário de Cadastre-se da Modal de Login.
 	   */
 	   $(".form-add form").ajaxForm({

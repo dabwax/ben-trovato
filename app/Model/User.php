@@ -11,7 +11,7 @@ class User extends AppModel {
 		'name' => array(
 			'notEmpty' => array(
 				'rule' => 'notEmpty',
-				'message' => 'Este campo é obrigatório'
+				'message' => 'O nome é obrigatório'
 			)
 		),
 		'username' => array(
@@ -22,7 +22,7 @@ class User extends AppModel {
 			'alphaNumeric' => array(
                 'rule'     => 'alphaNumeric',
                 'required' => true,
-                'message'  => 'Letras e números apenas'
+                'message'  => 'O usuário só pode ter letras e números apenas'
             ),
 		),
 		'password' => array(
@@ -32,7 +32,7 @@ class User extends AppModel {
 			),
             'between' => array(
                 'rule'    => array('between', 5, 15),
-                'message' => 'Entre 5 e 15 caracteres'
+                'message' => 'A senha precisa ter entre 5 e 15 caracteres'
             )
 		)
 	);
