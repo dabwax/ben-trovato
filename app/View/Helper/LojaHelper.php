@@ -15,7 +15,12 @@ class LojaHelper extends AppHelper {
 		// Se não houver configurações pro Timthumb, não usá-lo
 		if(!empty($timthumb_config)) {
 
-			$url = 'ben-trovato/app/' . WEBROOT_DIR . $url;
+			if($_SERVER['SERVER_NAME'] == 'localhost') {
+				$url = 'ben-trovato/app/' . WEBROOT_DIR . $url;
+			} else {
+				$url = 'app/' . WEBROOT_DIR . $url;
+			}
+			
 
 			$timthumb = '?src=' . $url;
 
