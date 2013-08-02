@@ -19,7 +19,10 @@
 	<?php echo $this->Html->script('jquery.slides.min.js'); ?>
 	<?php echo $this->Html->script('socialite.min.js'); ?>
 	<?php echo $this->Html->script('default.js'); ?>
+
+	<?php echo $configuracoes['google_analytics']; ?>
 </head>
+<?php echo $configuracoes['clicktale_before_body_tag']; ?>
 <body>
 
 	<div class="container">
@@ -205,4 +208,5 @@
 	</div> <!-- .container -->
 		
 </body>
+<?php echo $configuracoes['click_tale_after_body_tag']; ?>
 </html>

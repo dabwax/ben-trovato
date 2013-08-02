@@ -83,8 +83,33 @@ class AppController extends Controller {
 		 * Apenas usuários com cargo administrativo podem acessar a rota de admin.
 		 */
 		$this->onlyAdminAccessAdmin();
+
+		/**
+		 * Envia para as views todas as configurações da loja.
+		 */
+		$this->setSettings();
 	}
 
+/**
+ * Envia para as views todas as configurações da loja.
+ */
+	public function setSettings() {
+		$this->uses = array('Setting');
+
+		$settings = $this->Setting->find('all');
+
+		$settings_view = array();
+
+		foreach($settings as $setting) {
+			$settings_view[$setting['Setting']['key']] = $setting['Setting']['value'];
+		}
+
+		$this->set('configuracoes', $settings_view);
+	}
+
+/**
+ * Apenas usuários com cargo administrativo podem acessar a rota de admin.
+ */
 	public function onlyAdminAccessAdmin() {
 		if($this->params['prefix'] == 'admin' && AuthComponent::user() && AuthComponent::user('role') != 'admin') {
 
