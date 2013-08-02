@@ -7,7 +7,9 @@
 					<h3 class="panel-title"><?php echo __('Usuários'); ?> 
 						<small><?php echo __('Gerenciamento do Módulo de Usuários'); ?> - <?php if($role == 'admin') { echo 'Administradores'; } else { echo 'Clientes'; } ?></small>
 
+						<?php if($role == 'admin') { ?>
 						<a href="<?php echo $this->Html->url( array('action' => 'add', $role) ); ?>" class="btn btn-primary">Adicionar</a>
+						<?php } ?>
 					</h3> <!-- .panel-title -->
 				</div> <!-- .panel-heading -->
 
@@ -30,8 +32,14 @@
 							<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
 							<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 							<td class="actions">
+
+								<?php if($user['User']['username'] != 'marketingshop') { ?>
+
 								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id'])); ?>
+
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $user['User']['id']), null, __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
+
+								<?php } ?>
 							</td>
 						</tr>
 					<?php endforeach; ?>

@@ -5,7 +5,6 @@
   	<?php echo $this->Session->flash(); ?>
   </div>
   
-  <?php echo $this->Session->flash('auth'); ?>
   <p class="text-center" style="font-size: 12px; background: #F5F5F5; color: #333;">Insira as credenciais corretas para acessar o sistema administrativo da loja.</p>
   <?php echo $this->Form->create('User'); ?>
     <p>
