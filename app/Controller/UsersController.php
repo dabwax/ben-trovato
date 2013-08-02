@@ -99,6 +99,21 @@ class UsersController extends AppController {
 	    $this->redirect($this->Auth->logout());
 	}
 
+	public function login() {
+		
+	    if ($this->request->is('post')) {
+
+	        if ($this->Auth->login()) {
+            	$this->Session->setFlash(__('Seja bem-vindo de volta a Ben Trovato.'), 'success');
+	        } else {
+	            $this->Session->setFlash(__('Invalid username or password, try again'), 'error');
+	        }
+
+	    }
+
+	    $this->redirect('/');
+	}
+
 	public function logout() {
 		$this->Auth->logout();
 

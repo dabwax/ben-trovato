@@ -159,3 +159,6 @@ msgstr "E-mail"
 
 msgid "You can't access this page."
 msgstr "A página que você tentou acessar não lhe permitiu o acesso."
+
+msgid "Invalid username or password, try again"
+msgstr "Usuário e/ou senha inválidos. Por favor, tente novamente."
