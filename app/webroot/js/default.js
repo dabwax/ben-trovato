@@ -81,8 +81,6 @@ $(document).ready(function() {
 		$(".form-forgot form").ajaxForm({
 			success: function(responseText) {
 
-				console.log(responseText);
-
 				if(responseText == 'sucesso') {
 					if(confirm('Foi enviado um e-mail para você com uma nova senha temporária.')) {
 						window.location.reload();

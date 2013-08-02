@@ -6,6 +6,20 @@ App::uses('AppController', 'Controller');
  */
 class GlassesController extends AppController {
 
+	public function all($sex = 'masculino', $type = 'grau') {
+
+		// Pesquisa todos os óculos baseados no sexo e tipo selecionados
+		$glasses = $this->Glass->find('all', array(
+			'conditions' => array(
+				'Glass.sex' => $sex,
+				'Glass.type' => $type,
+			)
+		) );
+
+		// Recupera todos os atributos do óculos
+		$this->getAttributes();
+	}
+
 /**
  * Método para recuperar todos os atributos usados.
  */

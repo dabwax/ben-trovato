@@ -77,6 +77,9 @@ header {
 	text-transform: uppercase;
 	text-decoration: none;
 }
+#menu-principal li:hover {
+	background: #2b2828;
+}
 #menu-principal .dropdown-menu li {
 	float: left;
 	display: inline;
