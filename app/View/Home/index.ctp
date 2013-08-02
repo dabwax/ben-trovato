@@ -18,7 +18,7 @@
 					height: 380,
 					play: {
 						active: true,
-						interval: 3000,
+						interval: 5000,
 						effect: 'fade',
 						auto: true
 					},

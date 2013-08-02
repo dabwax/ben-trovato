@@ -160,6 +160,19 @@ class Glass extends AppModel {
 	);
 
 /**
+ * Relacionamentos hasAndBelongsToMany.
+ */
+	public $hasAndBelongsToMany = array(
+		'Related' => array(
+			'className' => 'Glass',
+			'joinTable' => 'related_glasses',
+			'foreignKey' => 'glass_id',
+			'associationForeignKey' => 'related_id',
+			'unique' => 'keepExisting'
+		)
+	);
+
+/**
  * Método para validação de campos tipo Enum.
  */
 	public function validateEnum($check, $column) {

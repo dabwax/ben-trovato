@@ -58,6 +58,8 @@
 
 									echo '<p class="label" style="margin-left: 12px;">Imagem atual</p>';
 								}
+
+								echo $this->Form->input('Related', array('options' => $options['related']) );
 							?>
 						</div> <!-- .form -->
 

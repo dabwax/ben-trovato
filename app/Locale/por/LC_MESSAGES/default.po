@@ -76,8 +76,8 @@ msgstr "Este campo é obrigatório"
 msgid "enum"
 msgstr "Você deve selecionar um valor válido para este campo"
 
-msgid ""
-msgstr ""
+msgid "Related"
+msgstr "Óculos Relacionados"
 
 msgid ""
 msgstr ""

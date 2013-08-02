@@ -20,6 +20,7 @@ class GlassesController extends AppController {
 		$options['format'] = $this->Glass->format;
 		$options['size'] = $this->Glass->size;
 		$options['type'] = $this->Glass->type;
+		$options['related'] = $this->Glass->find('list');
 
 		// Envia os atributos do model para a view
 		$this->set(compact('options'));

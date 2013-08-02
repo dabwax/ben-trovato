@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 01/08/2013 às 04:54
+-- Tempo de Geração: 01/08/2013 às 08:42
 -- Versão do servidor: 10.0.3-MariaDB
 -- Versão do PHP: 5.4.9
 
@@ -34,16 +34,20 @@ CREATE TABLE IF NOT EXISTS `banners` (
   `image` varchar(255) NOT NULL,
   `image_dir` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
-  `created` date NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Fazendo dump de dados para tabela `banners`
 --
 
-INSERT INTO `banners` (`id`, `position`, `image`, `image_dir`, `link`, `created`) VALUES
-(4, 'encima', 'Desert.jpg', '4', '', '2013-08-01');
+INSERT INTO `banners` (`id`, `position`, `image`, `image_dir`, `link`, `created`, `modified`) VALUES
+(4, 'encima', 'Desert.jpg', '4', '', '0000-00-00 00:00:00', '2013-08-01 00:00:00'),
+(5, 'encima', 'Koala.jpg', '5', 'http://google.com', '0000-00-00 00:00:00', '2013-08-01 06:41:53'),
+(6, 'embaixo', 'sub-1.jpg', '6', '', '2013-08-01 06:43:31', '2013-08-01 06:43:31'),
+(7, 'embaixo', 'sub-2.jpg', '7', '', '2013-08-01 06:43:36', '2013-08-01 06:43:36');
 
 -- --------------------------------------------------------
 
@@ -74,14 +78,15 @@ CREATE TABLE IF NOT EXISTS `glasses` (
   `created` date NOT NULL,
   `modified` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Fazendo dump de dados para tabela `glasses`
 --
 
 INSERT INTO `glasses` (`id`, `sku`, `name`, `photo_1`, `photo_1_dir`, `photo_2`, `photo_2_dir`, `price`, `the_style`, `character_frame`, `character_lenses`, `image_hover`, `image_hover_dir`, `sex`, `color`, `material`, `format`, `size`, `type`, `created`, `modified`) VALUES
-(1, '0001', 'Teste de Óculos', 'Chrysanthemum.jpg', '1', 'Desert.jpg', '1', 150, '', '', '', 'Hydrangeas.jpg', '1', 'masculino', 'tartaruga', 'acetato', 'quadrado', 'estreito', 'grau', '2013-08-01', '2013-08-01');
+(6, '123', 'Teste de Óculos', 'Chrysanthemum.jpg', '6', 'Hydrangeas.jpg', '6', 142, '', '', '', 'Jellyfish.jpg', '6', 'masculino', 'tartaruga', 'acetato', 'quadrado', 'estreito', 'grau', '2013-08-01', '2013-08-01'),
+(7, '0076', 'Lucca', 'wallpaper-2918823.jpg', '7', 'wallpaper-2921849.jpg', '7', 140, '', '', '', 'Penguins.jpg', '7', 'masculino', 'tartaruga', 'acetato', 'quadrado', 'estreito', 'grau', '2013-08-01', '2013-08-01');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
