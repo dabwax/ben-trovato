@@ -78,18 +78,32 @@ $(document).ready(function() {
 	 /**
 	   * AJAX do Formulário de "Esqueci minha Senha" da Modal de Login.
 	   */
-		$(".form-forgot form").ajaxForm({
-			success: function(responseText) {
+	$(".form-forgot form").ajaxForm({
+		success: function(responseText) {
 
-				if(responseText == 'sucesso') {
-					if(confirm('Foi enviado um e-mail para você com uma nova senha temporária.')) {
-						window.location.reload();
-					} else {
-						window.location.reload();
-					}
+			if(responseText == 'sucesso') {
+				if(confirm('Foi enviado um e-mail para você com uma nova senha temporária.')) {
+					window.location.reload();
 				} else {
-					alert('O e-mail digitado não foi encontrado no sistema.');
+					window.location.reload();
 				}
+			} else {
+				alert('O e-mail digitado não foi encontrado no sistema.');
 			}
-		});
+		}
+	});
+
+	/**
+	 * Toggle de fotos da interna dos óculos.
+	 */
+	 $("#vistas-oculos a").click(function() {
+	 	var url = $(this).attr('href');
+	 	var large = $(this).data('large');
+
+	 	$("#imagem-toggle").attr('src', url);
+
+	 	$("#imagem-toggle").parent().attr('href', large);
+
+	 	return false;
+	 });
 });
