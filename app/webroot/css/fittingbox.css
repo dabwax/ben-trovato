@@ -85,3 +85,50 @@
 	display: inline;
 	width: 120px;
 }
+.outras-cores-prev {
+	float: left;
+	display: inline;
+	width: 19px;
+	height: 38px;
+	margin-top: 4px;
+	margin-right: 8px;
+	background: url("../img/seta-esq.png") no-repeat;
+}
+.outras-cores-next {
+	float: left;
+	display: inline;
+	width: 19px;
+	height: 38px;
+	margin-top: 4px;
+	background: url("../img/seta-dir.png") no-repeat;
+}
+.carousel-produtos-relacionados {
+	float: left;
+	display: inline;
+	width: 100%;
+}
+.carousel-produtos-relacionados ul {
+	margin: 0px;
+}
+.carousel-produtos-relacionados li {
+	float: left;
+	display: inline;
+	width: 120px;
+}
+.produtos-relacionados-prev {
+	float: left;
+	display: inline;
+	width: 19px;
+	height: 38px;
+	margin-top: 4px;
+	margin-right: 8px;
+	background: url("../img/seta-esq.png") no-repeat;
+}
+.produtos-relacionados-next {
+	float: left;
+	display: inline;
+	width: 19px;
+	height: 38px;
+	margin-top: 4px;
+	background: url("../img/seta-dir.png") no-repeat;
+}

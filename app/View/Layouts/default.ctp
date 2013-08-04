@@ -234,10 +234,10 @@
 
 				<div class="span2">
 					<h3 class="footer-title">Perguntas</h3>
-					<a href="#">Preço</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'preco') ); ?>">Preço</a>
 					<a href="#">Garantia</a>
 					<a href="#">Troca e Devolução</a>
-					<a href="#">FAQ</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq') ); ?>">FAQ</a>
 				</div>
 
 				<div class="span2">
@@ -253,10 +253,10 @@
 
 				<div class="span2">
 					<h3 class="footer-title">Sobre</h3>
-					<a href="#">Quem Somos</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos') ); ?>">Quem Somos</a>
 					<a href="#">Depoimentos</a>
-					<a href="#">Entre em Contato</a>
-					<a href="#">Termos de Uso</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'contato') ); ?>">Entre em Contato</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>">Termos de Uso</a>
 				</div>
 
 				<div class="span2">

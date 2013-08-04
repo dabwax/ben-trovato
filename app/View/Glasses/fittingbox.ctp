@@ -62,6 +62,25 @@
 
 			</div> <!-- .texto-com-linha -->
 
+			<?php $totalGlassesColors = count($glassesWithOtherColors); ?>
+			<?php $visible = 0; ?>
+
+			<?php switch ($totalGlassesColors) {
+				case 1:
+					$visible = 1;
+					break;
+				case 2:
+					$visible = 2;
+					break;
+				default:
+					$visible = 3;
+					break;
+			} ?>
+
+			<?php if($totalGlassesColors >= 3) { ?>
+				<a href="javascript:;" class="outras-cores-prev"></a>
+			<?php } ?>
+
 			<div class="carousel-outras-cores">
 				<ul>
 					<?php foreach($glassesWithOtherColors as $glassColor) : ?>
@@ -73,6 +92,22 @@
 					<?php endforeach; ?>
 				</ul>
 			</div> <!-- .carousel-outras-cores -->
+
+			<?php if($totalGlassesColors >= 3) { ?>
+				<a href="javascript:;" class="outras-cores-next"></a>
+			<?php } ?>
+
+			<?php if($totalGlassesColors >= 3) { ?>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$(".carousel-outras-cores").jCarouselLite({
+							btnNext: '.outras-cores-next',
+							btnPrev: '.outras-cores-prev',
+							visible: <?php echo $visible; ?>
+						});
+					});
+				</script>
+			<?php } ?>
 
 			<div class="clear clearfix"></div>
 
@@ -92,7 +127,26 @@
 
 			</div> <!-- .texto-com-linha -->
 
-			<div class="carousel-outras-cores">
+			<?php $totalGlassesRelated = count($glass['Related']); ?>
+			<?php $visible = 0; ?>
+
+			<?php switch ($totalGlassesRelated) {
+				case 1:
+					$visible = 1;
+					break;
+				case 2:
+					$visible = 2;
+					break;
+				default:
+					$visible = 3;
+					break;
+			} ?>
+
+			<?php if($totalGlassesRelated >= 3) { ?>
+				<a href="javascript:;" class="produtos-relacionados-prev"></a>
+			<?php } ?>
+
+			<div class="carousel-produtos-relacionados">
 				<ul>
 					<?php foreach($glass['Related'] as $glassRelated) : ?>
 					<li>
@@ -103,6 +157,22 @@
 					<?php endforeach; ?>
 				</ul>
 			</div> <!-- .carousel-outras-cores -->
+
+			<?php if($totalGlassesRelated >= 3) { ?>
+				<a href="javascript:;" class="produtos-relacionados-next"></a>
+			<?php } ?>
+
+			<?php if($totalGlassesRelated >= 3) { ?>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$(".carousel-produtos-relacionados").jCarouselLite({
+							btnNext: '.produtos-relacionados-next',
+							btnPrev: '.produtos-relacionados-prev',
+							visible: <?php echo $visible; ?>
+						});
+					});
+				</script>
+			<?php } ?>
 
 			<div class="clear clearfix"></div>
 
