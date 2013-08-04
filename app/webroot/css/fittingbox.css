@@ -1,0 +1,87 @@
+#titulo-espelho-virtual {
+	text-transform: uppercase;
+	font-size: 22px;
+}
+#voce-esta-experimentando {
+	font-size: 18px;
+	line-height: 22px;
+	width: 280px;
+	text-transform: uppercase;
+	color: #a4c400;
+}
+.ml0 {
+	margin-left: 0px;
+}
+#nome-do-oculos {
+	font-size: 26px;
+	line-height: 28px;
+	margin: 0px;
+	color: #908c8c;
+}
+#cor-do-oculos {
+	margin: 0px;
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: 22px;
+	color: #acaaaa;
+}
+.texto-com-linha {
+	float: left;
+	display: inline;
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+.texto-com-linha .preco {
+	color: #a4c400;
+	font-weight: bold;
+	font-size: 22px;
+	position: relative;
+	z-index: 999;
+	background: #FFF;
+	padding: 6px;
+	display: inline-block;
+}
+.texto-com-linha hr {
+	position: absolute;
+	left: 0px;
+	top: 38%;
+	width: 100%;
+	margin: 0px;
+}
+#btn-comprar {
+	padding: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 15px;
+}
+#consulte-nossos-parametros {
+	font-size: 10px;
+	line-height: 14px;
+	margin-top: 6px;
+	text-align: center;
+	width: 100%;
+	color: #adadad;
+}
+.texto-com-linha .titulo-cinza {
+	z-index: 999;
+	position: relative;
+	background: #FFF;
+	padding: 6px;
+	display: inline-block;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.carousel-outras-cores {
+	float: left;
+	display: inline;
+	width: 100%;
+}
+.carousel-outras-cores ul {
+	margin: 0px;
+}
+.carousel-outras-cores li {
+	float: left;
+	display: inline;
+	width: 120px;
+}

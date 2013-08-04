@@ -11,7 +11,7 @@
 	<?php echo $this->Html->css('/bootstrap/css/bootstrap.min.css'); ?>
 	<?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Ubuntu:300,400'); ?>
 	<?php echo $this->Html->css('default.css'); ?>
-
+	
 	<!-- JS -->
 	<?php echo $this->Html->script('jquery-1.10.2.min.js'); ?>
 	<?php echo $this->Html->script('jquery-migrate-1.2.1.min.js'); ?>
@@ -20,7 +20,18 @@
 	<?php echo $this->Html->script('socialite.min.js'); ?>
 	<?php echo $this->Html->script('jquery.form.min.js'); ?>
 	<?php echo $this->Html->script('jquery.maskedinput.min.js'); ?>
+	<?php echo $this->Html->script('jquery.hoverIntent.minified.js'); ?>
+	<?php echo $this->Html->script('jquery.colorbox-min.js'); ?>
 	<?php echo $this->Html->script('default.js'); ?>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".colorbox-iframe").colorbox({
+				iframe: true,
+				width: 860,
+				height: 660
+			});
+		});
+	</script>
 
 	<?php echo $configuracoes['google_analytics']; ?>
 </head>

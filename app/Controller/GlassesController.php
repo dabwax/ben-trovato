@@ -6,6 +6,52 @@ App::uses('AppController', 'Controller');
  */
 class GlassesController extends AppController {
 
+/**
+ * Construtor.
+ */
+	public function beforeFilter() {
+		parent::beforeFilter();
+
+		/**
+		 * Autoriza as actions a serem públicas.
+		 */
+		$this->Auth->allow('fittingbox');
+	}
+
+	public function fittingbox($id = null) {
+		// Modifica o layout
+		$this->layout = "fittingbox";
+
+		/**
+		 * Atribui o ID do óculos ao Model
+		 */
+		$this->Glass->id = $id;
+
+		/**
+		 * Verifica se o óculos acessado existe.
+		 */
+		if(!$this->Glass->exists()) {
+			$this->Session->setFlash('O óculos que você tentou acessar não existe mais.', 'error');
+
+			return $this->redirect('/');
+		}
+
+		// Recupera dados do óculos
+		$glass = $this->Glass->read();
+
+		// Recupera óculos com o mesmo nome e de cor diferente do atual
+		$glassesWithOtherColors = $this->Glass->find('all', array(
+			'conditions' => array(
+				'Glass.name LIKE' => '%' . $glass['Glass']['name'] . '%',
+				'Glass.color !=' => $glass['Glass']['color']
+			),
+			'order' => 'rand()'
+		) );
+
+		// Envia os dados para a view
+		$this->set(compact('glass', 'glassesWithOtherColors'));
+	}
+
 	public function all($sex = 'masculino', $type = 'grau') {
 
 		// Pesquisa todos os óculos baseados no sexo e tipo selecionados
@@ -15,6 +61,9 @@ class GlassesController extends AppController {
 				'Glass.type' => $type,
 			)
 		) );
+
+		// Envia os óculos reparados para a view
+		$this->set(compact('glasses'));
 
 		// Recupera todos os atributos do óculos
 		$this->getAttributes();

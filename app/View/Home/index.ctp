@@ -76,7 +76,7 @@
 				</a>
 
 				<?php if($glass['Glass']['sku'] != '') { ?>
-				<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'fittingbox', $glass['Glass']['id']) ); ?>" class="btn-espelho-virtual">
+				<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'fittingbox', $glass['Glass']['id']) ); ?>" class="btn-espelho-virtual colorbox-iframe">
 					<?php echo __('Espelho virtual'); ?>
 				</a>
 				<?php } ?>
