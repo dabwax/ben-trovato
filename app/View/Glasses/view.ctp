@@ -16,16 +16,16 @@
 
 	<div class="span4" id="informacoes-do-oculos">
 		<h2 id="nome-do-oculos">
-			Óculos Preto
+			<?php echo $glass['Glass']['name']; ?>
 		</h2> <!-- #nome-do-oculos -->
 
 		<h3 id="cor-do-oculos">
-			Preto
+			<?php echo ucfirst($glass['Glass']['color']); ?>
 		</h3> <!-- #cor-do-oculos -->
 
 		<div class="linha-com-titulo">
 			<p class="preco">
-				R$ 198
+				<?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'])); echo $preco[0]; ?>
 			</p> <!-- .preco -->
 
 			<hr />
@@ -49,7 +49,7 @@
 			</li>
 		</ul> <!-- #vantagens-do-oculos -->
 
-		<a href="#" id="btn-adicionar-ao-carrinho" class="btn btn-large btn-success">
+		<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-adicionar-ao-carrinho" class="btn btn-large btn-success colorbox-iframe">
 			<i class="icon icon-shopping-cart icon-white"></i>
 			Adicionar ao Carrinho
 		</a> <!-- #btn-adicionar-ao-carrinho -->
@@ -61,9 +61,68 @@
 			<hr />
 		</div> <!-- .linha-com-titulo -->
 
-		<a href="#" id="btn-prove-virtualmente" class="btn btn-large btn-inverse">
+		<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glass['Glass']['id']) ); ?>" id="btn-prove-virtualmente" class="btn btn-large btn-inverse colorbox-iframe">
 			Prove Virtualmente
 		</a> <!-- #btn-prove-virtualmente -->
 
 	</div> <!-- #informacoes-do-oculos -->
+</div>
+
+<div class="row">
+	
+	<div class="span12" style="margin-left: 0px;">
+		
+		<div class="linha-com-titulo" style="text-align: left;">
+			<p class="texto" style="text-align: left; margin-left: 252px; text-transform: uppercase;">
+				Outras Cores
+			</p> <!-- .texto -->
+
+			<hr />
+		</div> <!-- .linha-com-titulo -->
+	</div> <!-- .span12 -->
+</div> <!-- .row -->
+
+<?php if(count($glassesWithOtherColors) > 0) { ?>
+<div class="row">
+	
+	<div class="oculos-outras-cores span12" style="margin-left: 0px;">
+		
+		<?php foreach($glassesWithOtherColors as $glassColor) : ?>
+			<a href="<?php echo $this->Html->url( array('action' => 'view', $glassColor['Glass']['id']) ); ?>">
+				<?php echo $this->Loja->imagem('/glass/photo_1/' . $glassColor['Glass']['photo_1_dir'] . '/' . $glassColor['Glass']['photo_1'], array('w' => '192', 'h' => '96') ); ?>
+			</a>
+		<?php endforeach; ?>
+	</div> <!-- .oculos-outras-cores -->
+
+</div> <!-- .row -->
+<?php } ?>
+
+<div class="row">
+	<div class="span12" style="margin-left: 0px;">
+		<hr class="linha" />
+	</div>
+</div>
+
+<div class="row">
+	<div class="span5" id="foto-efeito-hover" style="margin-left: 0px;">
+		<?php echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '360', 'h' => '280') ); ?>
+	</div> <!-- #foto-efeito-hover -->
+
+	<div class="span7" id="oculos-estilo-etc">
+		<h2>O Estilo</h2>
+
+		<h3 id="estilo-do-oculos">
+			LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. QUISQUE ID ODIO CONSEQUAT URNA INTERDUM ALIQUET.
+		</h3> <!-- #estilo-do-oculos -->
+
+		<div class="clear clearfix"></div>
+
+		<div class="span3">
+			<p>Características da Armação: <a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'caracteristicas-da-armacao') ); ?>"><?php echo $this->Html->image('information.png'); ?></a> </p>
+		</div> <!-- .span3 -->
+
+		<div class="span3">
+			<p>Características das Lentes:</p>
+		</div> <!-- .span3 -->
+	</div> <!-- #oculos-estilo-etc -->
 </div>

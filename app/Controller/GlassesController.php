@@ -15,7 +15,32 @@ class GlassesController extends AppController {
 		/**
 		 * Autoriza as actions a serem públicas.
 		 */
-		$this->Auth->allow('fittingbox');
+		$this->Auth->allow('fittingbox', 'buy');
+	}
+
+	public function buy($id = null) {
+		// Modifica o layout
+		$this->layout = "buy";
+
+		/**
+		 * Atribui o ID do óculos ao Model
+		 */
+		$this->Glass->id = $id;
+
+		/**
+		 * Verifica se o óculos acessado existe.
+		 */
+		if(!$this->Glass->exists()) {
+			$this->Session->setFlash('O óculos que você tentou acessar não existe mais.', 'error');
+
+			return $this->redirect('/');
+		}
+
+		// Recupera dados do óculos
+		$glass = $this->Glass->read();
+
+		// Envia os dados para a view
+		$this->set(compact('glass'));
 	}
 
 	public function view($id = null) {

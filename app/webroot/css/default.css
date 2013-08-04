@@ -510,3 +510,18 @@ color: #000;
 	color: #a4c400;
 	font-weight: bold;
 }
+.oculos-outras-cores a {
+	float: left;
+	display: inline;
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+hr.linha {
+	float: left;
+	display: inline;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 3px;
+	background: #CCC;
+}

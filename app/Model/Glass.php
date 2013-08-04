@@ -172,6 +172,10 @@ class Glass extends AppModel {
 		)
 	);
 
+	public $hasMany = array(
+		'OrderItem'
+	);
+
 /**
  * Método para validação de campos tipo Enum.
  */
