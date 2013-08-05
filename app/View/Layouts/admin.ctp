@@ -62,6 +62,17 @@
 			    	</ul>
 			    </li>
 			    <li 
+			    class="<?php if($this->params['controller'] == 'orders') { ?>active<?php } ?> dropdown">
+			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			    		<span class="glyphicon glyphicon-barcode"></span> Pedidos <b class="caret"></b>
+			    	</a>
+			    	<ul class="dropdown-menu">
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'orders', 'action' => 'index') ); ?>">Listar</a>
+			    		</li>
+			    	</ul>
+			    </li>
+			    <li 
 			    class="<?php if($this->params['controller'] == 'users') { ?>active<?php } ?> dropdown">
 			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			    		<span class="glyphicon glyphicon-user"></span> Usuários <b class="caret"></b>
@@ -82,7 +93,7 @@
 			    	</a>
 			    </li>
 			    <li 
-			    class="<?php if($this->params['controller'] == 'users') { ?>active<?php } ?> dropdown">
+			    class="<?php if($this->params['controller'] == 'subscriptions') { ?>active<?php } ?> dropdown">
 			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			    		<span class="glyphicon glyphicon-share-alt"></span> Exportar... <b class="caret"></b>
 			    	</a>

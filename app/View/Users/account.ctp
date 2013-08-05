@@ -28,6 +28,7 @@
 	</div>
 </div>
 
+<?php if(count($this->request->data['Order']) > 0) { ?>
 <div class="row">
 	<div class="span12 text-left" style="margin-left: 0px;">
 		
@@ -36,6 +37,9 @@
 				<tr>
 					<th>
 						Referência
+					</th>
+					<th>
+						Status
 					</th>
 					<th>
 						Produtos
@@ -56,6 +60,9 @@
 				<tr>
 					<td>
 						<?php echo $order['reference']; ?>
+					</td>
+					<td>
+						<p class="label"><?php if($order['payment_status'] != '') { echo $order['payment_status']; } else { echo 'Aguardando'; } ?></p>
 					</td>
 					<td>
 						<?php $orderItems = json_decode($order['json_items']); ?>
@@ -81,3 +88,12 @@
 		</table>
 	</div>
 </div>
+<?php } else { ?>
+<div class="row">
+	<div class="span12 text-left" style="margin-left: 0px;">
+
+		<h4>Parece que você não tem nenhum pedido ainda.</h4>
+
+	</div> <!-- .span12 -->
+</div>
+<?php } ?>

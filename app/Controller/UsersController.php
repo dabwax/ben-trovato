@@ -137,7 +137,7 @@ class UsersController extends AppController {
 	public function logout() {
 		$this->Auth->logout();
 
-		$this->Session->setFlash('A sua sessão foi expirada. Até logo.', 'error');
+		$this->Session->setFlash('Você desconectou-se da loja. Até a próxima.', 'error');
 
 	    $this->redirect('/');
 	}
