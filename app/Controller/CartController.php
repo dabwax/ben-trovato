@@ -1,8 +1,6 @@
 <?php
 
 class CartController extends AppController {
-	// Verificador se está em modo de desenvolvimento
-	public $developmentMode = false;
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -160,23 +158,20 @@ class CartController extends AppController {
 			// Gera a URL da página de pagamento do PagSeguro
 			$url = $paymentRequest->register($credentials);
 
-			return $this->redirect($url);
+			// Desabilita os Itens de Pedido
+			foreach($orderItems as $orderItem) {
+				$this->OrderItem->id = $orderItem['OrderItem']['id'];
 
-			// Se não estiver em modo de desenvolvimento
-			if(!$this->developmentMode) {
-				// Desabilita os Itens de Pedido
-				foreach($orderItems as $orderItem) {
-					$this->OrderItem->id = $orderItem['OrderItem']['id'];
+				$data['OrderItem']['id'] = $orderItem['OrderItem']['id'];
+				$data['OrderItem']['enabled'] = 0;
 
-					$data['OrderItem']['id'] = $orderItem['OrderItem']['id'];
-					$data['OrderItem']['enabled'] = 0;
-
-					$this->OrderItem->save($data);
-				}
-
-				// Exclui a Sessão dos Itens de Pedido
-				$this->Session->delete('OrderItemId');
+				$this->OrderItem->save($data);
 			}
+
+			// Exclui a Sessão dos Itens de Pedido
+			$this->Session->delete('OrderItemId');
+
+			return $this->redirect($url);
 		}
 	}
 
