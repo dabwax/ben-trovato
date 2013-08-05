@@ -38,6 +38,10 @@
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'display', 'faq') );
 	Router::connect('/contato', array('controller' => 'pages', 'action' => 'display', 'contato') );
 	Router::connect('/carrinho-de-compras', array('controller' => 'cart', 'action' => 'index') );
+	Router::connect('/minha-conta', array('controller' => 'users', 'action' => 'account') );
+	Router::connect('/excluir-item-do-carrinho/*', array('controller' => 'cart', 'action' => 'delete_order_item') );
+	Router::connect('/oculos/*', array('controller' => 'glasses', 'action' => 'view') );
+	Router::connect('/oculos/fittingbox/*', array('controller' => 'glasses', 'action' => 'fittingbox') );
 	Router::connect('/admin', array('controller' => 'home', 'admin' => true, 'action' => 'index'));
 
 	Router::parseExtensions('xls');

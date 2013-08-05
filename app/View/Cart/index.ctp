@@ -115,23 +115,35 @@
 
 			<?php echo $this->Form->input('Client.billing_is_same_as_delivery_address', array('label' => 'O mesmo que o endereço de entrega', 'type' => 'checkbox', 'div' => array('style' => 'font-size: 12px;') ) ); ?>
 
-			<div class="clear clearfix" style="margin-top: 20px;"></div>
+			<div class="formulario-de-cobranca">
 
-			<?php echo $this->Form->input('billing_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['billing_company']) ); ?>
+				<div class="clear clearfix" style="margin-top: 20px;"></div>
 
-			<?php echo $this->Form->input('billing_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['billing_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;') ) ); ?>
+				<?php echo $this->Form->input('billing_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['billing_company'], 'class' => 'required obrigatorio') ); ?>
 
-			<?php echo $this->Html->image('ajax-loader.gif', array('style' => 'float: left; margin-top: 32px; display: none;', 'class' => 'ajax-loader-billing') ); ?>
+				<?php echo $this->Form->input('billing_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['billing_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio' ) ); ?>
 
-			<div class="clear clearfix"></div>
+				<?php echo $this->Html->image('ajax-loader.gif', array('style' => 'float: left; margin-top: 32px; display: none;', 'class' => 'ajax-loader-billing') ); ?>
 
-			<?php echo $this->Form->input('billing_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['billing_street1']) ); ?>
+				<div class="clear clearfix"></div>
 
-			<?php echo $this->Form->input('billing_street2', array('label' => 'Bairro:', 'value' => $userLogged['Client']['billing_street2']) ); ?>
+				<?php echo $this->Form->input('billing_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['billing_street1'], 'div' => array('class' => 'span3', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio' ) ); ?>
 
-			<?php echo $this->Form->input('billing_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['billing_state'], 'div' => array('class' => 'span1', 'style' => 'margin-left: 0px;') ) ); ?>
+				<?php echo $this->Form->input('billing_street3', array('label' => 'Número:', 'value' => $userLogged['Client']['billing_street3'], 'div' => array('class' => 'span1'), 'class' => 'required obrigatorio' ) ); ?>
 
-			<?php echo $this->Form->input('billing_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['billing_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;' ) ); ?>
+				<div class="clear clearfix"></div>
+
+				<?php echo $this->Form->input('billing_street4', array('label' => 'Complemento (opcional):', 'value' => $userLogged['Client']['billing_street4']) ); ?>
+
+				<?php echo $this->Form->input('billing_street2', array('label' => 'Bairro:', 'value' => $userLogged['Client']['billing_street2'], 'class' => 'required obrigatorio') ); ?>
+
+				<div class="clear clearfix"></div>
+
+				<?php echo $this->Form->input('billing_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['billing_state'], 'div' => array('class' => 'span1', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio' ) ); ?>
+
+				<?php echo $this->Form->input('billing_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['billing_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;', 'class' => 'required obrigatorio' ) ); ?>
+
+			</div> <!-- .formulario-de-cobranca -->
 
 
 		</div> <!-- .span6 -->
@@ -143,19 +155,27 @@
 
 			<?php echo $this->Form->input('delivery_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['delivery_company']) ); ?>
 
-			<?php echo $this->Form->input('delivery_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['delivery_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;')) ); ?>
+			<?php echo $this->Form->input('delivery_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['delivery_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio') ); ?>
 
 			<?php echo $this->Html->image('ajax-loader.gif', array('style' => 'float: left; margin-top: 32px; display: none;', 'class' => 'ajax-loader-delivery') ); ?>
 
 			<div class="clear clearfix"></div>
 
-			<?php echo $this->Form->input('delivery_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['delivery_street1']) ); ?>
+			<?php echo $this->Form->input('delivery_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['delivery_street1'], 'div' => array('class' => 'span3', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio' ) ); ?>
 
-			<?php echo $this->Form->input('delivery_street2', array('label' => 'Bairro:', 'value' => $userLogged['Client']['delivery_street2']) ); ?>
+			<?php echo $this->Form->input('delivery_street3', array('label' => 'Número:', 'value' => $userLogged['Client']['delivery_street3'], 'div' => array('class' => 'span1'), 'class' => 'required obrigatorio' ) ); ?>
 
-			<?php echo $this->Form->input('delivery_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['delivery_state'], 'div' => array('class' => 'span1', 'style' => 'margin-left: 0px;')) ); ?>
+			<div class="clear clearfix"></div>
 
-			<?php echo $this->Form->input('delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;') ); ?>
+			<?php echo $this->Form->input('delivery_street4', array('label' => 'Complemento (opcional):', 'value' => $userLogged['Client']['delivery_street4']) ); ?>
+
+			<?php echo $this->Form->input('delivery_street2', array('label' => 'Bairro:', 'value' => $userLogged['Client']['delivery_street2'], 'class' => 'required obrigatorio') ); ?>
+			
+			<div class="clear clearfix"></div>
+
+			<?php echo $this->Form->input('delivery_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['delivery_state'], 'div' => array('class' => 'span1', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio') ); ?>
+
+			<?php echo $this->Form->input('delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;', 'class' => 'required obrigatorio') ); ?>
 
 		</div> <!-- .span6 -->
 
@@ -186,8 +206,30 @@
 
 <?php } ?>
 
+<?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js'); ?>
+<?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_pt_BR.js'); ?>
+
 <script type="text/javascript">
 	$(document).ready(function() {
+
+		$("#OrderIndexForm").validate({
+			submitHandler: function(form) {
+
+				$(form).find('button').attr('disabled');
+				form.submit();
+			}
+		});
+
+		$("#ClientBillingIsSameAsDeliveryAddress").click(function() {
+
+			if($(this).prop('checked')) {
+				$(".formulario-de-cobranca").hide();
+				$(".formulario-de-cobranca .obrigatorio").removeClass('required');
+			} else {
+				$(".formulario-de-cobranca").show();
+				$(".formulario-de-cobranca .obrigatorio").addClass('required');
+			}
+		});
 		
 		$("#OrderBillingCep").keyup(function() {
 	 		if($(this).val().length >= 8) {
@@ -201,6 +243,8 @@
 	 				success: function(data) {
 
 	 					$(".ajax-loader-billing").fadeOut(100);
+
+	 					$("#OrderBillingStreet3").focus();
 
 	 					$("#OrderBillingStreet1").val(data.logradouro);
 	 					$("#OrderBillingStreet2").val(data.bairro);

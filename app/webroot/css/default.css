@@ -545,3 +545,7 @@ hr.linha {
 .bloco-endereco input[type="text"] {
 	width: 80%;
 }
+#OrderIndexForm label.error {
+	font-size: 10px;
+	color: red;
+}

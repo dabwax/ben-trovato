@@ -147,6 +147,8 @@
 
 					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>" class="pull-right" id="btn-login">SAIR</a> <!-- #btn-login -->
 
+					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" class="pull-right" id="btn-minha-conta">MINHA CONTA</a>
+
 					<?php } ?>
 
 					<div class="clear clearfix"></div>
