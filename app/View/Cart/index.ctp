@@ -10,6 +10,8 @@
 
 <?php if(count($orderItems) > 0) { ?>
 
+<?php echo $this->Form->create('Order'); ?>
+
 <div class="row order-block">
 	<div class="span12" style="margin-left: 0px;">
 
@@ -62,7 +64,7 @@
 					</td>
 					<td>
 						<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn') ); ?>
-						<?php echo $this->Html->link('Fechar Pedido', 'javascript:;', array('class' => 'btn btn-success') ); ?>
+						<?php //echo $this->Html->link('Fechar Pedido', 'javascript:;', array('class' => 'btn btn-success') ); ?>
 					</td>
 					<td>
 						
@@ -84,7 +86,11 @@
 		<?php if(AuthComponent::user()) { ?>
 		
 		<p>
-			Olá, <?php echo $userLogged['User']['name']; ?> (<?php echo $userLogged['Client']['email']; ?>)!
+			Olá, <strong><?php echo $userLogged['User']['name']; ?></strong> (<?php echo $userLogged['Client']['email']; ?>)!
+		</p>
+
+		<p>
+			Você pode editar seu nome ou seu endereço de e-mail qualquer hora, <a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>">visitando esta página</a>.
 		</p>
 
 		<?php } ?>
@@ -96,4 +102,75 @@
 	</div> <!-- .span12 -->
 
 </div> <!-- .order-block -->
+
+<div class="row order-block">
+	<div class="span12" style="margin-left: 0px;">
+
+		<h3 class="order-block-title">Endereço de Entrega</h3>
+
+		<div class="span6">
+			<h4>Endereço de Cobrança</h4>
+
+			<div class="clear clearfix" style="margin-top: 20px;"></div>
+
+			<?php echo $this->Form->input('Client.billing_is_same_as_delivery_address', array('label' => 'O mesmo que o endereço de entrega', 'type' => 'checkbox', 'div' => array('style' => 'font-size: 12px;') ) ); ?>
+
+			<div class="clear clearfix" style="margin-top: 20px;"></div>
+
+			<?php echo $this->Form->input('billing_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['billing_company']) ); ?>
+
+			<?php echo $this->Form->input('billing_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['billing_street1']) ); ?>
+
+			<?php echo $this->Form->input('billing_street2', array('label' => 'Observações:', 'value' => $userLogged['Client']['billing_street2']) ); ?>
+
+			<?php echo $this->Form->input('billing_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['billing_state']) ); ?>
+
+			<?php echo $this->Form->input('billing_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['billing_city']) ); ?>
+
+			<?php echo $this->Form->input('billing_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['billing_cep']) ); ?>
+		</div> <!-- .span6 -->
+
+		<div class="span5">
+			<h4>Endereço de Entrega</h4>
+
+			<div class="clear clearfix" style="margin-top: 60px;"></div>
+
+			<?php echo $this->Form->input('delivery_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['delivery_company']) ); ?>
+
+			<?php echo $this->Form->input('delivery_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['delivery_street1']) ); ?>
+
+			<?php echo $this->Form->input('delivery_street2', array('label' => 'Observações:', 'value' => $userLogged['Client']['delivery_street2']) ); ?>
+
+			<?php echo $this->Form->input('delivery_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['delivery_state']) ); ?>
+
+			<?php echo $this->Form->input('delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city']) ); ?>
+
+			<?php echo $this->Form->input('delivery_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['delivery_cep']) ); ?>
+		</div> <!-- .span6 -->
+
+	</div> <!-- .span12 -->
+
+</div> <!-- .order-block -->
+
+<div class="row order-block">
+	<div class="span12" style="margin-left: 0px;">
+
+		<h3 class="order-block-title">Cupom de Desconto</h3>
+
+		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:', 'value' => $userLogged['Client']['delivery_cep']) ); ?>
+
+	</div>
+</div> <!-- .order-block -->
+
+<div class="row order-block">
+	<div class="span12 text-center" style="margin-left: 0px;">
+
+		<h3 class="order-block-title">Pagamento</h3>
+
+		<?php echo $this->Form->button('Finalizar Pedido', array('class' => 'btn btn-success btn-large', 'style' => 'margin-top: 20px; margin-bottom: 20px;') ); ?>
+	</div>
+</div> <!-- .order-block -->
+
+<?php echo $this->Form->end(); ?>
+
 <?php } ?>

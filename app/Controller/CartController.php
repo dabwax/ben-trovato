@@ -12,8 +12,6 @@ class CartController extends AppController {
  * Página de visualização do carrinho do usuário.
  */
 	public function index() {
-
-		print_r($this->Session->read('OrderItemId'));
 		
 		// Recupera todos os itens do usuário
 		$orderItems = $this->getOrderItemsFromUser();
