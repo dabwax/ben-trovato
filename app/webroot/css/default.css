@@ -525,3 +525,17 @@ hr.linha {
 	height: 3px;
 	background: #CCC;
 }
+.order-block-title {
+	float: left;
+	display: inline;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 18px;
+	text-transform: uppercase;
+	border-top: 1px solid #aba994;
+	border-bottom: 1px solid #aba994;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color: #A4C400;
+}

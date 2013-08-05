@@ -48,10 +48,16 @@ class GlassesController extends AppController {
 		// Se houver requisição POST
 		if($this->request->is('post')) {
 
-			// Armazena a SessionID do usuário
-			$this->request->data['OrderItem']['cakephp_session'] = $this->Session->id();
-
+			// Salva o item do pedido
 			$this->Glass->OrderItem->save($this->request->data);
+
+			// Armazena o ID do Item do Pedido na Sessão
+			if(!$this->Session->check('OrderItemId')) {
+				$this->Session->write('OrderItemId', array($this->Glass->OrderItem->getInsertID()) );
+			} else {
+				$this->Session->write('OrderItemId', array_merge($this->Session->read('OrderItemId'), array($this->Glass->OrderItem->getInsertID()) ) );
+			}
+			
 		}
 	}
 

@@ -98,6 +98,28 @@ class AppController extends Controller {
 		 * Recupera todos os óculos do carrinho do usuário.
 		 */
 		$this->getOrderItemsFromUser();
+
+		/**
+		 * Recupera informações do usuário logado.
+		 */
+		$this->getUserLoggedInfos();
+	}
+
+	public function getUserLoggedInfos() {
+		$this->uses = array('User');
+
+		// Recupera os dados do usuário atual
+		$userLogged = $this->User->find('first', array(
+			'conditions' => array(
+				'User.id' => AuthComponent::user('id')
+			),
+			'contain' => array(
+				'Client'
+			)
+		) );
+
+		// Envia os dados para as views
+		$this->set(compact('userLogged'));
 	}
 
 /**
@@ -110,7 +132,7 @@ class AppController extends Controller {
 		// Recupera todos os itens pertencentes a sessão do usuário
 		$orderItems = $this->OrderItem->find('all', array(
 			'conditions' => array(
-				'OrderItem.cakephp_session' => $this->Session->id()
+				'OrderItem.id' => $this->Session->read('OrderItemId')
 			),
 			'contain' => array(
 				'Glass',

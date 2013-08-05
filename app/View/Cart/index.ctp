@@ -1,6 +1,6 @@
-<?php if($orderItems <= 0) { ?>
+<?php if(count($orderItems) <= 0) { ?>
 <div class="row" style="margin-bottom: 30px;">
-	<div class="span12 text-center">
+	<div class="span12 text-center" style="margin-left: 0px;">
 		<h4>O seu carrinho parece vazio.</h4>
 
 		<a href="#" onclick="alert('Em breve!');">Que tal experimentar os nossos óculos no nosso Espelho Virtual?</a>
@@ -8,10 +8,10 @@
 </div>
 <?php } ?>
 
-<?php if($orderItems > 0) { ?>
+<?php if(count($orderItems) > 0) { ?>
 
 <div class="row order-block">
-	<div class="span12">
+	<div class="span12" style="margin-left: 0px;">
 
 		<h3 class="order-block-title">Revise seu Pedido</h3>
 
@@ -39,14 +39,61 @@
 					<td>
 						<!-- Preço -->
 						<?php echo $this->Loja->preco($orderItem['price']); ?>
+
+						<?php echo $this->Html->link('excluir', array('action' => 'delete_order_item', $orderItem['OrderItem']['id']), array('class' => 'btn btn-small btn-danger') ); ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
 			</tbody>
+			<tfoot>
+				<tr>
+					<td>
+						
+					</td>
+					<td>
+						Total: <?php echo $this->Loja->preco($totalPrice); ?>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						
+					</td>
+					<td>
+						<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn') ); ?>
+						<?php echo $this->Html->link('Fechar Pedido', 'javascript:;', array('class' => 'btn btn-success') ); ?>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</tfoot>
 		</table> <!-- .table -->
 
 	</div> <!-- .span12 -->
 
 </div> <!-- .order-block -->
 
+<div class="row order-block">
+	<div class="span12" style="margin-left: 0px;">
+
+		<h3 class="order-block-title">Detalhes da Sua Conta</h3>
+
+		<!-- Se o usuário estiver logado -->
+		<?php if(AuthComponent::user()) { ?>
+		
+		<p>
+			Olá, <?php echo $userLogged['User']['name']; ?> (<?php echo $userLogged['Client']['email']; ?>)!
+		</p>
+
+		<?php } ?>
+		<!-- Fim - Se o usuário estiver logado -->
+
+		<!-- Se o usuário não estiver logado -->
+
+		<!-- Fim - Se o usuário não estiver logado -->
+	</div> <!-- .span12 -->
+
+</div> <!-- .order-block -->
 <?php } ?>
