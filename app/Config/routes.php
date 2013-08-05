@@ -41,7 +41,7 @@
 	Router::connect('/minha-conta', array('controller' => 'users', 'action' => 'account') );
 	Router::connect('/excluir-item-do-carrinho/*', array('controller' => 'cart', 'action' => 'delete_order_item') );
 	Router::connect('/oculos/*', array('controller' => 'glasses', 'action' => 'view') );
-	Router::connect('/oculos/fittingbox/*', array('controller' => 'glasses', 'action' => 'fittingbox') );
+	Router::connect('/fittingbox/*', array('controller' => 'glasses', 'action' => 'fittingbox') );
 	Router::connect('/admin', array('controller' => 'home', 'admin' => true, 'action' => 'index'));
 
 	Router::parseExtensions('xls');

@@ -33,6 +33,55 @@ class CartController extends AppController {
 
 		// Envia dados para a view
 		$this->set(compact('orderItems', 'totalPrice'));
+
+		// Se houver requisição POST
+		if($this->request->is('post')) {
+
+			// Define os Models a serem usados
+			Controller::loadModel('Client');
+			Controller::loadModel('Order');
+			Controller::loadModel('OrderItem');
+
+			// Recupera os dados do usuário
+			$userLogged = $this->getUserLoggedInfos();
+
+			// Define que os dados inseridos no formulário pertencem ao usuário logado
+			$this->request->data['Client']['id'] = $userLogged['Client']['id'];
+			$this->request->data['Order']['user_id'] = $userLogged['User']['id'];
+
+			// Define o preço total do pedido
+			$this->request->data['Order']['total_price'] = $totalPrice;
+
+			// Define o total de itens do pedido
+			$this->request->data['Order']['total_items'] = count($orderItems);
+
+			// Define o número do pedido
+			$this->request->data['Order']['reference'] = (int) uniqid(rand(), true);
+
+			// Salva os dados de endereço do usuário
+			$this->Client->save($this->request->data);
+
+			// Salva os dados do pedido
+			$this->Order->save($this->request->data);
+
+			// Desabilita os Itens de Pedido
+			foreach($orderItems as $orderItem) {
+				$this->OrderItem->id = $orderItem['OrderItem']['id'];
+
+				$data['OrderItem']['id'] = $orderItem['OrderItem']['id'];
+				$data['OrderItem']['enabled'] = 0;
+
+				$this->OrderItem->save($data);
+			}
+
+			// Exclui a Sessão dos Itens de Pedido
+			$this->Session->delete('OrderItemId');
+
+			// Dá um alerta ao usuário
+			$this->Session->setFlash('O seu pedido foi efetuado com sucesso. Não se esqueça de enviar um e-mail para receitas@bentrovato.com.br caso tenha escolhido um óculos com receita.', 'success');
+
+			return $this->redirect('/');
+		}
 	}
 
 /**

@@ -121,6 +121,8 @@ class AppController extends Controller {
 
 		// Envia os dados para as views
 		$this->set(compact('userLogged'));
+
+		return $userLogged;
 	}
 
 /**
