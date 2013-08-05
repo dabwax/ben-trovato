@@ -2,12 +2,36 @@
 
 class CartController extends AppController {
 	// Verificador se está em modo de desenvolvimento
-	public $developmentMode = true;
+	public $developmentMode = false;
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 
-		$this->Auth->allow('delete_order_item', 'ajax_address');
+		$this->Auth->allow('delete_order_item', 'ajax_address', 'payment_success', 'payment_notification');
+	}
+
+/**
+ * Página usada como retorno após pagamento do usuário no PagSeguro.
+ */
+	public function payment_success() {
+		// Dá um alerta ao usuário
+		$this->Session->setFlash('O seu pedido foi efetuado com sucesso. Não se esqueça de enviar um e-mail para receitas@bentrovato.com.br caso tenha escolhido um óculos com receita.', 'success');
+
+		return $this->redirect('/');
+	}
+
+/**
+ * Página usada pelo Retorno Automático do PagSeguro.
+ */
+	public function payment_notification() {
+		$this->layout = "ajax";
+		$this->autoRender = false;
+
+		$name = APP . 'webroot' . DS . 'pagseguro-log.txt';
+		$text = var_export($_POST, true);
+		$file = fopen($name, 'a');
+		fwrite($file, $text);
+		fclose($file);
 	}
 
 /**
@@ -39,6 +63,9 @@ class CartController extends AppController {
 		// Se houver requisição POST
 		if($this->request->is('post')) {
 
+			// Gera um código de referência único
+			$reference = (int) uniqid(rand(), true);
+
 			// Define os Models a serem usados
 			Controller::loadModel('Client');
 			Controller::loadModel('Order');
@@ -58,7 +85,7 @@ class CartController extends AppController {
 			$this->request->data['Order']['total_items'] = count($orderItems);
 
 			// Define o número do pedido
-			$this->request->data['Order']['reference'] = (int) uniqid(rand(), true);
+			$this->request->data['Order']['reference'] = $reference;
 
 			// Salva os dados de endereço do usuário
 			$this->Client->save($this->request->data);
@@ -66,7 +93,74 @@ class CartController extends AppController {
 			// Salva os dados do pedido
 			$this->Order->save($this->request->data);
 
+			// Importa a biblioteca oficial do PagSeguro
+			require_once APP . 'Vendor' . DS . 'pagseguro' . DS . 'PagSeguroLibrary.php';
+
+			// Gera um objeto do tipo PagSeguroPaymentRequest
+			$paymentRequest = new PagSeguroPaymentRequest();
+
+			// Define a moeda a ser utilizada pelo objedo do PagSeguro
+			$paymentRequest->setCurrency("BRL");
+
+			// Define o tipo de frete ao objeto do PagSeguro
+			$paymentRequest->setShippingType(3);
+
+			// Adiciona os produtos ao objeto do PagSeguro
+			foreach($orderItems as $item) {
+
+				$paymentRequest->addItem($item['Glass']['id'], 'Óculos ' . $item['Glass']['name'] . ' ' . ucfirst($item['Glass']['color']), 1, number_format($item['price'], 2, '.', ''));
 			
+			}
+
+			// Define o nome do comprador ao objeto do PagSeguro
+			$paymentRequest->setSenderName($userLogged['User']['name']);
+
+			// Define o e-mail do comprador ao objeto do PagSeguro
+			$paymentRequest->setSenderEmail($userLogged['Client']['email']);
+
+			// Define o telefone do comprador ao objeto do PagSeguro
+			$ddd = explode(') ', $userLogged['Client']['phone']);
+			$ddd = explode('(', $ddd[0]);
+			$ddd = $ddd[1];
+
+			$telefone = explode(') ', $userLogged['Client']['phone']);
+			$telefone = str_replace('-', '', $telefone[1]);
+
+			$paymentRequest->setSenderPhone($ddd, $telefone);
+
+			// Define os dados de entrega ao objeto do PagSeguro
+			$paymentRequest->setShippingAddress( array(
+				'postalCode' => $this->request->data['Client']['delivery_cep'],
+				'street' => $this->request->data['Client']['delivery_street1'],
+				'number' => $this->request->data['Client']['delivery_street3'],
+				'complement' => $this->request->data['Client']['delivery_street4'],
+				'district' => $this->request->data['Client']['delivery_street2'],
+				'city' => $this->request->data['Client']['delivery_city'],
+				'state' => $this->request->data['Client']['delivery_state'],
+				'country' => 'BRA',
+			) );
+
+			// Define o código de referência do pedido ao objeto do PagSeguro
+			$paymentRequest->setReference($reference);
+
+			// Define a URL de Redirecionamento do usuário após o pagamento ao objeto do PagSeguro
+			$paymentRequest->setRedirectURL(Router::url( array('controller' => 'cart', 'action' => 'payment_success'), true));
+
+			// Define o prazo de validade da requisição de pagamento ao objeto do PagSeguro em 2 dias (em segundos)
+			$paymentRequest->setMaxAge(172800);
+
+			// Define a URL de Retorno Automático (Notification URL) ao objeto do PagSeguro
+			$paymentRequest->setNotificationURL(Router::url( array('controller' => 'cart', 'action' => 'payment_notification'), true));
+
+			// Define as credenciais do PagSeguro ao objeto do PagSeguro
+			$settings = $this->setSettings();
+
+			$credentials = new PagSeguroAccountCredentials($settings['pagseguro_email'], $settings['pagseguro_token']);
+
+			// Gera a URL da página de pagamento do PagSeguro
+			$url = $paymentRequest->register($credentials);
+
+			return $this->redirect($url);
 
 			// Se não estiver em modo de desenvolvimento
 			if(!$this->developmentMode) {
@@ -82,11 +176,6 @@ class CartController extends AppController {
 
 				// Exclui a Sessão dos Itens de Pedido
 				$this->Session->delete('OrderItemId');
-
-				// Dá um alerta ao usuário
-				$this->Session->setFlash('O seu pedido foi efetuado com sucesso. Não se esqueça de enviar um e-mail para receitas@bentrovato.com.br caso tenha escolhido um óculos com receita.', 'success');
-
-				return $this->redirect('/');
 			}
 		}
 	}

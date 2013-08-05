@@ -172,6 +172,8 @@ class AppController extends Controller {
 		}
 
 		$this->set('configuracoes', $settings_view);
+
+		return $settings_view;
 	}
 
 /**

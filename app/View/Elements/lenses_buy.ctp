@@ -22,7 +22,7 @@
 					<?php } ?>
 
 					<?php if($lense['Lense']['discount'] != 0) { ?>
-						<?php $preco = explode(',', $this->Loja->preco($lense['Lense']['discount'])); echo $preco[0]; ?>
+						- <?php $preco = explode(',', $this->Loja->preco($lense['Lense']['discount'])); echo $preco[0]; ?>
 					<?php } ?>
 				</p> <!-- .preco-da-lente -->
 
