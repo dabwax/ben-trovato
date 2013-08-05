@@ -1,6 +1,8 @@
 <?php
 
 class CartController extends AppController {
+	// Verificador se está em modo de desenvolvimento
+	public $developmentMode = true;
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -64,23 +66,28 @@ class CartController extends AppController {
 			// Salva os dados do pedido
 			$this->Order->save($this->request->data);
 
-			// Desabilita os Itens de Pedido
-			foreach($orderItems as $orderItem) {
-				$this->OrderItem->id = $orderItem['OrderItem']['id'];
+			
 
-				$data['OrderItem']['id'] = $orderItem['OrderItem']['id'];
-				$data['OrderItem']['enabled'] = 0;
+			// Se não estiver em modo de desenvolvimento
+			if(!$this->developmentMode) {
+				// Desabilita os Itens de Pedido
+				foreach($orderItems as $orderItem) {
+					$this->OrderItem->id = $orderItem['OrderItem']['id'];
 
-				$this->OrderItem->save($data);
+					$data['OrderItem']['id'] = $orderItem['OrderItem']['id'];
+					$data['OrderItem']['enabled'] = 0;
+
+					$this->OrderItem->save($data);
+				}
+
+				// Exclui a Sessão dos Itens de Pedido
+				$this->Session->delete('OrderItemId');
+
+				// Dá um alerta ao usuário
+				$this->Session->setFlash('O seu pedido foi efetuado com sucesso. Não se esqueça de enviar um e-mail para receitas@bentrovato.com.br caso tenha escolhido um óculos com receita.', 'success');
+
+				return $this->redirect('/');
 			}
-
-			// Exclui a Sessão dos Itens de Pedido
-			$this->Session->delete('OrderItemId');
-
-			// Dá um alerta ao usuário
-			$this->Session->setFlash('O seu pedido foi efetuado com sucesso. Não se esqueça de enviar um e-mail para receitas@bentrovato.com.br caso tenha escolhido um óculos com receita.', 'success');
-
-			return $this->redirect('/');
 		}
 	}
 
