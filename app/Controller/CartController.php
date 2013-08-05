@@ -155,6 +155,24 @@ class CartController extends AppController {
 
 			$credentials = new PagSeguroAccountCredentials($settings['pagseguro_email'], $settings['pagseguro_token']);
 
+			App::uses('CakeEmail', 'Network/Email');
+
+			$email = new CakeEmail('smtp');
+
+			$email->emailFormat('html');
+
+			$email->from(array('no-reply@bentrovato.com.br' => 'Ben Trovato'));
+
+			$email->to($userLogged['Client']['email']);
+
+			$email->subject('Pedido Efetuado com Sucesso - Loja Ben Trovato');
+
+			$email->template('pedido_efetuado', 'default');
+
+			$email->viewVars( array('reference' => $reference, 'orderItems' => $orderItems, 'userLogged' => $userLogged, 'totalPrice' => $totalPrice) );
+
+			$email->send();
+
 			// Gera a URL da página de pagamento do PagSeguro
 			$url = $paymentRequest->register($credentials);
 
