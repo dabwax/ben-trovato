@@ -5,7 +5,7 @@ class CartController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 
-		$this->Auth->allow('delete_order_item');
+		$this->Auth->allow('delete_order_item', 'ajax_address');
 	}
 
 /**
@@ -93,4 +93,29 @@ class CartController extends AppController {
 		
 		return $this->redirect( array('controller' => 'cart', 'action' => 'index') );
 	}
+
+/**
+ * AJAX para recuperar o Endereço através do CEP digitado.
+ */
+	public function ajax_address() {
+
+		$this->RequestHandler->respondAs('json');
+
+		$this->layout = "ajax";
+		$this->autoRender = false;
+
+    	$cep = $_POST['cep'];
+
+        $cep = str_replace('.', '', str_replace('-', '', $cep));
+
+        $address = "http://cep.correiocontrol.com.br/$cep.json";
+
+        App::uses('HttpSocket', 'Network/Http');
+
+        $HttpSocket = new HttpSocket();
+
+        $data = $HttpSocket->get($address);
+
+        echo $data;
+    }
 }

@@ -539,3 +539,9 @@ hr.linha {
 	padding-bottom: 6px;
 	color: #A4C400;
 }
+#OrderIndexForm div.checkbox label {
+	font-size: 12px;
+}
+.bloco-endereco input[type="text"] {
+	width: 80%;
+}

@@ -108,7 +108,7 @@
 
 		<h3 class="order-block-title">Endereço de Entrega</h3>
 
-		<div class="span6">
+		<div class="span5 bloco-endereco">
 			<h4>Endereço de Cobrança</h4>
 
 			<div class="clear clearfix" style="margin-top: 20px;"></div>
@@ -119,33 +119,44 @@
 
 			<?php echo $this->Form->input('billing_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['billing_company']) ); ?>
 
+			<?php echo $this->Form->input('billing_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['billing_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;') ) ); ?>
+
+			<?php echo $this->Html->image('ajax-loader.gif', array('style' => 'float: left; margin-top: 32px; display: none;', 'class' => 'ajax-loader-billing') ); ?>
+
+			<div class="clear clearfix"></div>
+
 			<?php echo $this->Form->input('billing_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['billing_street1']) ); ?>
 
-			<?php echo $this->Form->input('billing_street2', array('label' => 'Observações:', 'value' => $userLogged['Client']['billing_street2']) ); ?>
+			<?php echo $this->Form->input('billing_street2', array('label' => 'Bairro:', 'value' => $userLogged['Client']['billing_street2']) ); ?>
 
-			<?php echo $this->Form->input('billing_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['billing_state']) ); ?>
+			<?php echo $this->Form->input('billing_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['billing_state'], 'div' => array('class' => 'span1', 'style' => 'margin-left: 0px;') ) ); ?>
 
-			<?php echo $this->Form->input('billing_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['billing_city']) ); ?>
+			<?php echo $this->Form->input('billing_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['billing_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;' ) ); ?>
 
-			<?php echo $this->Form->input('billing_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['billing_cep']) ); ?>
+
 		</div> <!-- .span6 -->
 
-		<div class="span5">
+		<div class="span5 bloco-endereco offset1">
 			<h4>Endereço de Entrega</h4>
 
 			<div class="clear clearfix" style="margin-top: 60px;"></div>
 
 			<?php echo $this->Form->input('delivery_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['delivery_company']) ); ?>
 
+			<?php echo $this->Form->input('delivery_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['delivery_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;')) ); ?>
+
+			<?php echo $this->Html->image('ajax-loader.gif', array('style' => 'float: left; margin-top: 32px; display: none;', 'class' => 'ajax-loader-delivery') ); ?>
+
+			<div class="clear clearfix"></div>
+
 			<?php echo $this->Form->input('delivery_street1', array('label' => 'Endereço:', 'value' => $userLogged['Client']['delivery_street1']) ); ?>
 
-			<?php echo $this->Form->input('delivery_street2', array('label' => 'Observações:', 'value' => $userLogged['Client']['delivery_street2']) ); ?>
+			<?php echo $this->Form->input('delivery_street2', array('label' => 'Bairro:', 'value' => $userLogged['Client']['delivery_street2']) ); ?>
 
-			<?php echo $this->Form->input('delivery_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['delivery_state']) ); ?>
+			<?php echo $this->Form->input('delivery_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['delivery_state'], 'div' => array('class' => 'span1', 'style' => 'margin-left: 0px;')) ); ?>
 
-			<?php echo $this->Form->input('delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city']) ); ?>
+			<?php echo $this->Form->input('delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;') ); ?>
 
-			<?php echo $this->Form->input('delivery_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['delivery_cep']) ); ?>
 		</div> <!-- .span6 -->
 
 	</div> <!-- .span12 -->
@@ -174,3 +185,53 @@
 <?php echo $this->Form->end(); ?>
 
 <?php } ?>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$("#OrderBillingCep").keyup(function() {
+	 		if($(this).val().length >= 8) {
+
+	 			$(".ajax-loader-billing").fadeIn(100);
+
+	 			$.ajax({
+	 				type: 'POST',
+	 				data: {'cep': $(this).val()},
+	 				url: '<?php echo $this->Html->url( array('action' => 'ajax_address') ); ?>',
+	 				success: function(data) {
+
+	 					$(".ajax-loader-billing").fadeOut(100);
+
+	 					$("#OrderBillingStreet1").val(data.logradouro);
+	 					$("#OrderBillingStreet2").val(data.bairro);
+	 					$("#OrderBillingState").val(data.uf);
+	 					$("#OrderBillingCity").val(data.localidade);
+	 				}
+	 			});
+	 		}
+	 	});
+
+	 	$("#OrderDeliveryCep").keyup(function() {
+	 		if($(this).val().length >= 8) {
+
+	 			$(".ajax-loader-delivery").fadeIn(100);
+
+	 			$.ajax({
+	 				type: 'POST',
+	 				data: {'cep': $(this).val()},
+	 				url: '<?php echo $this->Html->url( array('action' => 'ajax_address') ); ?>',
+	 				success: function(data) {
+
+	 					$(".ajax-loader-delivery").fadeOut(100);
+
+	 					$("#OrderDeliveryStreet1").val(data.logradouro);
+	 					$("#OrderDeliveryStreet2").val(data.bairro);
+	 					$("#OrderDeliveryState").val(data.uf);
+	 					$("#OrderDeliveryCity").val(data.localidade);
+	 				}
+	 			});
+	 		}
+	 	});
+
+	});
+</script>
