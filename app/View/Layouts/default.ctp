@@ -30,6 +30,8 @@
 				width: 860,
 				height: 660
 			});
+
+			$(".colorbox-image").colorbox();
 		});
 	</script>
 

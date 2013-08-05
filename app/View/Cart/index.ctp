@@ -3,7 +3,7 @@
 	<div class="span12 text-center" style="margin-left: 0px;">
 		<h4>O seu carrinho parece vazio.</h4>
 
-		<a href="#" onclick="alert('Em breve!');">Que tal experimentar os nossos óculos no nosso Espelho Virtual?</a>
+		<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'view', $randomGlass['Glass']['id']) ); ?>">Que tal experimentar o nosso óculos <?php echo $randomGlass['Glass']['name']; ?>?</a>
 	</div>
 </div>
 <?php } ?>

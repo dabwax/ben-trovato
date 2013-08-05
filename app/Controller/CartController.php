@@ -36,7 +36,12 @@ class CartController extends AppController {
  * Página de visualização do carrinho do usuário.
  */
 	public function index() {
+
+		Controller::loadModel('Glass');
 		
+		$randomGlass = $this->Glass->find('first', array('order' => 'rand()') );
+		$this->set(compact('randomGlass'));
+
 		// Recupera todos os itens do usuário
 		$orderItems = $this->getOrderItemsFromUser();
 
