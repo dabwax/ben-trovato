@@ -2,6 +2,26 @@
 
 class UsersController extends AppController {
 
+	public function account() {
+		$user = $this->User->read(null, AuthComponent::user('id'));
+
+		if($this->request->is('get')) {
+			$this->request->data = $user;
+
+			$this->request->data['User']['password'] = '';
+		} else {
+			if($this->request->data['User']['password'] == '') {
+				unset($this->request->data['User']['password']);
+			}
+
+			$this->User->save($this->request->data);
+
+			$this->Session->setFlash('Os seus dados foram atualizados com sucesso.', 'success');
+
+			return $this->redirect('/minha-conta');
+		}
+	}
+
 	public function admin_index($role = 'admin') {
 		$this->paginate = array(
 			'conditions' => array(

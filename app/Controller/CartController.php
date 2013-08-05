@@ -85,6 +85,9 @@ class CartController extends AppController {
 			// Define o número do pedido
 			$this->request->data['Order']['reference'] = $reference;
 
+			// Armazena os produtos solicitados em um JSON do Pedido
+			$this->request->data['Order']['json_items'] = json_encode($orderItems);
+			
 			// Salva os dados de endereço do usuário
 			$this->Client->save($this->request->data);
 

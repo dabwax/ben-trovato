@@ -7,6 +7,10 @@ class User extends AppModel {
 		'Client'
 	);
 
+	public $hasMany = array(
+		'Order'
+	);
+
 	public $validate = array(
 		'name' => array(
 			'notEmpty' => array(
