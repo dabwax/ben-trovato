@@ -39,8 +39,20 @@ class GlassesController extends AppController {
 		// Recupera dados do óculos
 		$glass = $this->Glass->read();
 
+		// Recupera as lentes
+		$lenses = $this->Glass->OrderItem->Lense->find('all');
+
 		// Envia os dados para a view
-		$this->set(compact('glass'));
+		$this->set(compact('glass', 'lenses'));
+
+		// Se houver requisição POST
+		if($this->request->is('post')) {
+
+			// Armazena a SessionID do usuário
+			$this->request->data['OrderItem']['cakephp_session'] = $this->Session->id();
+
+			$this->Glass->OrderItem->save($this->request->data);
+		}
 	}
 
 	public function view($id = null) {

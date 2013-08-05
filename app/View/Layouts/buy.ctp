@@ -10,15 +10,14 @@
 	<!-- CSS -->
 	<?php echo $this->Html->css('/bootstrap/css/bootstrap.min.css'); ?>
 	<?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Ubuntu:300,400'); ?>
-	<?php echo $this->Html->css('fittingbox.css'); ?>
+	<?php echo $this->Html->css('buy.css'); ?>
 
 	<!-- JS -->
 	<?php echo $this->Html->script('jquery-1.10.2.min.js'); ?>
 	<?php echo $this->Html->script('jquery-migrate-1.2.1.min.js'); ?>
 	<?php echo $this->Html->script('/bootstrap/js/bootstrap.min.js'); ?>
 	<?php echo $this->Html->script('jcarousellite_1.0.1.pack.js'); ?>
-	<?php echo $this->Html->script('http://libs.us.youarethemodel.com/js/fitPhoto/FBX.fitPhoto.js.php?cid=' . $configuracoes['fittingbox_customerid']); ?>
-	<?php echo $this->Html->script('fittingbox.js'); ?>
+	<?php echo $this->Html->script('buy.js'); ?>
 
 	<?php echo $configuracoes['google_analytics']; ?>
 </head>

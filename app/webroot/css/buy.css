@@ -1,0 +1,49 @@
+.alerta-inicial p {
+	font-size: 12px;
+	line-height: 16px;
+	color: rgb(164, 196, 0);
+}
+.lenses-block {
+	display: none;
+}
+.lente {
+	float: left;
+	display: inline;
+	width: 240px;
+	margin-right: 20px;
+}
+.lente .titulo-da-lente {
+	text-align: center;
+	width: 100%;
+	text-transform: uppercase;
+	color: rgb(150, 150, 150);
+	font-weight: bold;
+	font-size: 14px;
+}
+.lente .descricao-da-lente {
+	text-align: center;
+	width: 100%;
+	min-height: 50px;
+	color: rgb(150, 150, 150);
+	font-size: 12px;
+}
+.lente .preco-da-lente {
+	text-align: center;
+	width: 100%;
+	color: rgb(164, 196, 0);
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.btn-lente {
+	margin-left: 72px;
+}
+.btn-finalizar-pedido {
+	margin-top: 20px;
+}
+.lense-type-radios label span {
+	clear: both;
+	display: block;
+	font-size: 12px;
+	color: #666;
+}

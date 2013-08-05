@@ -88,6 +88,48 @@ class AppController extends Controller {
 		 * Envia para as views todas as configurações da loja.
 		 */
 		$this->setSettings();
+
+		/**
+		 * Gera uma Session ID para o visitante.
+		 */
+		$this->generateSessionId();
+
+		/**
+		 * Recupera todos os óculos do carrinho do usuário.
+		 */
+		$this->getOrderItemsFromUser();
+	}
+
+/**
+ * Recupera todos os óculos do carrinho do usuário.
+ */
+	public function getOrderItemsFromUser() {
+		// Declara os Models a serem usados
+		$this->uses = array('OrderItem');
+		
+		// Recupera todos os itens pertencentes a sessão do usuário
+		$orderItems = $this->OrderItem->find('all', array(
+			'conditions' => array(
+				'OrderItem.cakephp_session' => $this->Session->id()
+			),
+			'contain' => array(
+				'Glass',
+				'Lense'
+			)
+		) );
+
+		// Envia para as views
+		$this->set(compact('orderItems'));
+
+		// Retorna os itens (caso a função seja usada nos Controllers, isso é neecessário)
+		return $orderItems;
+	}
+
+/**
+ * Gera um Session ID para o visitante.
+ */
+	public function generateSessionId() {
+		$this->Session->id(session_id());
 	}
 
 /**

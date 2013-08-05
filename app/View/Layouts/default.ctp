@@ -137,7 +137,7 @@
 
 				<div id="header-meta" class="span4 offset3">
 					
-					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [0 armações]</a> <!-- #btn-carrinho -->
+					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [<?php echo count($orderItems); ?> armações]</a> <!-- #btn-carrinho -->
 
 					<?php if(!AuthComponent::user()) { ?>
 
