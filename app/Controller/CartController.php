@@ -75,6 +75,19 @@ class CartController extends AppController {
 			// Gera um código de referência único
 			$reference = (int) uniqid(rand(), true);
 
+			// Verifica se foi digitado um cupom. Se tiver sido, verifica se ele existe e qual o valor de desconto dele.
+			if(isset($this->request->data['Order']['coupon'])) {
+				Controller::loadModel('Coupon');
+
+				$coupon = $this->Coupon->find('first', array('conditions' => array('Coupon.number' => $this->request->data['Order']['coupon'], 'Coupon.is_used' => 0) ) );
+
+				if($coupon) {
+					$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
+
+					$this->Coupon->save( array('id' => $coupon['Coupon']['id'], 'is_used' => 1) );
+				}
+			}
+
 			// Define os Models a serem usados
 			Controller::loadModel('Client');
 			Controller::loadModel('Order');

@@ -23,8 +23,6 @@
 		<div class="container">
 
 			<div class="row">
-
-			  <a class="navbar-brand" href="<?php echo $this->Html->url('/admin'); ?>"><?php echo $storeName; ?></a>
 			  
 			  <ul class="nav navbar-nav">
 			    <li 
@@ -44,6 +42,20 @@
 			    		</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'banners', 'action' => 'index') ); ?>">Listar</a>
+			    		</li>
+			    	</ul>
+			    </li>
+			    <li 
+			    class="<?php if($this->params['controller'] == 'coupons') { ?>active<?php } ?> dropdown">
+			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			    		<span class="glyphicon glyphicon-tags"></span> Cupons <b class="caret"></b>
+			    	</a>
+			    	<ul class="dropdown-menu">
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'coupons', 'action' => 'add') ); ?>">Adicionar</a>
+			    		</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'coupons', 'action' => 'index') ); ?>">Listar</a>
 			    		</li>
 			    	</ul>
 			    </li>
