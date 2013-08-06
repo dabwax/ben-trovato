@@ -21,7 +21,7 @@
 
 						$banner = $this->request->data;
 
-						echo $this->Loja->imagem('/banner/image/' . $banner['Banner']['id'] . '/' . $banner['Banner']['image'], array('w' => '240'), array('class' => 'img-thumbnail') );
+						echo $this->Loja->imagem($banner['Banner']['image'], array('w' => '240'), array('class' => 'img-thumbnail') );
 
 						echo '<p class="label" style="margin-left: 12px;">Imagem atual</p>';
 

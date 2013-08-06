@@ -40,23 +40,23 @@
 
 								echo $this->Form->input('photo_1', array('type' => 'file', 'label' => 'Foto (ângulo: frontal)') );
 
-								if(!empty($glass['Glass']['photo_1']) && @$glass['Glass']['photo_1']['error'] != 4 && isset($glass['Glass']['photo_1_dir'])) {
-									echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '240'), array('class' => 'img-thumbnail') );
+								if(!empty($glass['Glass']['photo_1']) && @$glass['Glass']['photo_1']['error'] != 4) {
+									echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '240'), array('class' => 'img-thumbnail') );
 
 									echo '<p class="label" style="margin-left: 12px;">Imagem atual</p>';
 								}
 
 								echo $this->Form->input('photo_2', array('type' => 'file', 'label' => 'Foto (ângulo: lateral)') );
 								
-								if(!empty($glass['Glass']['photo_2']) && @$glass['Glass']['photo_2']['error'] != 4 && isset($glass['Glass']['photo_2_dir'])) {
-									echo $this->Loja->imagem('/glass/photo_2/' . $glass['Glass']['photo_2_dir'] . '/' . $glass['Glass']['photo_2'], array('w' => '240'), array('class' => 'img-thumbnail') );
+								if(!empty($glass['Glass']['photo_2']) && @$glass['Glass']['photo_2']['error'] != 4) {
+									echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '240'), array('class' => 'img-thumbnail') );
 
 									echo '<p class="label" style="margin-left: 12px;">Imagem atual</p>';
 								}
 								echo $this->Form->input('image_hover', array('type' => 'file', 'label' => 'Foto (efeito de mouseover)') );
 
-								if(!empty($glass['Glass']['image_hover']) && @$glass['Glass']['image_hover']['error'] != 4 && isset($glass['Glass']['image_hover_dir'])) {
-									echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '240'), array('class' => 'img-thumbnail') );
+								if(!empty($glass['Glass']['image_hover']) && @$glass['Glass']['image_hover']['error'] != 4) {
+									echo $this->Loja->imagem($glass['Glass']['image_hover'], array('w' => '240'), array('class' => 'img-thumbnail') );
 
 									echo '<p class="label" style="margin-left: 12px;">Imagem atual</p>';
 								}
@@ -86,7 +86,8 @@
 						<div class="form">
 							<?php
 								echo $this->Form->input('sex', array('options' => $options['sex'], 'empty' => 'Selecionar') );
-								echo $this->Form->input('color', array('options' => $options['color'], 'empty' => 'Selecionar') );
+								echo $this->Form->input('color', array('label' => 'Cor (Filtro)', 'options' => $options['color'], 'empty' => 'Selecionar') );
+								echo $this->Form->input('color2', array('label' => 'Cor (Descrição)', 'required' => false) );
 								echo $this->Form->input('material', array('options' => $options['material'], 'empty' => 'Selecionar') );
 								echo $this->Form->input('format', array('options' => $options['format'], 'empty' => 'Selecionar') );
 								echo $this->Form->input('size', array('options' => $options['size'], 'empty' => 'Selecionar') );
@@ -113,7 +114,7 @@
 				    // Máscara de Preço
 				    $("#GlassPrice").priceFormat({
 						prefix: 'R$ ',
-						centsSeparator: ',',
+						centsSeparator: '',
 						thousandsSeparator: ''
 					});
 				  })

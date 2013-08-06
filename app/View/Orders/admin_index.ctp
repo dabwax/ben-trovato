@@ -38,7 +38,7 @@
 
 								<?php foreach($orderItems as $item) : ?>
 
-									<?php echo $item->Glass->name; ?> - <?php echo ucfirst($item->Glass->color); ?> - <?php echo $item->Lense->name; ?><br />
+									<?php echo $item->Glass->name; ?> - <?php echo ucfirst($item->Glass->color2); ?> - <?php echo $item->Lense->name; ?><br />
 
 								<?php endforeach; ?>
 							</td>

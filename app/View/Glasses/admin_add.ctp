@@ -64,7 +64,8 @@
 						<div class="form">
 							<?php
 								echo $this->Form->input('sex', array('options' => $options['sex'], 'empty' => 'Selecionar') );
-								echo $this->Form->input('color', array('options' => $options['color'], 'empty' => 'Selecionar') );
+								echo $this->Form->input('color', array('label' => 'Cor (Filtro)', 'options' => $options['color'], 'empty' => 'Selecionar') );
+								echo $this->Form->input('color2', array('label' => 'Cor (Descrição)', 'required' => false) );
 								echo $this->Form->input('material', array('options' => $options['material'], 'empty' => 'Selecionar') );
 								echo $this->Form->input('format', array('options' => $options['format'], 'empty' => 'Selecionar') );
 								echo $this->Form->input('size', array('options' => $options['size'], 'empty' => 'Selecionar') );
@@ -91,7 +92,7 @@
 				    // Máscara de Preço
 				    $("#GlassPrice").priceFormat({
 						prefix: 'R$ ',
-						centsSeparator: ',',
+						centsSeparator: '',
 						thousandsSeparator: ''
 					});
 				  })

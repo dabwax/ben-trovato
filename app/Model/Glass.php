@@ -77,6 +77,11 @@ class Glass extends AppModel {
 				'rule' => 'notEmpty',
 			)
 		),
+		'color2' => array(
+			'required' => array(
+				'rule' => 'notEmpty',
+			)
+		),
 		'sex' => array(
 			'enum' => array(
 				'rule' => array('validateEnum', 'sex'),
@@ -134,28 +139,16 @@ class Glass extends AppModel {
  * Behaviors.
  */
 	public $actsAs = array(
-		'Upload.Upload' => array(
+		'Uploader.Attachment' => array(
 			'photo_1' => array(
-				'fields' => array(
-					'dir' => 'photo_1_dir',
-					'size' => false,
-					'type' => false,
-				)
+				'dbColumn' => 'photo_1'
 			),
 			'photo_2' => array(
-				'fields' => array(
-					'dir' => 'photo_2_dir',
-					'size' => false,
-					'type' => false,
-				)
+				'dbColumn' => 'photo_2'
 			),
 			'image_hover' => array(
-				'fields' => array(
-					'dir' => 'image_hover_dir',
-					'size' => false,
-					'type' => false,
-				)
-			)
+				'dbColumn' => 'image_hover'
+			),
 		)
 	);
 

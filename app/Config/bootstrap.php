@@ -111,4 +111,4 @@ CakeLog::config('error', array(
 /**
  * Leitura de Plugins.
  */
-CakePlugin::load('Upload');
+CakePlugin::load('Uploader');

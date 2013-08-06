@@ -32,7 +32,7 @@ class BannersController extends AppController {
 	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->Banner->create();
-			if ($this->Banner->save($this->request->data)) {
+			if ($this->Banner->save($this->request->data, true)) {
 				$this->Session->setFlash(__('The banner has been saved'), 'success');
 				$this->redirect(array('action' => 'index'));
 			} else {

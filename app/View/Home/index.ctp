@@ -5,7 +5,7 @@
 		<div class="banners-encima">
 			<?php foreach($bannersEncima as $banner) : ?>
 			<a <?php if($banner['Banner']['link'] != '') { ?>href="<?php echo $banner['Banner']['link']; ?>"<?php } ?>>
-				<?php echo $this->Loja->imagem('/banner/image/' . $banner['Banner']['image_dir'] . '/' . $banner['Banner']['image'], array('w' => '614', 'h' => '380') ); ?>
+				<?php echo $this->Loja->imagem($banner['Banner']['image'], array('w' => '614', 'h' => '380') ); ?>
 			</a>
 			<?php endforeach; ?>
 		</div> <!-- .banners-encima -->
@@ -32,7 +32,7 @@
 		<div class="banners-embaixo">
 			<?php foreach($bannersEmbaixo as $banner) : ?>
 			<a <?php if($banner['Banner']['link'] != '') { ?>href="<?php echo $banner['Banner']['link']; ?>"<?php } ?>>
-				<?php echo $this->Loja->imagem('/banner/image/' . $banner['Banner']['image_dir'] . '/' . $banner['Banner']['image'], array('w' => '300', 'h' => '380') ); ?>
+				<?php echo $this->Loja->imagem($banner['Banner']['image'], array('w' => '300', 'h' => '380') ); ?>
 			</a>
 			<?php endforeach; ?>
 		</div> <!-- .banners-embaixo -->
@@ -70,7 +70,7 @@
 			<div class="oculos-sidebar">
 
 				<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'view', $glass['Glass']['id']) ); ?>">
-					<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '270', 'h' => '134') ); ?>
+					<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '270', 'h' => '134') ); ?>
 
 					<p><?php echo $glass['Glass']['name']; ?></p>
 				</a>

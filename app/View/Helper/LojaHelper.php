@@ -10,7 +10,7 @@ class LojaHelper extends AppHelper {
  */
 	public function imagem($path, $timthumb_config = array(), $options = array() ) {
 
-		$url = '/files' . $path;
+		$url = $path;
 
 		// Se não houver configurações pro Timthumb, não usá-lo
 		if(!empty($timthumb_config)) {

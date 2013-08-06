@@ -10,8 +10,6 @@
 
 <?php if(count($orderItems) > 0) { ?>
 
-<?php echo $this->Form->create('Order'); ?>
-
 <div class="row order-block">
 	<div class="span12" style="margin-left: 0px;">
 
@@ -25,13 +23,15 @@
 						<!-- Link do Óculos -->
 						<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'view', $orderItem['Glass']['id']) ); ?>">
 							<!-- Imagem do Óculos -->
-							<?php echo $this->Loja->imagem('/glass/photo_1/' . $orderItem['Glass']['photo_1_dir'] . '/' . $orderItem['Glass']['photo_1'], array('w' => '350', 'h' => '140') ); ?>
+							<?php echo $this->Loja->imagem($orderItem['Glass']['photo_1'], array('w' => '350', 'h' => '140') ); ?>
 						</a>
 					</td>
 					<td>
 						<!-- Informações Gerais -->
 						<p class="nome-do-oculos">
 							<?php echo $orderItem['Glass']['name']; ?>
+
+							<?php echo $orderItem['Glass']['color2']; ?>
 						</p> <!-- .nome-do-oculos -->
 
 						<p class="descricao-da-lente">
@@ -97,11 +97,79 @@
 		<!-- Fim - Se o usuário estiver logado -->
 
 		<!-- Se o usuário não estiver logado -->
+		<?php if(!AuthComponent::user()) { ?>
+			<div class="span5 form-usuario-login text-left" style="border-right: 1px solid #CCC; position: relative; left: 50px;">
 
+				<h3 style="text-align: left; font-size: 22px;">LOGIN</h3>
+				<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'login') ) ); ?>
+
+				<?php echo $this->Form->hidden('redirect', array('value' => Router::url( array('controller' => 'cart', 'action' => 'index'), true ) ) ); ?>
+
+				<div class="control-group">
+					<?php echo $this->Form->input('username', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+				</div>
+
+				<div class="control-group">
+					<?php echo $this->Form->input('password', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+				</div>
+
+				<div class="control-group">
+					<?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 212px;') ) ); ?>
+				</div>
+
+				<?php echo $this->Form->end(); ?>
+			</div>
+
+			<style type="text/css">
+				.form-usuario-login .control-label, .form-criar-conta .control-label {
+					width: 60px;
+					text-align: left;
+				}
+			</style>
+
+			<div class="span5 offset1 form-criar-conta text-left" style="position: relative; left: 50px;">
+
+				<h3 style="text-align: left; font-size: 22px;">CADASTRE-SE</h3>
+
+				<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'ajax_add') ) ); ?>
+
+				<?php echo $this->Form->hidden('redirect', array('value' => $this->Html->url( array('controller' => 'cart', 'action' => 'index') ) ) ); ?>
+
+				<div class="control-group">
+					<?php echo $this->Form->input('name', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+				</div>
+
+				<div class="control-group">
+					<?php echo $this->Form->input('username', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+				</div>
+
+				<div class="control-group">
+					<?php echo $this->Form->input('password', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+				</div>
+
+				<div class="control-group">
+					<?php echo $this->Form->input('Client.phone', array('class' => 'campo-de-telefone', 'div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+				</div>
+
+				<div class="control-group">
+					<?php echo $this->Form->input('Client.email', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
+				</div>
+
+				<div class="control-group">
+					<?php echo $this->Form->submit('Cadastrar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 180px;') ) ); ?>
+				</div>
+
+				<?php echo $this->Form->end(); ?>
+			</div>
+		<?php } ?>
 		<!-- Fim - Se o usuário não estiver logado -->
 	</div> <!-- .span12 -->
 
 </div> <!-- .order-block -->
+
+<?php if(AuthComponent::user()) { ?>
+
+<?php echo $this->Form->create('Order'); ?>
 
 <div class="row order-block">
 	<div class="span12" style="margin-left: 0px;">
@@ -206,6 +274,8 @@
 
 <?php } ?>
 
+<?php } ?>
+
 <?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js'); ?>
 <?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_pt_BR.js'); ?>
 
@@ -230,6 +300,8 @@
 				$(".formulario-de-cobranca .obrigatorio").addClass('required');
 			}
 		});
+
+		$("#ClientBillingIsSameAsDeliveryAddress").click();
 		
 		$("#ClientBillingCep").keyup(function() {
 	 		if($(this).val().length >= 8) {

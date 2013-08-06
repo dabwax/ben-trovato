@@ -75,17 +75,17 @@
 
 				<a href="<?php echo $this->Html->url( array('action' => 'view', $glass['Glass']['id']) ); ?>">
 
-					<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '370', 'h' => '210') ); ?>
-					<?php echo $this->Loja->imagem('/glass/photo_2/' . $glass['Glass']['photo_2_dir'] . '/' . $glass['Glass']['photo_2'], array('w' => '370', 'h' => '210'), array('style' => 'display: none;') ); ?>
+					<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '370', 'h' => '210') ); ?>
+					<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '370', 'h' => '210'), array('style' => 'display: none;') ); ?>
 				</a>
 
-				<h2><?php echo $glass['Glass']['name']; ?></h2>
+				<h2><?php echo $glass['Glass']['name']; ?> <small style="font-size: 12px;"><?php echo $glass['Glass']['color2']; ?></small> </h2>
 
 				<h3 class="produto-preco"><?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'])); echo $preco[0]; ?></h3>
 
 				<div class="produto-rodape">
 
-					<a href="http://bentrovato.lojavirtualprotegida.com.br/pages/display/fittingbox?sku=teste" data-fancybox-type="iframe" class="btn-espelho-virtual">espelho virtual</a>
+					<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glass['Glass']['id']) ); ?>" data-fancybox-type="iframe" class="btn-espelho-virtual colorbox-iframe">espelho virtual</a>
 
 				</div> <!-- .produto-rodape -->
 

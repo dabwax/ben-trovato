@@ -14,6 +14,8 @@
 				<!-- Informações Gerais -->
 				<p class="nome-do-oculos">
 					<?php echo $orderItem['Glass']['name']; ?>
+
+					<?php echo $orderItem['Glass']['color2']; ?>
 				</p> <!-- .nome-do-oculos -->
 
 				<p class="descricao-da-lente">

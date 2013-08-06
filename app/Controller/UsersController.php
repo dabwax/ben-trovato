@@ -3,6 +3,13 @@
 class UsersController extends AppController {
 
 	public function account() {
+
+		if(AuthComponent::user('role') == 'admin') {
+			$this->Session->setFlash('Você não pode acessar a sua conta como administrador. Saia da sua conta e entre com a de um cliente.', 'error');
+
+			return $this->redirect('/');
+		}
+
 		$user = $this->User->read(null, AuthComponent::user('id'));
 
 		if($this->request->is('get')) {
@@ -124,14 +131,23 @@ class UsersController extends AppController {
 	    if ($this->request->is('post')) {
 
 	        if ($this->Auth->login()) {
-            	$this->Session->setFlash(__('Seja bem-vindo de volta a Ben Trovato.'), 'success');
+            	$this->Session->setFlash(__('Seja bem-vindo a Loja Ben Trovato.'), 'success');
+
+            	if(isset($this->request->data['User']['redirect'])) {
+			    	return $this->redirect($this->request->data['User']['redirect']);
+			    }
+			    
 	        } else {
 	            $this->Session->setFlash(__('Invalid username or password, try again'), 'error');
 	        }
 
 	    }
 
-	    $this->redirect('/');
+	    if(isset($this->request->data['User']['redirect'])) {
+	    	return $this->redirect($this->request->data['User']['redirect']);
+	    } else {
+	    	return $this->redirect('/');
+	    }
 	}
 
 	public function logout() {

@@ -1,15 +1,15 @@
 <div class="row">
 	<div class="span8" id="fotos-do-oculos" style="margin-left: 0px;">
-		<a href="<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '820', 'h' => '580', 'url' => true) ); ?>" class="colorbox-iframe">
-			<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '620', 'h' => '280'), array('id' => 'imagem-toggle') ); ?>
+		<a href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'h' => '580', 'url' => true) ); ?>" class="colorbox-iframe">
+			<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280'), array('id' => 'imagem-toggle') ); ?>
 		</a>
 
 		<div class="clear clearfix"></div>
 
 		<p id="vistas-oculos" class="text-center">
 			Vistas
-			<a data-large="<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '820', 'h' => '580', 'url' => true) ); ?>" href="<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">01</a>
-			<a data-large="<?php echo $this->Loja->imagem('/glass/photo_2/' . $glass['Glass']['photo_2_dir'] . '/' . $glass['Glass']['photo_2'], array('w' => '820', 'h' => '540', 'url' => true) ); ?>" href="<?php echo $this->Loja->imagem('/glass/photo_2/' . $glass['Glass']['photo_2_dir'] . '/' . $glass['Glass']['photo_2'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">02</a>
+			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'h' => '580', 'url' => true) ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">01</a>
+			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '820', 'h' => '540', 'url' => true) ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">02</a>
 		</p> <!-- #vistas-oculos -->
 
 	</div> <!-- #fotos-do-oculos -->
@@ -20,7 +20,7 @@
 		</h2> <!-- #nome-do-oculos -->
 
 		<h3 id="cor-do-oculos">
-			<?php echo ucfirst($glass['Glass']['color']); ?>
+			<?php echo ucfirst($glass['Glass']['color2']); ?>
 		</h3> <!-- #cor-do-oculos -->
 
 		<div class="linha-com-titulo">
@@ -90,7 +90,7 @@
 		
 		<?php foreach($glassesWithOtherColors as $glassColor) : ?>
 			<a href="<?php echo $this->Html->url( array('action' => 'view', $glassColor['Glass']['id']) ); ?>">
-				<?php echo $this->Loja->imagem('/glass/photo_1/' . $glassColor['Glass']['photo_1_dir'] . '/' . $glassColor['Glass']['photo_1'], array('w' => '192', 'h' => '96') ); ?>
+				<?php echo $this->Loja->imagem($glassColor['Glass']['photo_1'], array('w' => '192', 'h' => '96') ); ?>
 			</a>
 		<?php endforeach; ?>
 	</div> <!-- .oculos-outras-cores -->
@@ -105,7 +105,7 @@
 </div>
 
 <div class="row">
-	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '1800', 'h' => '280', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -723px;">
+	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem($glass['Glass']['image_hover'], array('w' => '1800', 'h' => '280', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -723px;">
 
 		<span class="shape shape-1"></span>
 		<span class="shape shape-2"></span>
@@ -113,8 +113,6 @@
 		<span class="shape shape-4"></span>
 		<span class="shape shape-5"></span>
 
-		<?php
-		// echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '360', 'h' => '280') ); ?>
 	</div> <!-- #foto-efeito-hover -->
 
 	<script type="text/javascript">

@@ -29,7 +29,7 @@
 					</tr>
 					<?php foreach ($glasses as $glass): ?>
 						<tr>
-							<td><?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '240') ); ?>&nbsp;</td>
+							<td><?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '240') ); ?>&nbsp;</td>
 							<td><?php echo h($glass['Glass']['name']); ?>&nbsp;</td>
 							<td><?php echo $this->Loja->preco($glass['Glass']['price']); ?>&nbsp;</td>
 							<td><?php echo h($glass['Glass']['sku']); ?>&nbsp;</td>

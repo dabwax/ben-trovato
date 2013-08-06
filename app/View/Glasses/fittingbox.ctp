@@ -16,7 +16,7 @@
 		<div class="clear clearfix"></div>
 
 		<div class="span4 ml0" id="foto-oculos-frontal">
-			<?php echo $this->Loja->imagem('/glass/photo_1/' . $glass['Glass']['photo_1_dir'] . '/' . $glass['Glass']['photo_1'], array('w' => '300', 'h' => '150') ); ?>
+			<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '300', 'h' => '150') ); ?>
 		</div> <!-- #foto-oculos-frontal -->
 
 		<div class="span2 text-center" id="sobre-o-oculos">
@@ -26,7 +26,7 @@
 			</h2> <!-- #nome-do-oculos -->
 
 			<h3 id="cor-do-oculos">
-				<?php echo $glass['Glass']['color']; ?>
+				<?php echo $glass['Glass']['color2']; ?>
 			</h3> <!-- cor-do-oculos -->
 
 			<div class="texto-com-linha">
@@ -86,7 +86,7 @@
 					<?php foreach($glassesWithOtherColors as $glassColor) : ?>
 					<li>
 						<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glassColor['Glass']['id']) ); ?>">
-							<?php echo $this->Loja->imagem('/glass/photo_1/' . $glassColor['Glass']['photo_1_dir'] . '/' . $glassColor['Glass']['photo_1'], array('w' => '112', 'h' => '46') ); ?>
+							<?php echo $this->Loja->imagem($glassColor['Glass']['photo_1'], array('w' => '112', 'h' => '46') ); ?>
 						</a>
 					</li>
 					<?php endforeach; ?>
@@ -151,7 +151,7 @@
 					<?php foreach($glass['Related'] as $glassRelated) : ?>
 					<li>
 						<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glassRelated['id']) ); ?>">
-							<?php echo $this->Loja->imagem('/glass/photo_1/' . $glassRelated['photo_1_dir'] . '/' . $glassRelated['photo_1'], array('w' => '112', 'h' => '46') ); ?>
+							<?php echo $this->Loja->imagem($glassRelated['photo_1'], array('w' => '112', 'h' => '46') ); ?>
 						</a>
 					</li>
 					<?php endforeach; ?>

@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('AttachmentBehavior', 'Uploader.Model/Behavior');
 /**
  * Banner Model
  *
@@ -31,11 +32,10 @@ class Banner extends AppModel {
  * Behaviors.
  */
 	public $actsAs = array(
-		'Upload.Upload' => array(
+		'Uploader.Attachment' => array(
 			'image' => array(
-				'fields' => array(
-					'dir' => 'image_dir'
-				)
+				'overwrite' => true,
+				'dbColumn' => 'image'
 			)
 		)
 	);

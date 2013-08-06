@@ -37,6 +37,12 @@ class CartController extends AppController {
  */
 	public function index() {
 
+		if(AuthComponent::user('role') == 'admin') {
+			$this->Session->setFlash('Você não pode acessar o carrinho como administrador. Saia da sua conta e entre com a de um cliente.', 'error');
+
+			return $this->redirect('/');
+		}
+
 		Controller::loadModel('Glass');
 		
 		$randomGlass = $this->Glass->find('first', array('order' => 'rand()') );

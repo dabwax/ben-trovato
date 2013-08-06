@@ -110,7 +110,7 @@ msgid "The glass has been saved"
 msgstr "O óculos foi salvo com sucesso"
 
 msgid "The glass could not be saved. Please, try again."
-msgstr "O óculos não pôde ser salvo. Por favor, tente novamente."
+msgstr "O óculos não pôde ser salvo. Lembre-se que você terá de selecionar as imagens novamente. Lembre-se que existe a aba de 'Características' para ser preenchida. Por favor, tente novamente."
 
 msgid "Invalid glass"
 msgstr "Óculos inválido"
