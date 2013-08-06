@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="span8" id="fotos-do-oculos" style="margin-left: 0px;">
-		<a href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'h' => '580', 'url' => true) ); ?>" class="colorbox-iframe">
+		<a href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" class="colorbox-iframe">
 			<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280'), array('id' => 'imagem-toggle') ); ?>
 		</a>
 
@@ -8,8 +8,8 @@
 
 		<p id="vistas-oculos" class="text-center">
 			Vistas
-			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'h' => '580', 'url' => true) ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">01</a>
-			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '820', 'h' => '540', 'url' => true) ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">02</a>
+			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">01</a>
+			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">02</a>
 		</p> <!-- #vistas-oculos -->
 
 	</div> <!-- #fotos-do-oculos -->
@@ -105,7 +105,7 @@
 </div>
 
 <div class="row">
-	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem($glass['Glass']['image_hover'], array('w' => '1800', 'h' => '280', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -723px;">
+	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem($glass['Glass']['image_hover'], array('h' => '280', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -723px;">
 
 		<span class="shape shape-1"></span>
 		<span class="shape shape-2"></span>

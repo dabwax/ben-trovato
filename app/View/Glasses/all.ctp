@@ -77,8 +77,8 @@
 
 				<a href="<?php echo $this->Html->url( array('action' => 'view', $glass['Glass']['id']) ); ?>">
 
-					<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '370', 'h' => '210') ); ?>
-					<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '370', 'h' => '210'), array('style' => 'display: none;') ); ?>
+					<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '370', 'h' => '210', 'zc' => '0') ); ?>
+					<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '370', 'h' => '210', 'zc' => '0'), array('style' => 'display: none;') ); ?>
 				</a>
 
 				<h2><?php echo $glass['Glass']['name']; ?> <small style="font-size: 12px;"><?php echo $glass['Glass']['color2']; ?></small> </h2>
