@@ -549,3 +549,18 @@ hr.linha {
 	font-size: 10px;
 	color: red;
 }
+#oculos-estilo-etc h2 {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+#estilo-do-oculos {
+	font-size: 18px;
+	line-height: 26px;
+	color: #a3a3a3;
+	text-transform: uppercase;
+	text-align: left;
+	margin-bottom: 30px;
+}
+.texto-caracteristicas {
+	font-size: 12px;
+}

@@ -32,6 +32,12 @@
 			});
 
 			$(".colorbox-image").colorbox();
+
+			$(".colorbox-armacao").colorbox({
+				iframe: true,
+				width: 830,
+				height: 530
+			});
 		});
 	</script>
 

@@ -106,24 +106,113 @@
 
 <div class="row">
 	<div class="span5" id="foto-efeito-hover" style="margin-left: 0px;">
-		<?php echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '360', 'h' => '280') ); ?>
+		<?php
+		// echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '360', 'h' => '280') ); ?>
+		<?php echo $this->Html->image('efeito-hover.jpg'); ?>
 	</div> <!-- #foto-efeito-hover -->
 
 	<div class="span7" id="oculos-estilo-etc">
 		<h2>O Estilo</h2>
 
-		<h3 id="estilo-do-oculos">
-			LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. QUISQUE ID ODIO CONSEQUAT URNA INTERDUM ALIQUET.
-		</h3> <!-- #estilo-do-oculos -->
+		<div id="estilo-do-oculos">
+			<?php echo $glass['Glass']['the_style']; ?>
+		</div> <!-- #estilo-do-oculos -->
 
 		<div class="clear clearfix"></div>
 
-		<div class="span3">
-			<p>Características da Armação: <a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'caracteristicas-da-armacao') ); ?>"><?php echo $this->Html->image('information.png'); ?></a> </p>
-		</div> <!-- .span3 -->
+		<div class="span3 texto-caracteristicas" style="margin-left: 0px;">
+			<p>CARACTERÍSTICAS DA ARMAÇÃO: <a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'caracteristicas-da-armacao') ); ?>" class="colorbox-armacao"><?php echo $this->Html->image('information.png', array('width' => '14') ); ?></a> </p>
 
-		<div class="span3">
-			<p>Características das Lentes:</p>
-		</div> <!-- .span3 -->
+			<?php echo $glass['Glass']['character_frame']; ?>
+		</div> <!-- .texto-caracteristicas -->
+
+		<div class="span3 texto-caracteristicas" style="margin-left: 40px;">
+			<p>CARACTERÍSTICAS DAS LENTES:</p>
+
+			<?php echo $glass['Glass']['character_lenses']; ?>
+		</div> <!-- .texto-caracteristicas -->
 	</div> <!-- #oculos-estilo-etc -->
+</div>
+
+<div class="row">
+	<div class="span12" style="margin-left: 0px;">
+		<div class="linha-com-titulo" style="margin-top: 10px;">
+			<p class="texto" style="text-transform: uppercase;">
+				Qualidade na Fabricação
+			</p> <!-- .texto -->
+			<hr />
+		</div> <!-- .linha-com-titulo -->
+	</div>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<?php echo $this->Html->image('qualidade-1.jpg'); ?>
+
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Desenhado no Rio</p>
+
+		<div class="clear clearfix"></div>
+
+		<p style="font-size: 11px;">
+			Inspirado no design italiano e no estilo carioca de viver, nossas coleções são desenhadas com paixão e conhecimento de quem trabalha no ramo ótico há 11 anos. Nosso objetivo é simples: encantar e trazer estilo com nossas armações.
+		</p>
+	</div>
+
+	<div class="span4">
+		<?php echo $this->Html->image('qualidade-2.jpg'); ?>
+
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Fabricados à mão</p>
+
+		<div class="clear clearfix"></div>
+
+		<p style="font-size: 11px;">
+			Nossos óculos são fabricado à mão, cortados de uma placa única de acetato para garantir uma uniformidade de cor e polidos para um acabamento superior.
+		</p>
+	</div>
+
+	<div class="span4">
+		<?php echo $this->Html->image('qualidade-3.jpg'); ?>
+
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Lentes de Grau Montadas em Laboratório</p>
+
+		<div class="clear clearfix"></div>
+
+		<p style="font-size: 11px;">
+			Nossas lentes de grau são montadas no Brasil em laboratório ótico renomado para garantir excelência e atender nosso padrão de qualidade. Elas são importadas e possuem tratamento antirreflexo e antirrisco.
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12" style="margin-left: 0px;">
+		<div class="linha-com-titulo" style="margin-top: 10px;">
+			<p class="texto" style="text-transform: uppercase;">
+				Incluso
+			</p> <!-- .texto -->
+			<hr />
+		</div> <!-- .linha-com-titulo -->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="span6">
+		<?php echo $this->Html->image('incluso-1.jpg', array('class' => 'pull-left') ); ?>
+
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">O que mais está incluído?</p>
+
+		<p style="font-size: 11px;">
+			Estojo e flanela exclusivos da Ben Trovato. Cada óculos é acompanhado por um sofisticado estojo importado e uma flanela exclusiva de microfibra, para que seu Ben Trovato fique sempre protegido e impecável.
+		</p>
+	</div>
+
+	<div class="span6">
+		<?php echo $this->Html->image('incluso-2.jpg', array('class' => 'pull-left') ); ?>
+
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Garantia de 180 Dias</p>
+
+		<p style="font-size: 11px;">
+			Todos nossas armações e lentes têm garantia de 180 dias, com os custos envio para troca por nossa conta.
+		</p>
+	</div>
 </div>
