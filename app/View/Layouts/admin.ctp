@@ -110,7 +110,7 @@
 			    	</a>
 			    	<ul class="dropdown-menu">
 			    		<li>
-			    			<a href="<?php echo $this->Html->url( array('controller' => 'subscriptions', 'action' => 'export', 'ext' => 'xls') ); ?>">Newsletter</a>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'subscriptions', 'action' => 'export') ); ?>">Newsletter</a>
 			    		</li>
 			    	</ul>
 			    </li>

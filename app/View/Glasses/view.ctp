@@ -275,3 +275,15 @@
 		</div> <!-- .linha-com-titulo -->
 	</div>
 </div>
+
+<div class="row">
+	<?php foreach($glass['Related'] as $glassRelated) : ?>
+	<div class="span3">
+		<a href="<?php echo $this->Html->url( array('action' => 'view', $glassRelated['id']) ); ?>" style="color: #000; text-align: center;">
+			<?php echo $this->Html->image($glassRelated['photo_1']); ?>
+
+			<p style="margin-top: 10px;"><?php echo $glassRelated['name']; ?> - <?php echo $glassRelated['color2']; ?></p>
+		</a>
+	</div>
+	<?php endforeach; ?>
+</div>

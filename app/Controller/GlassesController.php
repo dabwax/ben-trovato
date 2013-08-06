@@ -157,7 +157,13 @@ class GlassesController extends AppController {
 		$options['format'] = $this->Glass->format;
 		$options['size'] = $this->Glass->size;
 		$options['type'] = $this->Glass->type;
-		$options['related'] = $this->Glass->find('list');
+
+		$glasses_all = $this->Glass->find('all');
+		$options['related'] = array();
+
+		foreach($glasses_all as $glass) {
+			$options['related'][$glass['Glass']['id']] = $glass['Glass']['name'] . ' - ' . $glass['Glass']['color2'];
+		}
 
 		// Envia os atributos do model para a view
 		$this->set(compact('options'));
