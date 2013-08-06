@@ -31,56 +31,52 @@
 			    		<span class="glyphicon glyphicon-globe"></span> Home
 			    	</a>
 			    </li>
-			    <li 
-			    class="<?php if($this->params['controller'] == 'banners') { ?>active<?php } ?> dropdown">
+			    <li>
 			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			    		<span class="glyphicon glyphicon-picture"></span> Banners <b class="caret"></b>
+			    		<span class="glyphicon glyphicon-edit"></span> Conteúdo <b class="caret"></b>
 			    	</a>
 			    	<ul class="dropdown-menu">
+						<li class="dropdown-header"><span class="glyphicon glyphicon-picture"></span> Banners</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'banners', 'action' => 'add') ); ?>">Adicionar</a>
 			    		</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'banners', 'action' => 'index') ); ?>">Listar</a>
 			    		</li>
+						<li class="divider"></li>
+						<li class="dropdown-header"><span class="glyphicon glyphicon-thumbs-up"></span> Depoimentos</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'testemonials', 'action' => 'add') ); ?>">Adicionar</a>
+			    		</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'testemonials', 'action' => 'index') ); ?>">Listar</a>
+			    		</li>
 			    	</ul>
 			    </li>
-			    <li 
-			    class="<?php if($this->params['controller'] == 'coupons') { ?>active<?php } ?> dropdown">
+			    <li>
 			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			    		<span class="glyphicon glyphicon-tags"></span> Cupons <b class="caret"></b>
+			    		<span class="glyphicon glyphicon-shopping-cart"></span> Loja <b class="caret"></b>
 			    	</a>
 			    	<ul class="dropdown-menu">
+						<li class="dropdown-header"><span class="glyphicon glyphicon-tags" style="margin-right: 3px;"></span> Cupons</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'coupons', 'action' => 'add') ); ?>">Adicionar</a>
 			    		</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'coupons', 'action' => 'index') ); ?>">Listar</a>
 			    		</li>
-			    	</ul>
-			    </li>
-			    <li 
-			    class="<?php if($this->params['controller'] == 'glasses') { ?>active<?php } ?> dropdown">
-			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			    		<span class="glyphicon glyphicon-eye-open"></span> Óculos <b class="caret"></b>
-			    	</a>
-			    	<ul class="dropdown-menu">
+						<li class="divider"></li>
+						<li class="dropdown-header"><span class="glyphicon glyphicon-eye-open"></span> Óculos</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'add') ); ?>">Adicionar</a>
 			    		</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'index') ); ?>">Listar</a>
 			    		</li>
-			    	</ul>
-			    </li>
-			    <li 
-			    class="<?php if($this->params['controller'] == 'orders') { ?>active<?php } ?> dropdown">
-			    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			    		<span class="glyphicon glyphicon-barcode"></span> Pedidos <b class="caret"></b>
-			    	</a>
-			    	<ul class="dropdown-menu">
+						<li class="divider"></li>
+						<li class="dropdown-header"><span class="glyphicon glyphicon-barcode"></span> Pedidos</li>
 			    		<li>
-			    			<a href="<?php echo $this->Html->url( array('controller' => 'orders', 'action' => 'index') ); ?>">Listar</a>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'index') ); ?>">Listar</a>
 			    		</li>
 			    	</ul>
 			    </li>
@@ -90,11 +86,14 @@
 			    		<span class="glyphicon glyphicon-user"></span> Usuários <b class="caret"></b>
 			    	</a>
 			    	<ul class="dropdown-menu">
+						<li class="dropdown-header"><span class="glyphicon glyphicon-user"></span> Administradores</li>
 			    		<li>
-			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'index', 'admin') ); ?>">Administradores</a>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'index', 'admin') ); ?>">Listar</a>
 			    		</li>
+						<li class="divider"></li>
+						<li class="dropdown-header"><span class="glyphicon glyphicon-user"></span> Clientes</li>
 			    		<li>
-			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'index', 'client') ); ?>">Clientes</a>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'index', 'client') ); ?>">Listar</a>
 			    		</li>
 			    	</ul>
 			    </li>

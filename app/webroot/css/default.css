@@ -585,3 +585,12 @@ hr.linha {
 .order-block-title {
 	cursor: pointer;
 }
+#lista-de-depoimentos li {
+	float: left;
+	display: inline;
+	width: 100%;
+	list-style-type: none;
+}
+#lista-de-depoimentos {
+	margin: 0px;
+}

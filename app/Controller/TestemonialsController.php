@@ -2,6 +2,12 @@
 
 class TestemonialsController extends AppController {
 
+	public function index() {
+		$testemonials = $this->Testemonial->find('all', array('order' => array('Testemonial.created' => 'DESC') ) );
+
+		$this->set(compact('testemonials'));
+	}
+
 /**
  * index method
  *
@@ -34,6 +40,15 @@ class TestemonialsController extends AppController {
 				$this->Session->setFlash(__('The testemonial could not be saved. Please, try again.'), 'error');
 			}
 		}
+
+		$glasses_all = $this->Testemonial->Glass->find('all');
+		$glasses = array();
+
+		foreach($glasses_all as $glass) {
+			$glasses[$glass['Glass']['id']] = $glass['Glass']['name'] . ' - ' . $glass['Glass']['color2'];
+		}
+
+		$this->set(compact('glasses'));
 	}
 
 /**
@@ -58,6 +73,15 @@ class TestemonialsController extends AppController {
 			$options = array('conditions' => array('Testemonial.' . $this->Testemonial->primaryKey => $id));
 			$this->request->data = $this->Testemonial->find('first', $options);
 		}
+		
+		$glasses_all = $this->Testemonial->Glass->find('all');
+		$glasses = array();
+
+		foreach($glasses_all as $glass) {
+			$glasses[$glass['Glass']['id']] = $glass['Glass']['name'] . ' - ' . $glass['Glass']['color2'];
+		}
+
+		$this->set(compact('glasses'));
 	}
 
 /**
