@@ -15,6 +15,8 @@
 
 		<p style="font-size: 16px; line-height: 28px; text-align: left;">Hoje, a indústria óptica é controlada por poucas empresas multinacionais e intermediários que mantêm os preços exageradamente/absurdamente elevados. A Ben Trovato chegou para revolucionar o modo como os óculos são vendidos! Ao desenhar, fabricar e vender nossos próprios óculos, nos tornamos independentes e podemos dispensar o sistema tradicional.</p>
 
+		<hr>
+
 		<h2 style="text-align: left; font-family: 'Nothing You Could Do' !important;font-weight: bold !important;font-size: 26px;">Nossa grife</h2>
 
 		<p style="font-size: 16px; line-height: 28px; text-align: left;">
@@ -25,17 +27,22 @@
 
 		<h2 style="position: relative; margin-top: 40px; margin-bottom: 30px; font-size: 24px;"><span style="position: absolute; left: 0px; top: 8px; width: 100%; height: 2px; background: #CCC;"></span> <span style="background: #FFF; position: relative; z-index: 999; padding: 24px; left: 0px; text-transform: uppercase; top: -10px;">Nosso Segredo</span> </h2>
 
-		<p style="font-size: 16px; line-height: 28px; text-align: left;">Segredo? Na verdade, não temos. Isto nós deixamos para as multinacionais.</p>
+		<h3 style="margin-top: 10px; margin-bottom: 20px; width: 100%;text-align: center;font-size: 24px;color: #999;font-style: italic;">"Segredo? Na verdade, não temos. Isto nós deixamos para as multinacionais."</h3>
 
-		<p style="font-size: 16px; line-height: 28px; text-align: left;">Nós dispensamos os intermediários. Desenhamos, fabricamos e vendemos nossos próprios óculos.</p>
+		<p style="font-size: 16px; line-height: 28px; text-align: center;">Nós dispensamos os intermediários. Desenhamos, fabricamos e vendemos nossos próprios óculos.</p>
 
-		<h2 style="text-align: left;font-family: 'Nothing You Could Do' !important; font-size: 24px; margin-top: 30px;">Como funciona o mercado óptico?</h2>
+		<h2 style="text-align: left;font-family: 'Nothing You Could Do' !important; font-size: 24px; margin-top: 20px; text-align: center;">Como funciona o mercado óptico?</h2>
 
 		<p style="font-size: 16px; line-height: 28px; text-align: left;">Hoje, a maioria das marcas/grifes de luxo vendem suas licenças para poucas empresas multinacionais que ficam responsáveis pelo desenho, fabricação e venda das armações em troca de contratos milionários e royalties sobre as vendas.</p>
 
 		<p style="font-size: 16px; line-height: 28px; text-align: left;">Essas poucas multinacionais controlam todas as licenças das grandes marcas, às vezes até mesmo os seus distribuidores, mantendo os preços artificialmente elevados.</p>
 
 		<p style="font-size: 16px; line-height: 28px; text-align: left;">Além disso, a grande maioria das óticas vende estas armações por preços entre 2 a 3 vezes o valor de compra, inclusive adicionando uma margem (muito) confortável nas lentes oftálmicas.</p>
+
+		<?php echo $this->Html->image('grafico.png', array('style' => 'margin-bottom: 30px; margin-top: 30px;') ); ?>
+
+		<h3 style="margin-top: 10px; margin-bottom: 20px; width: 100%;text-align: center;font-size: 18px; line-height: 22px; color: #333;font-style: italic;">NÓS DISPENSAMOS OS INTERMEDIÁRIOS.</h3>
+		<h3 style="margin-top: 10px; margin-bottom: 20px; width: 100%;text-align: center;font-size: 18px; line-height: 22px; color: #333;font-style: italic;">DESENHAMOS, FABRICAMOS E VENDEMOS NOSSO PRÓPRIOS ÓCULOS.</h3>
 
 	</div>
 </div>

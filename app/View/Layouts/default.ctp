@@ -75,7 +75,7 @@
 
 	<div class="modal-body hide form-add">
 
-		<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'ajax_add') ) ); ?>
+		<?php echo $this->Form->create('User', array('class' => 'form-horizontal form-criacao-de-conta', 'url' => array('controller' => 'users', 'action' => 'ajax_add') ) ); ?>
 
 		<div class="control-group">
 			<?php echo $this->Form->input('name', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>

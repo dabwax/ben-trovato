@@ -594,3 +594,36 @@ hr.linha {
 #lista-de-depoimentos {
 	margin: 0px;
 }
+#imagem-principal {
+	float: left;
+	display: inline;
+	width: 98%;
+}
+.imagem-pequena {
+	float: left;
+	display: inline;
+	width: 143px;
+	margin-right: 10px;
+	margin-top: 10px;
+	opacity: 0.7;
+}
+.imagem-pequena:hover, .imagem-pequena.ativo {
+	opacity: 1;
+}
+.seta-pai {
+	float: left;
+	display: inline;
+	width: 20px;
+	height: 12px;
+	margin-top: 4px;
+	background: url("../img/seta-peq-dir.png") no-repeat;
+}
+.seta-baixo {
+	background: url("../img/seta-peq-baixo.png") no-repeat;
+}
+.parent-toggle {
+	text-transform: uppercase;
+}
+.parent-toggle-ativo {
+	color: #4fa4da !important;
+}

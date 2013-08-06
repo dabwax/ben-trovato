@@ -7,7 +7,7 @@
 		<ul style="list-style: none;">
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Receita
+					<span class="seta-pai"></span> Receita
 				</a>
 				<ul>
 															<li>
@@ -99,7 +99,7 @@
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Lentes
+					<span class="seta-pai"></span> Lentes
 				</a>
 				<ul>
 															<li>
@@ -214,7 +214,7 @@ proteção UVA/UVB (mesma proteção das lentes com grau).</p>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Armações
+					<span class="seta-pai"></span> Armações
 				</a>
 				<ul>
 															<li>
@@ -325,7 +325,7 @@ para uso!</p>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Óculos de sol
+					<span class="seta-pai"></span> Óculos de sol
 				</a>
 				<ul>
 										<li>
@@ -394,7 +394,7 @@ você!</p>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Garantia
+					<span class="seta-pai"></span> Garantia
 				</a>
 				<ul>
 										<li>
@@ -469,7 +469,7 @@ perfeito estado. Veja aqui mais detalhes.</p>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Espelho virtual
+					<span class="seta-pai"></span> Espelho virtual
 				</a>
 				<ul>
 										<li>
@@ -547,7 +547,7 @@ ficaremos felizes em te ajudar a escolher qual estilo veste melhor em você!</p>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Fazer, alterar ou cancelar pedido
+					<span class="seta-pai"></span> Fazer, alterar ou cancelar pedido
 				</a>
 				<ul>
 										<li>
@@ -586,7 +586,7 @@ fazer tudo o que for pedido!</p>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Pagamento
+					<span class="seta-pai"></span> Pagamento
 				</a>
 				<ul>
 										<li>
@@ -687,7 +687,7 @@ informações veja FAQ – Quais são as opções de lentes disponíveis?</p>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Envio
+					<span class="seta-pai"></span> Envio
 				</a>
 				<ul>
 										<li>
@@ -733,7 +733,7 @@ contato@bentrovato.com.br, nós ficaremos felizes em te ajudar!</p>
 			</li>
 <li class="parent" style="margin-bottom: 8px;">
 				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
-					Troca e devolução
+					<span class="seta-pai"></span> Troca e devolução
 				</a>
 				<ul>
 										<li>
@@ -819,6 +819,11 @@ mais, nos diga o motivo.</p>
 	$(document).ready(function() {
 
 		$(".parent-toggle").click(function() {
+			
+			$(this).toggleClass('parent-toggle-ativo');
+
+			$(this).find('span').toggleClass('seta-baixo');
+
 			$(this).parent().find('ul').toggle();
 		});
 

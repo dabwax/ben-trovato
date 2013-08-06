@@ -184,33 +184,44 @@
 
 <div class="row">
 	<div class="span4">
-		<?php echo $this->Html->image('qualidade-1.jpg'); ?>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Desenhado no Rio</p>
+		<div style="width: 100%; text-align: center;">
+			<?php echo $this->Html->image('qualidade-1.png'); ?>
+		</div>
+
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px;">Desenhado no Rio</p>
 
 		<div class="clear clearfix"></div>
 
-		<p style="font-size: 11px;">
+		<p style="font-size: 11px; margin-top: 16px;">
 			Inspirado no design italiano e no estilo carioca de viver, nossas coleções são desenhadas com paixão e conhecimento de quem trabalha no ramo ótico há 11 anos. Nosso objetivo é simples: encantar e trazer estilo com nossas armações.
 		</p>
 	</div>
 
 	<div class="span4">
-		<?php echo $this->Html->image('qualidade-2.jpg'); ?>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Fabricados à mão</p>
+		<div style="width: 100%; text-align: center;">
+			<?php echo $this->Html->image('qualidade-2.png'); ?>
+		</div>
 
 		<div class="clear clearfix"></div>
 
-		<p style="font-size: 11px;">
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px;">Fabricados à mão</p>
+
+		<div class="clear clearfix"></div>
+
+		<p style="font-size: 11px; margin-top: 16px;">
 			Nossos óculos são fabricado à mão, cortados de uma placa única de acetato para garantir uma uniformidade de cor e polidos para um acabamento superior.
 		</p>
 	</div>
 
 	<div class="span4">
-		<?php echo $this->Html->image('qualidade-3.jpg'); ?>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Lentes de Grau Montadas em Laboratório</p>
+		<div style="width: 100%; text-align: center;">
+			<?php echo $this->Html->image('qualidade-3.png'); ?>
+		</div>
+
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px;">Lentes de Grau Montadas em Laboratório</p>
 
 		<div class="clear clearfix"></div>
 
@@ -234,7 +245,7 @@
 
 <div class="row">
 	<div class="span6">
-		<?php echo $this->Html->image('incluso-1.jpg', array('class' => 'pull-left') ); ?>
+		<?php echo $this->Html->image('incluso-1.jpg', array('class' => 'pull-left', 'style' => 'height: 84px; margin-top: 7px; margin-bottom: 20px; margin-right: 20px;') ); ?>
 
 		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">O que mais está incluído?</p>
 
@@ -244,12 +255,23 @@
 	</div>
 
 	<div class="span6">
-		<?php echo $this->Html->image('incluso-2.jpg', array('class' => 'pull-left') ); ?>
+		<?php echo $this->Html->image('icone-garantia.png', array('class' => 'pull-left', 'style' => 'margin-top: 20px; margin-right: 20px;') ); ?>
 
 		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Garantia de 180 Dias</p>
 
 		<p style="font-size: 11px;">
 			Todos nossas armações e lentes têm garantia de 180 dias, com os custos envio para troca por nossa conta.
 		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12" style="margin-left: 0px;">
+		<div class="linha-com-titulo" style="margin-top: 10px;">
+			<p class="texto" style="text-transform: uppercase;">
+				Que tal esses?
+			</p> <!-- .texto -->
+			<hr />
+		</div> <!-- .linha-com-titulo -->
 	</div>
 </div>

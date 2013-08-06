@@ -65,8 +65,8 @@
 							
 						</td>
 						<td>
+							<?php echo $this->Html->link('Finalizar Compra', 'javascript:;', array('class' => 'btn btn-success btn-finalizar-compra') ); ?>
 							<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn') ); ?>
-							<?php //echo $this->Html->link('Fechar Pedido', 'javascript:;', array('class' => 'btn btn-success') ); ?>
 						</td>
 						<td>
 							
@@ -84,7 +84,7 @@
 <div class="row order-block">
 	<div class="span12" style="margin-left: 0px;">
 
-		<h3 class="order-block-title">Detalhes da Sua Conta</h3>
+		<h3 class="order-block-title detalhes-da-sua-conta">Detalhes da Sua Conta</h3>
 
 		<div class="order-block-content">
 
@@ -137,7 +137,7 @@
 
 				<h3 style="text-align: left; font-size: 22px;">CADASTRE-SE</h3>
 
-				<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'ajax_add') ) ); ?>
+				<?php echo $this->Form->create('User', array('class' => 'form-horizontal form-criacao-de-conta', 'url' => array('controller' => 'users', 'action' => 'ajax_add') ) ); ?>
 
 				<?php echo $this->Form->hidden('redirect', array('value' => $this->Html->url( array('controller' => 'cart', 'action' => 'index') ) ) ); ?>
 
@@ -303,6 +303,10 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+
+		$(".btn-finalizar-compra").click(function() {
+			$(".detalhes-da-sua-conta").click();
+		});
 
 		$(".order-block-title").click(function() {
 

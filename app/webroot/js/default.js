@@ -54,7 +54,7 @@ $(document).ready(function() {
 	  /**
 	   * AJAX do Formulário de Cadastre-se da Modal de Login.
 	   */
-		$(".form-add form").ajaxForm({
+		$(".form-criacao-de-conta").ajaxForm({
 			success: function(responseText) {
 				if(responseText == 'sucesso') {
 					window.location.reload();
