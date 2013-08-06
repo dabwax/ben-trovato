@@ -579,3 +579,9 @@ hr.linha {
 	width: 72px;
 	height: 280px;
 }
+.order-block-content {
+	display: none;
+}
+.order-block-title {
+	cursor: pointer;
+}

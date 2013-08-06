@@ -15,63 +15,67 @@
 
 		<h3 class="order-block-title">Revise seu Pedido</h3>
 
-		<table class="table-bordered table table-hover">
-			<tbody>
-				<?php foreach($orderItems as $orderItem) : ?>
-				<tr>
-					<td>
-						<!-- Link do Óculos -->
-						<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'view', $orderItem['Glass']['id']) ); ?>">
-							<!-- Imagem do Óculos -->
-							<?php echo $this->Loja->imagem($orderItem['Glass']['photo_1'], array('w' => '350', 'h' => '140') ); ?>
-						</a>
-					</td>
-					<td>
-						<!-- Informações Gerais -->
-						<p class="nome-do-oculos">
-							<?php echo $orderItem['Glass']['name']; ?>
+		<div class="order-block-content" style="display: block;">
 
-							<?php echo $orderItem['Glass']['color2']; ?>
-						</p> <!-- .nome-do-oculos -->
+			<table class="table-bordered table table-hover">
+				<tbody>
+					<?php foreach($orderItems as $orderItem) : ?>
+					<tr>
+						<td>
+							<!-- Link do Óculos -->
+							<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'view', $orderItem['Glass']['id']) ); ?>">
+								<!-- Imagem do Óculos -->
+								<?php echo $this->Loja->imagem($orderItem['Glass']['photo_1'], array('w' => '350', 'h' => '140') ); ?>
+							</a>
+						</td>
+						<td>
+							<!-- Informações Gerais -->
+							<p class="nome-do-oculos">
+								<?php echo $orderItem['Glass']['name']; ?>
 
-						<p class="descricao-da-lente">
-							<?php echo $orderItem['Lense']['label']; ?>
-						</p> <!-- .descricao-da-lente -->
-					</td>
-					<td>
-						<!-- Preço -->
-						<?php echo $this->Loja->preco($orderItem['price']); ?>
+								<?php echo $orderItem['Glass']['color2']; ?>
+							</p> <!-- .nome-do-oculos -->
 
-						<?php echo $this->Html->link('excluir', array('action' => 'delete_order_item', $orderItem['OrderItem']['id']), array('class' => 'btn btn-small btn-danger') ); ?>
-					</td>
-				</tr>
-				<?php endforeach; ?>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td>
-						
-					</td>
-					<td>
-						Total: <?php echo $this->Loja->preco($totalPrice); ?>
-					</td>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						
-					</td>
-					<td>
-						<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn') ); ?>
-						<?php //echo $this->Html->link('Fechar Pedido', 'javascript:;', array('class' => 'btn btn-success') ); ?>
-					</td>
-					<td>
-						
-					</td>
-				</tr>
-			</tfoot>
-		</table> <!-- .table -->
+							<p class="descricao-da-lente">
+								<?php echo $orderItem['Lense']['label']; ?>
+							</p> <!-- .descricao-da-lente -->
+						</td>
+						<td>
+							<!-- Preço -->
+							<?php echo $this->Loja->preco($orderItem['price']); ?>
+
+							<?php echo $this->Html->link('excluir', array('action' => 'delete_order_item', $orderItem['OrderItem']['id']), array('class' => 'btn btn-small btn-danger') ); ?>
+						</td>
+					</tr>
+					<?php endforeach; ?>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							Total: <?php echo $this->Loja->preco($totalPrice); ?>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn') ); ?>
+							<?php //echo $this->Html->link('Fechar Pedido', 'javascript:;', array('class' => 'btn btn-success') ); ?>
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+				</tfoot>
+			</table> <!-- .table -->
+
+		</div>
 
 	</div> <!-- .span12 -->
 
@@ -81,6 +85,8 @@
 	<div class="span12" style="margin-left: 0px;">
 
 		<h3 class="order-block-title">Detalhes da Sua Conta</h3>
+
+		<div class="order-block-content">
 
 		<!-- Se o usuário estiver logado -->
 		<?php if(AuthComponent::user()) { ?>
@@ -163,6 +169,9 @@
 			</div>
 		<?php } ?>
 		<!-- Fim - Se o usuário não estiver logado -->
+
+		</div>
+
 	</div> <!-- .span12 -->
 
 </div> <!-- .order-block -->
@@ -175,6 +184,8 @@
 	<div class="span12" style="margin-left: 0px;">
 
 		<h3 class="order-block-title">Endereço de Entrega</h3>
+
+		<div class="order-block-content">
 
 		<div class="span5 bloco-endereco">
 			<h4>Endereço de Cobrança</h4>
@@ -247,6 +258,8 @@
 
 		</div> <!-- .span6 -->
 
+		</div>
+
 	</div> <!-- .span12 -->
 
 </div> <!-- .order-block -->
@@ -256,7 +269,11 @@
 
 		<h3 class="order-block-title">Cupom de Desconto</h3>
 
+		<div class="order-block-content">
+
 		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:') ); ?>
+
+		</div>
 
 	</div>
 </div> <!-- .order-block -->
@@ -266,7 +283,12 @@
 
 		<h3 class="order-block-title">Pagamento</h3>
 
+		<div class="order-block-content">
+
 		<?php echo $this->Form->button('Finalizar Pedido', array('class' => 'btn btn-success btn-large', 'style' => 'margin-top: 20px; margin-bottom: 20px;') ); ?>
+
+		</div>
+
 	</div>
 </div> <!-- .order-block -->
 
@@ -281,6 +303,17 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+
+		$(".order-block-title").click(function() {
+
+			var content = $(this).parent().find('div.order-block-content');
+
+			if(content.is(':visible')) {
+				content.hide();
+			} else {
+				content.show();
+			}
+		});
 
 		$("#OrderIndexForm").validate({
 			submitHandler: function(form) {
