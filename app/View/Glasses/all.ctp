@@ -66,6 +66,8 @@
 	<hr>
 </div>
 
+<a href="javascript:;" class="pull-right" style="text-transform: uppercase; color: #222;" id="btn-limpar-todos-os-filtros">Limpar Todos os Filtros</a>
+
 <div class="row">
 	<div id="produtos-geral" class="span12">
 
@@ -161,24 +163,23 @@
 			'tamanho': []
 		};
 
-		$("#filtros-dos-produtos input").click(function() {
-
+		function clickCheckbox(checkbox) {
 			var quantidade_checkboxes_total = 0;
 			var quantidade_checkboxes_marcado = 0;
 
 			// Itera todos os checkboxes
-			$(this).each(function() {
+			$(checkbox).each(function() {
 				quantidade_checkboxes_total++;
 
 				// Se tiver sido marcado, é adicionado ao array de dados selecionados
-				if($(this).is(':checked')) {
+				if($(checkbox).is(':checked')) {
 					quantidade_checkboxes_marcado++;
 
-					iterate_types_values($(this), dados_selecionados);
+					iterate_types_values($(checkbox), dados_selecionados);
 				// Se não tiver sido marcado, é removido do array
 				} else {
 					quantidade_checkboxes_marcado--;
-					remove_value($(this), dados_selecionados);
+					remove_value($(checkbox), dados_selecionados);
 				}
 			});
 
@@ -188,6 +189,12 @@
 			if(quantidade_checkboxes_marcado <= 0) {
 				$("#produtos-geral .produto").show();
 			}
+		}
+
+		$("#filtros-dos-produtos input").click(function() {
+
+			clickCheckbox($(this));
+
 		});
 
 		function show_products_with_data_selected(dados_selecionados) {
@@ -261,6 +268,13 @@
 
 			$(segunda_imagem).hide();
 			$(primeira_imagem).fadeIn(300);
+		});
+
+		$("#btn-limpar-todos-os-filtros").click(function() {
+			$("#filtros-dos-produtos input").each(function() {
+				$(this).removeAttr('checked');
+				clickCheckbox($(this));
+			});
 		});
 	});
 </script>

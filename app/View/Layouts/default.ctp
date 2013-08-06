@@ -145,7 +145,7 @@
 
 				<div id="header-meta" class="span4 offset3">
 					
-					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [<?php echo count($orderItems); ?> armações]</a> <!-- #btn-carrinho -->
+					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [<?php echo count($orderItems); ?> <?php if(count($orderItems) > 1) { ?>armações<?php } else { ?>armação<?php } ?>]</a> <!-- #btn-carrinho -->
 
 					<?php if(!AuthComponent::user()) { ?>
 
@@ -245,26 +245,24 @@
 				<div class="span2">
 					<h3 class="footer-title">Perguntas</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'preco') ); ?>">Preço</a>
-					<a href="#">Garantia</a>
-					<a href="#">Troca e Devolução</a>
+					<a href="javascript:;" onclick="alert('Em breve!'); return false;">Troca e Devolução</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq') ); ?>">FAQ</a>
 				</div>
 
 				<div class="span2">
 					<h3 class="footer-title">Comece</h3>
 					<a>Óculos de Grau</a>
-					<a href="#">Masculino</a>
-					<a href="#">Feminino</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau') ); ?>">Masculino</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau') ); ?>">Feminino</a>
 					<a>Óculos de Sol</a>
-					<a href="#">Masculino</a>
-					<a href="#">Feminino</a>
-					<a href="#">Espelho Virtual</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar') ); ?>">Masculino</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar') ); ?>">Feminino</a>
 				</div>
 
 				<div class="span2">
 					<h3 class="footer-title">Sobre</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos') ); ?>">Quem Somos</a>
-					<a href="#">Depoimentos</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'testemonials', 'action' => 'index') ); ?>">Depoimentos</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'contato') ); ?>">Entre em Contato</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>">Termos de Uso</a>
 				</div>

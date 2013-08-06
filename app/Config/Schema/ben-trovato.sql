@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 05/08/2013 às 08:02
+-- Tempo de Geração: 06/08/2013 às 09:48
 -- Versão do servidor: 10.0.3-MariaDB
 -- Versão do PHP: 5.4.9
 
@@ -32,22 +32,20 @@ CREATE TABLE IF NOT EXISTS `banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `position` enum('encima','embaixo') NOT NULL,
   `image` varchar(255) NOT NULL,
-  `image_dir` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Fazendo dump de dados para tabela `banners`
 --
 
-INSERT INTO `banners` (`id`, `position`, `image`, `image_dir`, `link`, `created`, `modified`) VALUES
-(4, 'encima', 'Desert.jpg', '4', '', '0000-00-00 00:00:00', '2013-08-01 00:00:00'),
-(5, 'encima', 'Koala.jpg', '5', 'http://google.com', '0000-00-00 00:00:00', '2013-08-01 06:41:53'),
-(6, 'embaixo', 'sub-1.jpg', '6', '', '2013-08-01 06:43:31', '2013-08-01 06:43:31'),
-(7, 'embaixo', 'sub-2.jpg', '7', '', '2013-08-01 06:43:36', '2013-08-01 06:43:36');
+INSERT INTO `banners` (`id`, `position`, `image`, `link`, `created`, `modified`) VALUES
+(8, 'encima', '/files/uploads/wallpaper-2918823.jpg', 'http://google.com/', '2013-08-06 06:57:49', '2013-08-06 07:02:39'),
+(9, 'embaixo', '/files/uploads/wallpaper-2921849.jpg', '', '2013-08-06 07:03:37', '2013-08-06 07:03:37'),
+(10, 'embaixo', '/files/uploads/Penguins.jpg', '', '2013-08-06 07:03:44', '2013-08-06 07:03:44');
 
 -- --------------------------------------------------------
 
@@ -78,7 +76,14 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `delivery_cep` varchar(255) DEFAULT NULL,
   `billing_is_same_as_delivery_address` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Fazendo dump de dados para tabela `clients`
+--
+
+INSERT INTO `clients` (`id`, `user_id`, `phone`, `email`, `billing_company`, `billing_street1`, `billing_street2`, `billing_street3`, `billing_street4`, `billing_city`, `billing_state`, `billing_cep`, `delivery_company`, `delivery_street1`, `delivery_street2`, `delivery_street3`, `delivery_street4`, `delivery_city`, `delivery_state`, `delivery_cep`, `billing_is_same_as_delivery_address`) VALUES
+(6, 11, '(21) 3586-8412', 'luizhrqas@gmail.com', '', '', '', '', '', '', '', '', '', 'Praça Barão de Drumond', 'Vila Isabel', '10', 'apto. 202', 'Rio de Janeiro', 'RJ', '20560020', 0);
 
 -- --------------------------------------------------------
 
@@ -89,9 +94,18 @@ CREATE TABLE IF NOT EXISTS `clients` (
 CREATE TABLE IF NOT EXISTS `coupons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `number` int(11) NOT NULL,
+  `discount` float DEFAULT NULL,
   `is_used` tinyint(1) NOT NULL,
+  `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Fazendo dump de dados para tabela `coupons`
+--
+
+INSERT INTO `coupons` (`id`, `number`, `discount`, `is_used`, `created`) VALUES
+(2, 199985200, 50, 1, '2013-08-06 08:27:16');
 
 -- --------------------------------------------------------
 
@@ -104,17 +118,15 @@ CREATE TABLE IF NOT EXISTS `glasses` (
   `sku` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `photo_1` varchar(255) NOT NULL,
-  `photo_1_dir` varchar(255) DEFAULT NULL,
   `photo_2` varchar(255) NOT NULL,
-  `photo_2_dir` varchar(255) DEFAULT NULL,
   `price` float NOT NULL,
   `the_style` text,
   `character_frame` text,
   `character_lenses` text,
   `image_hover` varchar(255) NOT NULL,
-  `image_hover_dir` varchar(255) DEFAULT NULL,
   `sex` enum('masculino','feminino') NOT NULL,
   `color` enum('tartaruga','verde','listrado','azul','cinza','amarelo','preto','vermelho','marrom','castanho','crystal','') NOT NULL,
+  `color2` varchar(255) NOT NULL,
   `material` enum('acetato') NOT NULL,
   `format` enum('quadrado','retangulo','redondo') NOT NULL,
   `size` enum('estreito','medio','largo') NOT NULL,
@@ -122,16 +134,14 @@ CREATE TABLE IF NOT EXISTS `glasses` (
   `created` date NOT NULL,
   `modified` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Fazendo dump de dados para tabela `glasses`
 --
 
-INSERT INTO `glasses` (`id`, `sku`, `name`, `photo_1`, `photo_1_dir`, `photo_2`, `photo_2_dir`, `price`, `the_style`, `character_frame`, `character_lenses`, `image_hover`, `image_hover_dir`, `sex`, `color`, `material`, `format`, `size`, `type`, `created`, `modified`) VALUES
-(6, '0076', 'Teste de Óculos', 'Chrysanthemum.jpg', '6', 'Hydrangeas.jpg', '6', 198, '', '', '', 'Jellyfish.jpg', '6', 'masculino', 'tartaruga', 'acetato', 'quadrado', 'estreito', 'grau', '2013-08-01', '2013-08-02'),
-(7, '0075', 'Teste de Óculos', 'wallpaper-2918823.jpg', '7', 'wallpaper-2921849.jpg', '7', 198, '', '', '', 'Koala.jpg', '7', 'masculino', 'verde', 'acetato', 'quadrado', 'estreito', 'grau', '2013-08-03', '2013-08-03'),
-(8, '0080', 'Solar', 'Tulips.jpg', '8', 'Jellyfish.jpg', '8', 198, '<p>Esse &eacute; o estilo do &oacute;culos de Sol.</p>', '<p>- Caracter&iacute;stica 1;</p><p>- Caracter&iacute;stica 2;</p><p>- Caracter&iacute;stica 3;</p>', '<p>- Caracter&iacute;stica 3;</p><p>- Caracter&iacute;stica 2;</p><p>- Caracter&iacute;stica 1;</p>', 'Koala.jpg', '8', 'masculino', 'listrado', 'acetato', 'quadrado', 'estreito', 'solar', '2013-08-05', '2013-08-05');
+INSERT INTO `glasses` (`id`, `sku`, `name`, `photo_1`, `photo_2`, `price`, `the_style`, `character_frame`, `character_lenses`, `image_hover`, `sex`, `color`, `color2`, `material`, `format`, `size`, `type`, `created`, `modified`) VALUES
+(9, '0074', 'John Arm', '/files/uploads/Tulips.jpg', '/files/uploads/Lighthouse.jpg', 198, '', '', '', '/files/uploads/Penguins-1.jpg', 'masculino', 'tartaruga', 'Black Piano', 'acetato', 'quadrado', 'estreito', 'grau', '2013-08-06', '2013-08-06');
 
 -- --------------------------------------------------------
 
@@ -180,11 +190,21 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `payment_date` datetime DEFAULT NULL,
   `total_items` int(11) NOT NULL,
   `total_price` float NOT NULL,
+  `json_items` text NOT NULL,
   `coupon` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+
+--
+-- Fazendo dump de dados para tabela `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `reference`, `payment_type`, `payment_status`, `payment_date`, `total_items`, `total_price`, `json_items`, `coupon`, `created`, `modified`) VALUES
+(24, 11, 250535200, NULL, NULL, NULL, 1, 178, '[{"OrderItem":{"id":"22","glass_id":"9","lense_type":"demonstracao","lense_id":"5","enabled":true,"created":"2013-08-06 07:13:19","modified":"2013-08-06 07:13:19"},"Glass":{"id":"9","sku":"0074","name":"John Arm","photo_1":"\\/files\\/uploads\\/Tulips.jpg","photo_2":"\\/files\\/uploads\\/Lighthouse.jpg","price":"198","the_style":"","character_frame":"","character_lenses":"","image_hover":"\\/files\\/uploads\\/Penguins-1.jpg","sex":"masculino","color":"tartaruga","color2":"Black Piano","material":"acetato","format":"quadrado","size":"estreito","type":"grau","created":"2013-08-06","modified":"2013-08-06"},"Lense":{"id":"5","name":"Lentes de Demonstra\\u00e7\\u00e3o","description":"","price":"0","discount":"20","type":"demonstracao","label":"Lentes de demonstra\\u00e7\\u00e3o \\u2013 vou colocar em outro lugar","created":"2013-08-04 00:00:00","modified":"2013-08-04 00:00:00"},"price":178}]', '199985200', '2013-08-06 08:40:39', '2013-08-06 08:40:39'),
+(25, 11, 72255200, NULL, NULL, NULL, 1, 178, '[{"OrderItem":{"id":"22","glass_id":"9","lense_type":"demonstracao","lense_id":"5","enabled":true,"created":"2013-08-06 07:13:19","modified":"2013-08-06 07:13:19"},"Glass":{"id":"9","sku":"0074","name":"John Arm","photo_1":"\\/files\\/uploads\\/Tulips.jpg","photo_2":"\\/files\\/uploads\\/Lighthouse.jpg","price":"198","the_style":"","character_frame":"","character_lenses":"","image_hover":"\\/files\\/uploads\\/Penguins-1.jpg","sex":"masculino","color":"tartaruga","color2":"Black Piano","material":"acetato","format":"quadrado","size":"estreito","type":"grau","created":"2013-08-06","modified":"2013-08-06"},"Lense":{"id":"5","name":"Lentes de Demonstra\\u00e7\\u00e3o","description":"","price":"0","discount":"20","type":"demonstracao","label":"Lentes de demonstra\\u00e7\\u00e3o \\u2013 vou colocar em outro lugar","created":"2013-08-04 00:00:00","modified":"2013-08-04 00:00:00"},"price":178}]', '', '2013-08-06 08:59:43', '2013-08-06 08:59:43'),
+(26, 11, 47345200, NULL, NULL, NULL, 1, 178, '[{"OrderItem":{"id":"22","glass_id":"9","lense_type":"demonstracao","lense_id":"5","enabled":true,"created":"2013-08-06 07:13:19","modified":"2013-08-06 07:13:19"},"Glass":{"id":"9","sku":"0074","name":"John Arm","photo_1":"\\/files\\/uploads\\/Tulips.jpg","photo_2":"\\/files\\/uploads\\/Lighthouse.jpg","price":"198","the_style":"","character_frame":"","character_lenses":"","image_hover":"\\/files\\/uploads\\/Penguins-1.jpg","sex":"masculino","color":"tartaruga","color2":"Black Piano","material":"acetato","format":"quadrado","size":"estreito","type":"grau","created":"2013-08-06","modified":"2013-08-06"},"Lense":{"id":"5","name":"Lentes de Demonstra\\u00e7\\u00e3o","description":"","price":"0","discount":"20","type":"demonstracao","label":"Lentes de demonstra\\u00e7\\u00e3o \\u2013 vou colocar em outro lugar","created":"2013-08-04 00:00:00","modified":"2013-08-04 00:00:00"},"price":178}]', '', '2013-08-06 09:00:01', '2013-08-06 09:00:01');
 
 -- --------------------------------------------------------
 
@@ -201,7 +221,15 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+
+--
+-- Fazendo dump de dados para tabela `order_items`
+--
+
+INSERT INTO `order_items` (`id`, `glass_id`, `lense_type`, `lense_id`, `enabled`, `created`, `modified`) VALUES
+(21, 8, 'de_sol_com_grau', 7, 1, '2013-08-05 17:43:15', '2013-08-05 17:43:15'),
+(22, 9, 'demonstracao', 5, 1, '2013-08-06 07:13:19', '2013-08-06 07:13:19');
 
 -- --------------------------------------------------------
 
@@ -215,16 +243,6 @@ CREATE TABLE IF NOT EXISTS `related_glasses` (
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
---
--- Fazendo dump de dados para tabela `related_glasses`
---
-
-INSERT INTO `related_glasses` (`id`, `glass_id`, `related_id`) VALUES
-(3, 6, 6),
-(4, 7, 6),
-(5, 8, 6),
-(6, 8, 7);
 
 -- --------------------------------------------------------
 
@@ -282,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Fazendo dump de dados para tabela `users`
@@ -290,7 +308,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `name`, `password`, `role`, `created`, `modified`) VALUES
 (3, 'bentrovato', 'João Ferraz', '99e4ac1e2734da29ad97136c041f92418437376b', 'admin', '2013-08-02 02:35:39', '2013-08-02 02:35:39'),
-(4, 'marketingshop', 'Marketing Shop', '546e0d17358d9502dc6d4e211d3f85f4b746f482', 'admin', '2013-08-02 03:04:01', '2013-08-02 03:04:01');
+(4, 'marketingshop', 'Marketing Shop', '546e0d17358d9502dc6d4e211d3f85f4b746f482', 'admin', '2013-08-02 03:04:01', '2013-08-02 03:04:01'),
+(11, 'luizhrqas', 'Luiz Henrique', '02c9f1731847db6f2dc34755bbe2935af0d4c3be', 'client', '2013-08-05 08:35:32', '2013-08-05 08:35:32');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
