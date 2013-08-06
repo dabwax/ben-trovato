@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 06/08/2013 às 09:48
+-- Tempo de Geração: 06/08/2013 às 12:50
 -- Versão do servidor: 10.0.3-MariaDB
 -- Versão do PHP: 5.4.9
 
@@ -284,6 +284,32 @@ CREATE TABLE IF NOT EXISTS `subscriptions` (
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `testemonials`
+--
+
+CREATE TABLE IF NOT EXISTS `testemonials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `month` varchar(255) NOT NULL,
+  `year` varchar(255) NOT NULL,
+  `glass_id` int(11) NOT NULL,
+  `testemonial` text NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Fazendo dump de dados para tabela `testemonials`
+--
+
+INSERT INTO `testemonials` (`id`, `name`, `month`, `year`, `glass_id`, `testemonial`, `created`, `modified`) VALUES
+(1, 'Luiz Henrique', 'Agosto', '2013', 9, '<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam lorem nunc, luctus vel eleifend tincidunt, eleifend vitae risus. Pellentesque tellus libero, viverra ac iaculis ut, volutpat sed tortor. Sed auctor leo eget velit lobortis volutpat. Phasellus tristique orci purus, sit amet fringilla felis feugiat interdum. Nam hendrerit massa eu suscipit viverra. Morbi vel elementum diam. Aenean et ante id nibh dictum luctus a non est. Praesent aliquet elit dolor, at tempor magna pharetra eget.</p>', '2013-08-06 11:50:31', '2013-08-06 12:13:24'),
+(2, 'João Ferraz', 'Setembro', '2013', 9, '<p>Fusce vestibulum enim lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In vitae egestas elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce quis pretium eros, eu viverra diam. Ut nec pharetra enim, luctus sodales erat. Nulla tempor a metus quis faucibus. Phasellus tristique luctus ante eget faucibus. Aenean eget velit leo. Donec hendrerit consequat tempor. Suspendisse faucibus dui sed vulputate porttitor. Quisque sodales odio non nisl sagittis, vel molestie purus ullamcorper. In viverra imperdiet luctus. Fusce sagittis sollicitudin rhoncus. Duis eget nisl ac dui cursus rutrum.</p>', '2013-08-06 12:19:36', '2013-08-06 12:19:36');
 
 -- --------------------------------------------------------
 
