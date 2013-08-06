@@ -36,6 +36,10 @@ class LojaHelper extends AppHelper {
 				$timthumb .= '&q=' . $timthumb_config['q'];
 			}
 
+			if(isset($timthumb_config['zc'])) {
+				$timthumb .= '&zc=' . $timthumb_config['zc'];
+			}
+
 			if(isset($timthumb_config['url'])) {
 				return $this->Html->url('/timthumb.php' . $timthumb);
 			}

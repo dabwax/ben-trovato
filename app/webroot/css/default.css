@@ -564,3 +564,18 @@ hr.linha {
 .texto-caracteristicas {
 	font-size: 12px;
 }
+#foto-efeito-hover {
+	float: left;
+	display: inline;
+	width: 360px;
+	height: 280px;
+	overflow: hidden;
+}
+#foto-efeito-hover .shape {
+	float: left;
+	display: inline;
+	position: relative;
+	z-index: 999;
+	width: 72px;
+	height: 280px;
+}

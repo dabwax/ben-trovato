@@ -105,11 +105,50 @@
 </div>
 
 <div class="row">
-	<div class="span5" id="foto-efeito-hover" style="margin-left: 0px;">
+	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '1800', 'h' => '280', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -723px;">
+
+		<span class="shape shape-1"></span>
+		<span class="shape shape-2"></span>
+		<span class="shape shape-3"></span>
+		<span class="shape shape-4"></span>
+		<span class="shape shape-5"></span>
+
 		<?php
 		// echo $this->Loja->imagem('/glass/image_hover/' . $glass['Glass']['image_hover_dir'] . '/' . $glass['Glass']['image_hover'], array('w' => '360', 'h' => '280') ); ?>
-		<?php echo $this->Html->image('efeito-hover.jpg'); ?>
 	</div> <!-- #foto-efeito-hover -->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#foto-efeito-hover .shape").hover(function() {
+				var div = $(this).parent();
+
+				if($(this).hasClass('shape-1')) {
+					div.css('background-position-x', '0px');
+				}
+
+				if($(this).hasClass('shape-2')) {
+					div.css('background-position-x', '-360px');
+				}
+
+				if($(this).hasClass('shape-3')) {
+					div.css('background-position-x', '-723px');
+				}
+
+				if($(this).hasClass('shape-4')) {
+					div.css('background-position-x', '-1086px');
+				}
+
+				if($(this).hasClass('shape-5')) {
+					div.css('background-position-x', '-1450px');
+				}
+
+			}, function() {
+				var div = $(this).parent();
+
+				div.css('background-position-x', '-723px');
+			});
+		});
+	</script>
 
 	<div class="span7" id="oculos-estilo-etc">
 		<h2>O Estilo</h2>
