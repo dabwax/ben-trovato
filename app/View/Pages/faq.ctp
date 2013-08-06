@@ -1,6 +1,6 @@
 <div id="product_wrap" class="row">
 	<div class="page span12" style="text-align: center;">
-		<img src="http://www.sneakingduck.com/i/faq-2.jpg" alt="">
+		<?php echo $this->Html->image('Banner_FAQ.jpg'); ?>
 		<h2 style="text-transform: uppercase;">F.A.Q</h2>
 	</div>
 	<div class="page span12">

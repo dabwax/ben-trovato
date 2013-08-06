@@ -137,7 +137,7 @@ class GlassesController extends AppController {
 		) );
 
 		// Envia os óculos reparados para a view
-		$this->set(compact('glasses'));
+		$this->set(compact('glasses', 'sex'));
 
 		// Recupera todos os atributos do óculos
 		$this->getAttributes();

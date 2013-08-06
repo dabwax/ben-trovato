@@ -1,5 +1,10 @@
 <div class="row">
-	<?php echo $this->Html->image('banner-oculos.jpg', array('style' => 'width: 100%;') ); ?>
+	<?php if($sex == 'masculino') {
+		echo $this->Html->image('Banner_Masculino.jpg', array('style' => 'width: 100%;') );
+	} else {
+		echo $this->Html->image('Banner_Feminino.jpg', array('style' => 'width: 100%;') );
+	} ?>
+	<?php  ?>
 </div>
 
 <div class="row">

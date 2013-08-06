@@ -2,7 +2,7 @@
 	<div class="span12 text-center">
 <div class="page" style="text-align: center;">
 	<p style="text-align: center;">
-		<?php echo $this->Html->image('pricing-3.jpg'); ?>
+		<?php echo $this->Html->image('Banner_Preco.jpg'); ?>
 		<br>
 	</p>
 
@@ -12,7 +12,7 @@
 
 	<h2></h2>
 
-	<h2 style="position: relative;">
+	<h2 style="position: relative; margin-top: 30px;">
 		<span style="position: absolute; left: 0px; top: 8px; width: 100%; height: 2px; background: #CCC;">
 			
 		</span>
@@ -76,7 +76,7 @@
 	<p><br></p>
 
 	<p style="font-size: 16px; line-height: 28px; text-align: left; margin-top: 40px;">
-		<?php echo $this->Html->image('foto-quem-somos-lateral.jpg', array('style' => 'width: 369.00000000000006px; height: 354px; float: left; margin: 0px 10px 10px 0px;') ); ?>
+		<?php echo $this->Html->image('Preco_Foto01.jpg', array('style' => 'width: 369.00000000000006px; height: 354px; float: left; margin: 0px 10px 10px 0px;') ); ?>
 		E se você não se apaixonar pelos seus óculos, nós oferecemos um política grátis de devolução por um período de 30 dias, sem você precisar justificar nada. Se você não tiver 100% de satisfação com seus novos óculos, apenas ligue para nós ou mande um e-mail para devolução@bentrovato.com.br que nós enviaremos um código para o frete de devolução pago por nós. Sem perguntas!
 		<br>
 	</p>
@@ -94,7 +94,7 @@
 	<p></p>
 
 	<p style="font-size: 16px; line-height: 28px; text-align: left;">
-		<img src="http://lojavirtualmshop.com.br/loja/themes/bentrovato/assets/img/oculos-de-sol-preco.jpg" style="float: right; margin: 0px 0px 10px 10px;" alt="">
+		<?php echo $this->Html->image('Preco_Foto02.jpg', array('style' => 'float: right; margin: 0px 0px 10px 10px;') ); ?>
 		Você pode transformar qualquer armação Ben Trovato em óculos de sol e nós não cobramos nada por isso! Nossas lentes de sol são feitas em resina orgânica de alta qualidade e com proteção UVA/UVB.
 	</p>
 

@@ -1,5 +1,5 @@
 <div class="row">
-		<?php echo $this->Html->image('banner-contato.jpg', array('style' => 'width: 100%;') ); ?>
+		<?php echo $this->Html->image('Banner_Contato.jpg', array('style' => 'width: 100%;') ); ?>
 </div>
 
 <?php echo $this->Html->css('http://glyphicons.getbootstrap.com/css/bootstrap-glyphicons.css'); ?>

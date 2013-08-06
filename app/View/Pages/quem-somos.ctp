@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="span12 text-center">
-		<?php echo $this->Html->image('banner-quem-somos.jpg'); ?>
+		<?php echo $this->Html->image('Banner_Sobre.jpg'); ?>
 
 		<h3 style="margin-top: 30px;width: 100%;text-align: center;font-size: 24px;color: #999;font-style: italic;">“Nós fundamos a Ben Trovato a partir de uma idéia forte: alta qualidade, praticidade na compra e preço baixo.”</h3>
 
 		<h2 style="position: relative; margin-top: 40px; margin-bottom: 20px; font-size: 24px;"><span style="position: absolute; left: 0px; top: 8px; width: 100%; height: 2px; background: #CCC;"></span> <span style="background: #FFF; position: relative; z-index: 999; padding: 26px; left: 0px; text-transform: uppercase; top: -10px;">Quem Somos</span> </h2>
 
 		<p style="font-size: 16px; line-height: 28px; text-align: left;">
-			<?php echo $this->Html->image('foto-quem-somos-lateral.jpg', array('style' => 'float: left; margin: 0px 20px 20px 0px; width: 368px; height: 354px;') ); ?>
+			<?php echo $this->Html->image('Sobre_Foto01.jpg', array('style' => 'float: left; margin: 0px 20px 20px 0px; width: 368px; height: 354px;') ); ?>
 
 			Ben Trovato é o destino virtual para amantes da moda. Nós somos apaixonados por óculos e adoramos ter um para cada humor. Estamos cansados de usar apenas um par que custou muito caro, todo dia, até quebrar.</p>
 
@@ -19,7 +19,7 @@
 
 		<p style="font-size: 16px; line-height: 28px; text-align: left;">
 
-			<?php echo $this->Html->image('imagem-nossa-grife-imagem.jpg', array('style' => 'float: right; margin: 0px 0px 10px 10px;') ); ?>
+			<?php echo $this->Html->image('Sobre_Foto02.jpg', array('style' => 'float: right; margin: 0px 0px 10px 10px;') ); ?>
 
 			Ah! Você ficou curioso de onde surgiu nosso nome? Então, vamos lá. Queríamos ter alguma referência histórica de praticidade e inovação de óculos em nosso marca/grife. Pesquisando, descobrimos que em 1785 o Benjamin Franklin inventou os óculos bifocais, que permitiam enxergar de perto e de longe em um único acessório. Tomamos a liberdade de apelidá-lo carinhosamente de “Ben”. Porém, sentíamos que ainda faltava algo. Buscando inspiração na Itália, país ícone da moda e design, nos deparamos com a palavra Trovato. Em português esta palavra pode ser traduzida como “encontrado”. Pronto! Nascia a Ben Trovato, onde esperamos que você encontre e se apaixone por seus óculos, da mesma maneira como nós somos.</p>
 
