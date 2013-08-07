@@ -139,47 +139,47 @@
 		<header>
 			<div class="row">
 
-				<a id="logo" class="span5" href="<?php echo $this->Html->url('/'); ?>">
+				<a id="logo" class="span5" href="<?php echo $this->Html->url('/'); ?>" style="position: relative; left: 22px; top: 10px;">
 					<?php echo $this->Html->image('logo.png'); ?>
 				</a> <!-- #logo -->
 
-				<div id="header-meta" class="span4 offset3">
+				<div id="header-meta" class="span5 offset2">
 					
-					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho"><?php echo $this->Html->image('oculos-carrinho.jpg'); ?> [<?php echo count($orderItems); ?> <?php if(count($orderItems) > 1) { ?>armações<?php } else { ?>armação<?php } ?>]</a> <!-- #btn-carrinho -->
+					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho" style="font-size: 12px; margin-top: 19px;"><?php echo $this->Html->image('oculos-carrinho.jpg', array('style' => 'margin-right: 8px;') ); ?> [<?php echo count($orderItems); ?> <?php if(count($orderItems) > 1) { ?>armações<?php } else { ?>armação<?php } ?>]</a> <!-- #btn-carrinho -->
 
 					<?php if(!AuthComponent::user()) { ?>
 
-					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">LOGIN</a> <!-- #btn-login -->
+					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">Login</a> <!-- #btn-login -->
 
 					<?php } else { ?>
 
-					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>" class="pull-right" id="btn-login">SAIR</a> <!-- #btn-login -->
+					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>" class="pull-right" id="btn-login" style="font-size: 11px; margin-top: 19px; margin-right: 18px;">(Sair)</a> <!-- #btn-login -->
 
-					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" class="pull-right" id="btn-minha-conta">MINHA CONTA</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" class="pull-right" id="btn-minha-conta" style="margin-top: 19px; font-size: 12px;">Minha Conta</a>
 
 					<?php } ?>
 
 					<div class="clear clearfix"></div>
 
-					<p id="slogan">
-						GRÁTIS <span class="verde">frete, home try-on & retorno</span>
+					<p id="slogan" style="font-size: 11px;">
+						<span class="verde">FRETE GRÁTIS</span> todo o Brasil | <span class="verde">30 DIAS</span> para troca ou devolução
 					</p> <!-- #slogan -->
 
 					<div class="clear clearfix"></div>
 
-					<a href="http://www.facebook.com/byBenTrovato" target="_blank" class="btn-rede-social">
+					<a href="http://www.facebook.com/byBenTrovato" target="_blank" class="btn-rede-social" style="margin-right: 0px; position: relative; top: -4px;">
 						<?php echo $this->Html->image('icone-facebook.png'); ?>
 					</a> <!-- .btn-rede-social -->
 
-					<a href="http://twitter.com/byBenTrovato" target="_blank" class="btn-rede-social">
+					<a href="http://twitter.com/byBenTrovato" target="_blank" class="btn-rede-social" style="margin-right: 0px; position: relative; top: -4px;">
 						<?php echo $this->Html->image('icone-twitter.png'); ?>
 					</a> <!-- .btn-rede-social -->
 
-					<a href="http://instagram.com/bybentrovato" target="_blank" class="btn-rede-social">
+					<a href="http://instagram.com/bybentrovato" target="_blank" class="btn-rede-social" style="margin-right: 0px; position: relative; top: -4px;">
 						<?php echo $this->Html->image('icone-instagram.png'); ?>
 					</a> <!-- .btn-rede-social -->
 
-					<a href="http://pinterest.com/bybentrovato" target="_blank" class="btn-rede-social">
+					<a href="http://pinterest.com/bybentrovato" target="_blank" class="btn-rede-social" style="margin-right: 0px; position: relative; top: -4px;">
 						<?php echo $this->Html->image('icone-pinterest.png'); ?>
 					</a> <!-- .btn-rede-social -->
 
@@ -192,11 +192,11 @@
 				<nav id="menu-principal">
 					
 					<ul class="span4">
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Feminino <b class="caret"></b></a>
+						<li class="dropdown" style="margin-left: 28px;">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Feminino</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau' ) ); ?>">
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau' ) ); ?>" style="border-bottom: 1px solid #CCC; line-height: 22px;">
 										Grau
 
 										<div class="clear clearfix"></div>
@@ -207,7 +207,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar' ) ); ?>">
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar' ) ); ?>" style="line-height: 22px;">
 										Solar
 
 										<div class="clear clearfix"></div>
@@ -219,11 +219,11 @@
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Masculino <b class="caret"></b></a>
+						<li class="dropdown" style="margin-left: 72px;">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Masculino</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau' ) ); ?>">
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau' ) ); ?>" style="border-bottom: 1px solid #CCC; line-height: 22px;">
 									Grau
 
 									<div class="clear clearfix"></div>
@@ -234,7 +234,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar' ) ); ?>">
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar' ) ); ?>" style="line-height: 22px;">
 										Solar
 
 									<div class="clear clearfix"></div>
@@ -248,18 +248,18 @@
 						</li>
 					</ul>
 
-					<ul class="span4 offset4">
+					<ul class="span4 offset4" style="position: relative; left: 40px;">
 						<li>
-							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos' ) ); ?>">Sobre</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos' ) ); ?>" style="font-size: 11px;">Sobre</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'preco' ) ); ?>">Preço</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'preco' ) ); ?>" style="font-size: 11px;">Preço</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq' ) ); ?>">FAQ</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq' ) ); ?>" style="font-size: 11px;">FAQ</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'contato' ) ); ?>">Contato</a>
+							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'contato' ) ); ?>" style="font-size: 11px;">Contato</a>
 						</li>
 					</ul>
 
