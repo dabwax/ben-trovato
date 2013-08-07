@@ -283,12 +283,10 @@
 
 				<div class="span2">
 					<h3 class="footer-title">Comece</h3>
-					<a>Óculos de Grau</a>
-					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau') ); ?>">Masculino</a>
-					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau') ); ?>">Feminino</a>
-					<a>Óculos de Sol</a>
-					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar') ); ?>">Masculino</a>
-					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar') ); ?>">Feminino</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau') ); ?>">Óculos de Grau Masculino</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau') ); ?>">Óculos de Grau Feminino</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar') ); ?>">Óculos de Sol Masculino</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar') ); ?>">Óculos de Sol Feminino</a>
 				</div>
 
 				<div class="span2">
@@ -296,7 +294,7 @@
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos') ); ?>">Quem Somos</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'testemonials', 'action' => 'index') ); ?>">Depoimentos</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'contato') ); ?>">Entre em Contato</a>
-					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>">Termos de Uso</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>">Termos de Uso e Condições</a>
 				</div>
 
 				<div class="span2">
@@ -312,6 +310,13 @@
 					<a class="socialite facebook-like" data-href="http://www.bentrovato.com.br/">
 						Share on Facebook
 					</a>
+
+					<a href="mailto:contato@bentrovato.com.br" style="float: left; display: inline; width: 100%; margin-left: 16px; color: #999; text-decoration: none;">
+						<?php echo $this->Html->image('email_verde.png', array('style' => 'width: 28px;') ); ?>
+						contato@bentrovato.com.br
+					</a>
+
+					<div class="clear clearfix"></div>
 					
 					<div id="newsletter-footer">
 						<p>Mantenha-se informado!</p>
@@ -335,7 +340,7 @@
 				<div class="clear clearfix"></div>
 
 				<p class="span12 text-center" style="font-size: 11px; margin-top: 20px;">
-					Razão Social: Centro Ótico Américas 700 Ltda. CNPJ: 05.050.375/0001-80. Endereço: Av. das Américas, 700, Bloco 8 – Loja 108-B - Barra da Tijuca - RJ, Brasil. CEP: 22640-100.
+					CENTRO ÓTICO AMÉRICAS 700 LTDA – CNPJ: 05.050.375/0001-80
 				</p>
 
 			</div>
