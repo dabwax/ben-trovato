@@ -196,10 +196,26 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Feminino <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau' ) ); ?>">Grau</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau' ) ); ?>">
+										Grau
+
+										<div class="clear clearfix"></div>
+
+										<?php echo $this->Html->image('FEMININO_GRAU.jpg', array('style' => 'width: 80px;') ); ?>
+
+										<div class="clear clearfix"></div>
+									</a>
 								</li>
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar' ) ); ?>">Solar</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar' ) ); ?>">
+										Solar
+
+										<div class="clear clearfix"></div>
+
+										<?php echo $this->Html->image('FEMININO_SOLAR.jpg', array('style' => 'width: 80px;') ); ?>
+
+										<div class="clear clearfix"></div>
+									</a>
 								</li>
 							</ul>
 						</li>
@@ -207,10 +223,26 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Masculino <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau' ) ); ?>">Grau</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau' ) ); ?>">
+									Grau
+
+									<div class="clear clearfix"></div>
+
+									<?php echo $this->Html->image('MASCULINO_GRAU.jpg', array('style' => 'width: 80px;') ); ?>
+
+									<div class="clear clearfix"></div>
+									</a>
 								</li>
 								<li>
-									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar' ) ); ?>">Solar</a>
+									<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar' ) ); ?>">
+										Solar
+
+									<div class="clear clearfix"></div>
+
+									<?php echo $this->Html->image('MASCULINO_SOLAR.jpg', array('style' => 'width: 80px;') ); ?>
+
+										<div class="clear clearfix"></div>
+									</a>
 								</li>
 							</ul>
 						</li>
