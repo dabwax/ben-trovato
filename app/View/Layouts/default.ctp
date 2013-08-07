@@ -248,7 +248,7 @@
 						</li>
 					</ul>
 
-					<ul class="span4 offset4" style="position: relative; left: 40px;">
+					<ul class="span4 offset4" style="position: relative; left: 6px;">
 						<li>
 							<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos' ) ); ?>" style="font-size: 11px;">Sobre</a>
 						</li>
