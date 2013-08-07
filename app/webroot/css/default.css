@@ -173,7 +173,7 @@ height: 206px;
 text-align: center;
 font-family: 'Open Sans' !important;
 margin-left: -1px;
-font-size: 34px;
+font-size: 27px;
 }
 #banner-preco h2 {
 color: #A4C400;
@@ -191,11 +191,11 @@ top: -12px;
 }
 #valor-banner .valor-banner-money {
 float: left;
-margin-left: 15px;
+margin-left: 16px;
 color: #A4C400;
 }
 #valor-banner .valor-banner-linha-right hr {
-width: 60px;
+width: 70px;
 height: 1px !important;
 color: #929292;
 float: right;
@@ -205,7 +205,7 @@ margin-right: 15px;
 margin-top: 30px;
 }
 #valor-banner .valor-banner-linha-left hr {
-width: 60px;
+width: 70px;
 height: 1px !important;
 color: #929292;
 float: left;
