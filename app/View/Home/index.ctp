@@ -59,10 +59,10 @@
 	           </div>
 	       </div>
 	       <div id="detalhes-banner">
-	          <h3 style="margin: 0px; margin-top: 16px; font-size: 11px; line-height: 18px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Lentes com grau com antirreflexo, antirrisco<br />e UVA/UVB ou lentes solares com UVA/UVB</h3>
-	          <h3 style="margin: 0px; line-height: 18px; font-size: 11px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Frete grátis (entrega, troca ou devolução)</h3>
-	          <h3 style="margin: 0px; line-height: 18px; font-size: 11px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Reembolso integral até 30 dias</h3>
-	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 33px; text-align: left; color: #CCC;"><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #CCC;">* Consulte termos de uso e condições</a></h3>
+	          <h3 style="margin: 0px; margin-top: 16px; font-size: 12px; line-height: 18px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Lentes com grau com antirreflexo, antirrisco<br /><span style="width: 14px; height: 10px; display: inline-block;"></span>e UVA/UVB ou lentes solares com UVA/UVB</h3>
+	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Frete grátis (entrega, troca ou devolução)</h3>
+	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Reembolso integral até 30 dias</h3>
+	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 33px; text-align: left; color: #999;"><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #999;">* Consulte termos de uso e condições</a></h3>
 	       </div>
 	     </div> <!-- #banner-preco -->
 
@@ -86,14 +86,14 @@
 
 		<?php endforeach; ?>
 
-		<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau') ); ?>" class="btn btn-inverse" style="text-align: left; position: relative; top: -30px; margin-left: 15px; width: 103px; background: #353535; border-radius: 0px; border: none;">
+		<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau') ); ?>" class="btn btn-inverse" style="text-align: left; position: relative; top: -27px; margin-left: 15px; width: 103px; background: #353535; border-radius: 0px; border: none;">
 			<span style="float: left; display: inline; margin-right: 6px; margin-top: 8px; color: #A4C400; font-weight: bold; font-size: 29px;">+</span>
 			<p style="float: left; display: inline; text-align: center; text-transform: uppercase; margin: 0px; font-size: 13px;">
 				Compre<br />Masculino
 			</p>
 		</a>
 
-		<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau') ); ?>" class="btn btn-inverse" style="text-align: left; position: relative; top: -30px; margin-left: 6px; width: 103px; background: #353535; border-radius: 0px; border: none;">
+		<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau') ); ?>" class="btn btn-inverse" style="text-align: left; position: relative; top: -27px; margin-left: 6px; width: 103px; background: #353535; border-radius: 0px; border: none;">
 			<span style="float: left; display: inline; margin-right: 6px; margin-top: 8px; color: #A4C400; font-weight: bold; font-size: 29px;">+</span>
 			<p style="float: left; display: inline; text-align: center; text-transform: uppercase; margin: 0px; font-size: 13px;">
 				Compre<br />Feminino

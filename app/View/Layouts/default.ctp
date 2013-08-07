@@ -149,19 +149,19 @@
 
 					<?php if(!AuthComponent::user()) { ?>
 
-					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login">Login</a> <!-- #btn-login -->
+					<a href="#modal-login" role="button" data-toggle="modal" class="pull-right" id="btn-login" style="margin-top: 19px; font-size: 12px;">Login</a> <!-- #btn-login -->
 
 					<?php } else { ?>
 
-					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>" class="pull-right" id="btn-login" style="font-size: 11px; margin-top: 19px; margin-right: 18px;">(Sair)</a> <!-- #btn-login -->
+					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>" class="pull-right" id="btn-login" style="font-size: 11px; margin-top: 20px; margin-right: 14px;">(Sair)</a> <!-- #btn-login -->
 
-					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" class="pull-right" id="btn-minha-conta" style="margin-top: 19px; font-size: 12px;">Minha Conta</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" class="pull-right" id="btn-minha-conta" style="margin-top: 20px; font-size: 12px;">Minha Conta</a>
 
 					<?php } ?>
 
 					<div class="clear clearfix"></div>
 
-					<p id="slogan" style="font-size: 11px;">
+					<p id="slogan" style="font-size: 12px;">
 						<span class="verde">FRETE GRÁTIS</span> todo o Brasil | <span class="verde">30 DIAS</span> para troca ou devolução
 					</p> <!-- #slogan -->
 
@@ -219,7 +219,7 @@
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown" style="margin-left: 72px;">
+						<li class="dropdown" style="margin-left: 62px;">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Masculino</a>
 							<ul class="dropdown-menu">
 								<li>
@@ -274,14 +274,14 @@
 		<footer>
 			<div class="row">
 
-				<div class="span2">
+				<div class="span2" style="position: relative; left: 0px; width: 105px;">
 					<h3 class="footer-title">Perguntas</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'preco') ); ?>">Preço</a>
 					<a href="javascript:;" onclick="alert('Em breve!'); return false;">Troca e Devolução</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq') ); ?>">FAQ</a>
 				</div>
 
-				<div class="span2" style="position: relative; left: 0px;">
+				<div class="span2" style="position: relative; left: 20px; width: 157px;">
 					<h3 class="footer-title">Compre</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau') ); ?>">Óculos de Grau Masculino</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau') ); ?>">Óculos de Grau Feminino</a>
@@ -289,7 +289,7 @@
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar') ); ?>">Óculos de Sol Feminino</a>
 				</div>
 
-				<div class="span2" style="position: relative; left: 20px;">
+				<div class="span2" style="position: relative; left: 38px;">
 					<h3 class="footer-title">Sobre</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos') ); ?>">Quem Somos</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'testemonials', 'action' => 'index') ); ?>">Depoimentos</a>
@@ -297,7 +297,7 @@
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>">Termos de Uso e Condições</a>
 				</div>
 
-				<div class="span2" style="position: relative; left: 20px;">
+				<div class="span2" style="position: relative; left: 33px;">
 					<h3 class="footer-title">Siga</h3>
 					<a href="http://www.facebook.com/byBenTrovato">Facebook</a>
 					<a href="http://twitter.com/byBenTrovato">Twitter</a>
@@ -307,11 +307,11 @@
 
 				<div class="span4 ultimo-bloco-footer">
 
-					<a class="socialite facebook-like" data-href="http://www.bentrovato.com.br/">
+					<a class="socialite facebook-like" data-href="http://www.bentrovato.com.br/" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false">
 						Share on Facebook
 					</a>
 
-					<a href="mailto:contato@bentrovato.com.br" style="float: left; display: inline; width: 100%; margin-left: 16px; color: #999; text-decoration: none; font-size: 13px;">
+					<a href="mailto:contato@bentrovato.com.br" style="float: left; display: inline; width: 100%; margin-left: 16px; color: #999; text-decoration: none; font-size: 13px; margin-top: 3px;">
 						<?php echo $this->Html->image('email_verde.png', array('style' => 'width: 22px;') ); ?>
 						contato@bentrovato.com.br
 					</a>

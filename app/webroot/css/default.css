@@ -240,7 +240,7 @@ footer {
 	padding-top: 10px;
 }
 footer .span2 .footer-title {
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 28px;
 	color: #A4C400;
 	margin: 0px;
@@ -253,11 +253,11 @@ footer .span2 a {
 	display: inline;
 	clear: both;
 	color: #999;
-	font-size: 11px;
+	font-size: 12px;
 	margin-top: 6px;
 }
 footer #newsletter-footer {
-	margin-top: 20px;
+	margin-top: 11px;
 	border: 1px solid #A4C400;
 	width: 92%;
 	padding: 4px;
@@ -274,7 +274,7 @@ footer .ultimo-bloco-footer div.socialite {
 	width: 100%;
 	text-align: center;
 	position: relative;
-	top: -30px;
+	top: -40px;
 }
 .oculos-sidebar a {
 	float: left;
@@ -631,4 +631,8 @@ hr.linha {
 }
 .sidebar-nav {
     padding: 9px 0;
+}
+.container {
+	position: relative;
+	left: 14px;
 }
