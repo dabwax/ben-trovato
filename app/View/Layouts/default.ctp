@@ -281,15 +281,15 @@
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq') ); ?>">FAQ</a>
 				</div>
 
-				<div class="span2">
-					<h3 class="footer-title">Comece</h3>
+				<div class="span2" style="position: relative; left: 0px;">
+					<h3 class="footer-title">Compre</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'grau') ); ?>">Óculos de Grau Masculino</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'grau') ); ?>">Óculos de Grau Feminino</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'masculino', 'solar') ); ?>">Óculos de Sol Masculino</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar') ); ?>">Óculos de Sol Feminino</a>
 				</div>
 
-				<div class="span2">
+				<div class="span2" style="position: relative; left: 20px;">
 					<h3 class="footer-title">Sobre</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos') ); ?>">Quem Somos</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'testemonials', 'action' => 'index') ); ?>">Depoimentos</a>
@@ -297,7 +297,7 @@
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>">Termos de Uso e Condições</a>
 				</div>
 
-				<div class="span2">
+				<div class="span2" style="position: relative; left: 20px;">
 					<h3 class="footer-title">Siga</h3>
 					<a href="http://www.facebook.com/byBenTrovato">Facebook</a>
 					<a href="http://twitter.com/byBenTrovato">Twitter</a>
@@ -311,24 +311,24 @@
 						Share on Facebook
 					</a>
 
-					<a href="mailto:contato@bentrovato.com.br" style="float: left; display: inline; width: 100%; margin-left: 16px; color: #999; text-decoration: none;">
-						<?php echo $this->Html->image('email_verde.png', array('style' => 'width: 28px;') ); ?>
+					<a href="mailto:contato@bentrovato.com.br" style="float: left; display: inline; width: 100%; margin-left: 16px; color: #999; text-decoration: none; font-size: 13px;">
+						<?php echo $this->Html->image('email_verde.png', array('style' => 'width: 22px;') ); ?>
 						contato@bentrovato.com.br
 					</a>
 
 					<div class="clear clearfix"></div>
 					
 					<div id="newsletter-footer">
-						<p>Mantenha-se informado!</p>
+						<p style="margin-bottom: 4px; font-size: 13px;">Mantenha-se informado!</p>
 
-						<?php echo $this->Form->create('Subscription', array('id' => 'formNewsletter', 'style' => 'margin-bottom: 12px;', 'url' => array('controller' => 'subscriptions', 'action' => 'ajax_add') ) ); ?>
+						<?php echo $this->Form->create('Subscription', array('id' => 'formNewsletter', 'style' => 'margin-bottom: 0px;', 'url' => array('controller' => 'subscriptions', 'action' => 'ajax_add') ) ); ?>
 
 						<div class="input-append">
 							<?php echo $this->Form->input('email', array('div' => false, 'label' => false, 'style' => 'width: 180px;') ); ?>
 							<?php echo $this->Form->submit('Enviar', array('class' => 'btn', 'label' => false, 'div' => false, 'style' => 'background: #A4C400; text-transform: uppercase; color: #FFF; text-shadow: none;') ); ?>
 						</div>
 
-						<p class="verde" style="font-size: 13px;">
+						<p class="verde" style="font-size: 12px; margin-bottom: 2px;">
 							Receba alertas de estilos e ofertas especiais
 						</p>
 
@@ -339,21 +339,19 @@
 
 				<div class="clear clearfix"></div>
 
-				<p class="span12 text-center" style="font-size: 11px; margin-top: 20px;">
-					CENTRO ÓTICO AMÉRICAS 700 LTDA – CNPJ: 05.050.375/0001-80
-				</p>
-
 			</div>
 
-			<div class="row" style="margin-top: 8px; border-top: 1px solid #000; margin-bottom: 14px;">
+			<div class="row" style="margin-top: 30px; border-top: 1px solid #000; margin-bottom: 14px; position: relative;">
 				
 				<p class="copyright span4" style="font-size: 12px; margin-top: 12px;">
 					Ben Trovato <?php echo date('Y'); ?> - Todos os Direitos Reservados.
 				</p> <!-- .copyright -->
 
+				<p class="span6" style="font-size: 11px; position: absolute; left: 0px; top: 34px;">
+					CENTRO ÓTICO AMÉRICAS 700 LTDA – CNPJ: 05.050.375/0001-80
+				</p>
+
 				<p class="infos-seguranca pull-right span6 text-right" style="margin-top: 10px;">
-					<?php echo $this->Html->image('cadeado.png', array('class' => '', 'style' => 'display: inline-block; width: 32px;') ); ?>
-					<span style="margin-top: 6px; margin-left: 6px; margin-right: 6px; display: inline-block; ">Segurança: </span>
 					<?php echo $this->Html->image('formas-de-pagamento.jpg', array('class' => '', 'style' => 'display: inline-block;') ); ?>
 				</p>
 
