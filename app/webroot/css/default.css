@@ -645,3 +645,10 @@ hr.linha {
 .btn-success, .btn-success:hover {
 	background: #A4C400;
 }
+#filtros-dos-produtos {
+	font-size: 12px;
+}
+#filtros-dos-produtos label {
+	font-size: 12px;
+	margin-bottom: 0px;
+}

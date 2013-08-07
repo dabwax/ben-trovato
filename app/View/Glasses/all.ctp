@@ -8,13 +8,13 @@
 </div>
 
 <div class="row">
-	<hr>
+	<hr style="border-top: 1px dashed #cdcccc; margin-top: 12px; margin-bottom: 6px;">
 </div>
 
-<div id="filtros-dos-produtos" class="row" style="text-transform: uppercase; margin-bottom: 20px;">
+<div id="filtros-dos-produtos" class="row" style="text-transform: uppercase;">
 
-	<div id="bloco-materiais" class="span2" style="margin-left: 0px;">
-		<p>Material</p>
+	<div id="bloco-materiais" class="span2" style="margin-left: 0px; border-right: 1px solid #CCC; height: 79px;">
+		<p style="color: #A4C400; margin-bottom: 0px;">Material</p>
 
 		<?php foreach($options['material'] as $slug => $name) : ?>
 		<div class="input">
@@ -26,8 +26,8 @@
 		<?php endforeach; ?>
 	</div> <!-- #bloco-materiais -->
 
-	<div id="bloco-cores" class="span6">
-		<p>Cor</p>
+	<div id="bloco-cores" class="span6" style="border-right: 1px solid #CCC; height: 79px;">
+		<p style="color: #A4C400; margin-bottom: 0px;">Cor</p>
 
 		<?php foreach($options['color'] as $slug => $name) : ?>
 		<div class="input">
@@ -39,8 +39,8 @@
 		<?php endforeach; ?>
 	</div> <!-- #bloco-cores -->
 
-	<div id="bloco-formatos" class="span2">
-		<p>Formato</p>
+	<div id="bloco-formatos" class="span2" style="border-right: 1px solid #CCC; height: 79px;">
+		<p style="color: #A4C400; margin-bottom: 0px;">Formato</p>
 
 		<?php foreach($options['format'] as $slug => $name) : ?>
 		<div class="input">
@@ -53,7 +53,7 @@
 	</div> <!-- #bloco-formato -->
 
 	<div id="bloco-tamanhos" class="span2">
-		<p>Tamanho</p>
+		<p style="color: #A4C400; margin-bottom: 0px;">Tamanho</p>
 
 		<?php foreach($options['size'] as $slug => $name) : ?>
 		<div class="input">
@@ -67,11 +67,11 @@
 
 </div> <!-- #filtros-dos-produtos -->
 
-<div class="row">
-	<hr>
+<div class="row" style="margin-top: -12px;">
+	<hr style="border-top: 1px dashed #cdcccc; margin-bottom: 8px;">
 </div>
 
-<a href="javascript:;" class="pull-right" style="text-transform: uppercase; color: #222;" id="btn-limpar-todos-os-filtros">Limpar Todos os Filtros</a>
+<a href="javascript:;" class="pull-right" style="text-transform: uppercase; color: #222; margin-top: -8px; font-size: 11px;" id="btn-limpar-todos-os-filtros">Limpar Todos os Filtros</a>
 
 <div class="row">
 	<div id="produtos-geral" class="span12">
@@ -86,13 +86,13 @@
 					<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '370', 'h' => '210', 'zc' => '0'), array('style' => 'display: none;') ); ?>
 				</a>
 
-				<h2><?php echo $glass['Glass']['name']; ?> <small style="font-size: 12px;"><?php echo $glass['Glass']['color2']; ?></small> </h2>
+				<h2 style="font-size: 14px;"><?php echo $glass['Glass']['name']; ?> <small style="font-size: 11px; display: block; margin-top: 4px; font-style: italic;"><?php echo $glass['Glass']['color2']; ?></small> </h2>
 
-				<h3 class="produto-preco"><?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'])); echo $preco[0]; ?></h3>
+				<h3 class="produto-preco" style="bottom: 72px; font-size: 16px;"><?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'])); echo $preco[0]; ?></h3>
 
-				<div class="produto-rodape">
+				<div class="produto-rodape" style="margin-top: -3px;">
 
-					<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glass['Glass']['id']) ); ?>" data-fancybox-type="iframe" class="btn-espelho-virtual colorbox-iframe">espelho virtual</a>
+					<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glass['Glass']['id']) ); ?>" data-fancybox-type="iframe" class="btn-espelho-virtual colorbox-iframe" style="font-size: 12px;">espelho virtual</a>
 
 				</div> <!-- .produto-rodape -->
 

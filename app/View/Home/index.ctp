@@ -73,7 +73,7 @@
 				<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'view', $glass['Glass']['id']) ); ?>">
 					<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '270', 'h' => '134') ); ?>
 
-					<p><?php echo $glass['Glass']['name']; ?></p>
+					<p><?php echo $glass['Glass']['name']; ?> <small style="font-size: 11px; color: #999; font-style: italic; position: relative; top: -2px;">(<?php echo $glass['Glass']['color2']; ?>)</small></p>
 				</a>
 
 				<?php if($glass['Glass']['sku'] != '') { ?>

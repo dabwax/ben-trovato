@@ -133,6 +133,9 @@ class GlassesController extends AppController {
 			'conditions' => array(
 				'Glass.sex' => $sex,
 				'Glass.type' => $type,
+			),
+			'order' => array(
+				'Glass.name ASC'
 			)
 		) );
 

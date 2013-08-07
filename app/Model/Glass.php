@@ -15,15 +15,15 @@ class Glass extends AppModel {
  */
 	public $color = array(
 		'tartaruga' => 'Tartaruga',
-		'verde' => 'Verde',
 		'listrado' => 'Listrado',
-		'azul' => 'Azul',
-		'cinza' => 'Cinza',
-		'amarelo' => 'Amarelo',
 		'preto' => 'Preto',
 		'vermelho' => 'Vermelho',
+		'verde' => 'Verde',
+		'azul' => 'Azul',
 		'marrom' => 'Marrom',
 		'castanho' => 'Castanho',
+		'cinza' => 'Cinza',
+		'amarelo' => 'Amarelo',
 		'crystal' => 'Crystal',
 	);
 
@@ -39,7 +39,7 @@ class Glass extends AppModel {
  */
 	public $format = array(
 		'quadrado' => 'Quadrado',
-		'retangulo' => 'Retângulo',
+		'retangulo' => 'Retangular',
 		'redondo' => 'Redondo',
 	);
 
