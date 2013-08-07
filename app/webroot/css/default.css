@@ -97,7 +97,7 @@ header {
 }
 #menu-principal .dropdown-menu a:hover {
 	color: #333;
-	background: #FFF;
+	background: #CCC;
 }
 #menu-principal .caret {
 	margin-top: 18px;
@@ -635,4 +635,13 @@ hr.linha {
 .container {
 	position: relative;
 	left: 14px;
+}
+.dropdown-menu {
+	padding: 0px;
+}
+.btn {
+	border-radius: 0px;
+}
+.btn-success, .btn-success:hover {
+	background: #A4C400;
 }
