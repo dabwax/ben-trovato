@@ -1,15 +1,17 @@
 <div class="row">
 	<div class="span8" id="fotos-do-oculos" style="margin-left: 0px;">
-		<a href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" class="colorbox-iframe">
+		<a href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" class="colorbox-image">
 			<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280'), array('id' => 'imagem-toggle') ); ?>
 		</a>
 
 		<div class="clear clearfix"></div>
 
-		<p id="vistas-oculos" class="text-center">
+		<p id="vistas-oculos" class="text-center" style="position: relative;">
 			Vistas
 			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">01</a>
 			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">02</a>
+
+			<span style="position: absolute; text-transform: uppercase; color: #999; right: 40px; top: 0px; font-size: 13px;">Clique para zoom</span>
 		</p> <!-- #vistas-oculos -->
 
 	</div> <!-- #fotos-do-oculos -->
@@ -29,39 +31,51 @@
 			</p> <!-- .preco -->
 
 			<hr />
+
+			<span style="position: absolute; top: 34px; left: 37px; color: #A4C400; z-index: 999;">
+				ou em até 3x sem juros de <?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'] / 3)); echo $preco[0]; ?>
+			</span>
 		</div> <!-- .linha-com-titulo -->
 
+
 		<ul id="vantagens-do-oculos">
-			<li>
+			<li style="font-size: 13px;">
 				<?php echo $this->Html->image('tick.png'); ?>
-				Lentes de grau com antirreflexo
+
+				<?php if($glass['Glass']['type'] == 'grau') { ?>
+				Lentes com grau com antirreflexo, antirrisco<br /><span style="width: 19px; height: 10px; display: inline-block;"></span>e UVA/UVB
+				<?php } else { ?>
+				Lentes solares com UVA/UVB
+				<?php } ?>
 			</li>
-			<li>
+			<li style="font-size: 13px;">
 				<?php echo $this->Html->image('tick.png'); ?>
-				Frete e devolução grátis
+				Frete grátis (entrega, troca ou devolução)
 			</li>
-			<li>
+			<li style="font-size: 13px;">
 				<?php echo $this->Html->image('tick.png'); ?>
 				Reembolso integral até 30 dias
 			</li>
 			<li class="cinza">
-				* Consulte nossos parâmetros
+				<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #999;">
+					* Consulte termos de uso e condições
+				</a>
 			</li>
 		</ul> <!-- #vantagens-do-oculos -->
 
-		<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-adicionar-ao-carrinho" class="btn btn-large btn-success colorbox-iframe">
-			<i class="icon icon-shopping-cart icon-white"></i>
+		<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-adicionar-ao-carrinho" class="btn btn-large btn-success colorbox-iframe" style="border: none; text-shadow: none; font-size: 15px; padding-top: 8px;">
+			<span style="font-size: 20px; top: 2px; position: relative; left: -5px;">+</span>
 			Adicionar ao Carrinho
 		</a> <!-- #btn-adicionar-ao-carrinho -->
 
-		<div class="linha-com-titulo" style="margin-top: 10px;">
-			<p class="texto">
+		<div class="linha-com-titulo" style="margin-top: 4px;">
+			<p class="texto" style="margin: 0px;">
 				Prove antes de comprar
 			</p> <!-- .texto -->
 			<hr />
 		</div> <!-- .linha-com-titulo -->
 
-		<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glass['Glass']['id']) ); ?>" id="btn-prove-virtualmente" class="btn btn-large btn-inverse colorbox-iframe">
+		<a href="<?php echo $this->Html->url( array('action' => 'fittingbox', $glass['Glass']['id']) ); ?>" id="btn-prove-virtualmente" class="btn btn-large btn-inverse colorbox-iframe" style="border: none; text-shadow: none; font-size: 14px; padding-top: 8px; color: #333;">
 			Prove Virtualmente
 		</a> <!-- #btn-prove-virtualmente -->
 
@@ -75,7 +89,7 @@
 	<div class="span12" style="margin-left: 0px;">
 		
 		<div class="linha-com-titulo" style="text-align: left;">
-			<p class="texto" style="text-align: left; margin-left: 252px; text-transform: uppercase;">
+			<p class="texto" style="text-align: left; margin-left: 252px; text-transform: uppercase; left: -8px; padding-left: 14px; padding-right: 14px;">
 				Outras Cores
 			</p> <!-- .texto -->
 
@@ -89,8 +103,10 @@
 	<div class="oculos-outras-cores span12" style="margin-left: 0px;">
 		
 		<?php foreach($glassesWithOtherColors as $glassColor) : ?>
-			<a href="<?php echo $this->Html->url( array('action' => 'view', $glassColor['Glass']['id']) ); ?>">
+			<a href="<?php echo $this->Html->url( array('action' => 'view', $glassColor['Glass']['id']) ); ?>" style="text-align: center; text-transform: uppercase; color: #999; font-size: 12px; text-decoration: none;">
 				<?php echo $this->Loja->imagem($glassColor['Glass']['photo_1'], array('w' => '192', 'h' => '96') ); ?>
+				<div class="clear clearfix"></div>
+				<?php echo $glassColor['Glass']['color2']; ?>
 			</a>
 		<?php endforeach; ?>
 	</div> <!-- .oculos-outras-cores -->
@@ -100,11 +116,19 @@
 
 <div class="row">
 	<div class="span12" style="margin-left: 0px;">
-		<hr class="linha" />
+		<hr class="linha" style="height: 1px; margin-bottom: 24px;" />
 	</div>
 </div>
 
 <div class="row">
+	<div class="span5" style="text-align: center; margin-bottom: 4px;">
+		<?php echo $this->Html->image('passe-o-mouse.png', array('style' => 'width: 215px;') ); ?>
+	</div>
+</div>
+
+<div class="row">
+
+
 	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem($glass['Glass']['image_hover'], array('h' => '280', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -723px;">
 
 		<span class="shape shape-1"></span>
@@ -148,8 +172,8 @@
 		});
 	</script>
 
-	<div class="span7" id="oculos-estilo-etc">
-		<h2>O Estilo</h2>
+	<div class="span7" id="oculos-estilo-etc" style="position: relative; height: 380px;">
+		<h2 style="margin: 0px; font-size: 20px; line-height: 20px; margin-bottom: 12px;">O Estilo</h2>
 
 		<div id="estilo-do-oculos">
 			<?php echo $glass['Glass']['the_style']; ?>
@@ -157,14 +181,14 @@
 
 		<div class="clear clearfix"></div>
 
-		<div class="span3 texto-caracteristicas" style="margin-left: 0px;">
-			<p>CARACTERÍSTICAS DA ARMAÇÃO: <a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'caracteristicas-da-armacao') ); ?>" class="colorbox-armacao"><?php echo $this->Html->image('information.png', array('width' => '14') ); ?></a> </p>
+		<div class="span3 texto-caracteristicas" style="position: absolute; left: 0px; bottom: 0px; margin-left: 0px;">
+			<p style="font-weight: bold;">CARACTERÍSTICAS DA ARMAÇÃO: <a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'caracteristicas-da-armacao') ); ?>" class="colorbox-armacao"><?php echo $this->Html->image('information.png', array('width' => '14') ); ?></a> </p>
 
 			<?php echo $glass['Glass']['character_frame']; ?>
 		</div> <!-- .texto-caracteristicas -->
 
-		<div class="span3 texto-caracteristicas" style="margin-left: 40px;">
-			<p>CARACTERÍSTICAS DAS LENTES:</p>
+		<div class="span3 texto-caracteristicas" style="position: absolute; left: 236px; bottom: 0px;">
+			<p style="font-weight: bold;">CARACTERÍSTICAS DAS LENTES:</p>
 
 			<?php echo $glass['Glass']['character_lenses']; ?>
 		</div> <!-- .texto-caracteristicas -->
@@ -173,7 +197,7 @@
 
 <div class="row">
 	<div class="span12" style="margin-left: 0px;">
-		<div class="linha-com-titulo" style="margin-top: 10px;">
+		<div class="linha-com-titulo" style="margin-top: 40px; margin-bottom: 30px;">
 			<p class="texto" style="text-transform: uppercase;">
 				Qualidade na Fabricação
 			</p> <!-- .texto -->
@@ -185,55 +209,55 @@
 <div class="row">
 	<div class="span4">
 
-		<div style="width: 100%; text-align: center;">
+		<div style="width: 86%; text-align: center;">
 			<?php echo $this->Html->image('qualidade-1.png'); ?>
 		</div>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px;">Desenhado no Rio</p>
+		<p style="margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px; width: 84%; text-align: center;">Desenhado no Rio</p>
 
 		<div class="clear clearfix"></div>
 
-		<p style="font-size: 11px; margin-top: 16px;">
+		<p style="font-size: 11px; margin-top: 16px; text-align: justify; width: 260px;">
 			Inspirado no design italiano e no estilo carioca de viver, nossas coleções são desenhadas com paixão e conhecimento de quem trabalha no ramo ótico há 11 anos. Nosso objetivo é simples: encantar e trazer estilo com nossas armações.
 		</p>
 	</div>
 
 	<div class="span4">
 
-		<div style="width: 100%; text-align: center;">
+		<div style="width: 86%; text-align: center;">
 			<?php echo $this->Html->image('qualidade-2.png'); ?>
 		</div>
 
 		<div class="clear clearfix"></div>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px;">Fabricados à mão</p>
+		<p style="margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px; text-align: center; width: 84%;">Fabricados à mão</p>
 
 		<div class="clear clearfix"></div>
 
-		<p style="font-size: 11px; margin-top: 16px;">
+		<p style="font-size: 11px; margin-top: 16px; text-align: justify; width: 260px;">
 			Nossos óculos são fabricado à mão, cortados de uma placa única de acetato para garantir uma uniformidade de cor e polidos para um acabamento superior.
 		</p>
 	</div>
 
 	<div class="span4">
 
-		<div style="width: 100%; text-align: center;">
+		<div style="width: 86%; text-align: center;">
 			<?php echo $this->Html->image('qualidade-3.png'); ?>
 		</div>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px;">Lentes de Grau Montadas em Laboratório</p>
+		<p style="margin-top: 16px; display: inline-block; font-size: 17px; font-weight: bold; font-family: 'Nothing You Could Do'; margin-top: 30px; margin-bottom: 26px; width: 100%; text-align: center;">Lentes montadas em laboratório</p>
 
 		<div class="clear clearfix"></div>
 
-		<p style="font-size: 11px;">
-			Nossas lentes de grau são montadas no Brasil em laboratório ótico renomado para garantir excelência e atender nosso padrão de qualidade. Elas são importadas e possuem tratamento antirreflexo e antirrisco.
+		<p style="font-size: 11px; text-align: justify; width: 292px;">
+			Nossas lentes de grau são montadas no Brasil em laboratório ótico renomado para garantir excelência e atender nosso padrão de qualidade. Elas são importadas e possuem tratamento antirreflexo, antirrisco e proteção UVA/UVB.
 		</p>
 	</div>
 </div>
 
 <div class="row">
 	<div class="span12" style="margin-left: 0px;">
-		<div class="linha-com-titulo" style="margin-top: 10px;">
+		<div class="linha-com-titulo" style="margin-top: 20px; margin-bottom: -2px;">
 			<p class="texto" style="text-transform: uppercase;">
 				Incluso
 			</p> <!-- .texto -->
@@ -244,23 +268,23 @@
 
 
 <div class="row">
-	<div class="span6">
-		<?php echo $this->Html->image('incluso-1.jpg', array('class' => 'pull-left', 'style' => 'height: 84px; margin-top: 7px; margin-bottom: 20px; margin-right: 20px;') ); ?>
+	<div class="span6" style="margin-left: 0px;">
+		<?php echo $this->Html->image('Case_BT.jpg', array('class' => 'pull-left', 'style' => 'margin-top: 42px; margin-bottom: 20px; margin-right: 20px; width: 166px;') ); ?>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">O que mais está incluído?</p>
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px; font-weight: bold;">Estojo e flanela exclusivos</p>
 
-		<p style="font-size: 11px;">
-			Estojo e flanela exclusivos da Ben Trovato. Cada óculos é acompanhado por um sofisticado estojo importado e uma flanela exclusiva de microfibra, para que seu Ben Trovato fique sempre protegido e impecável.
+		<p style="font-size: 11px; text-align: justify; width: 412px;">
+			Cada óculos é acompanhado por um sofisticado estojo importado e uma flanela exclusiva de microfibra, para que seu Ben Trovato fique sempre protegido e bonito.
 		</p>
 	</div>
 
 	<div class="span6">
-		<?php echo $this->Html->image('icone-garantia.png', array('class' => 'pull-left', 'style' => 'margin-top: 20px; margin-right: 20px;') ); ?>
+		<?php echo $this->Html->image('GARANTIA.png', array('class' => 'pull-left', 'style' => 'margin-top: 50px; margin-right: 20px; margin-bottom: 62px; width: 166px;') ); ?>
 
-		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px;">Garantia de 180 Dias</p>
+		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px; font-weight: bold;">Garantia Ben Trovato</p>
 
-		<p style="font-size: 11px;">
-			Todos nossas armações e lentes têm garantia de 180 dias, com os custos envio para troca por nossa conta.
+		<p style="font-size: 11px; text-align: justify;">
+			Para nós, o mais importante é sua satisfação e se você não se apaixonar pelos seu Ben Trovato, nós oferecemos um política devolução grátis por um período de 30 dias. A armação e lentes também possuem políticas de garantia próprias.<br /><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #999;">* Consulte nossa política de garantia</a>.
 		</p>
 	</div>
 </div>
@@ -279,10 +303,11 @@
 <div class="row">
 	<?php foreach($glass['Related'] as $glassRelated) : ?>
 	<div class="span3">
-		<a href="<?php echo $this->Html->url( array('action' => 'view', $glassRelated['id']) ); ?>" style="color: #000; text-align: center;">
+		<a href="<?php echo $this->Html->url( array('action' => 'view', $glassRelated['id']) ); ?>" style="color: #000; text-align: center; float: left; width: 192px; text-decoration: none;">
 			<?php echo $this->Html->image($glassRelated['photo_1']); ?>
 
-			<p style="margin-top: 10px;"><?php echo $glassRelated['name']; ?> - <?php echo $glassRelated['color2']; ?></p>
+			<p style="margin: 0px; text-transform: uppercase;"><?php echo $glassRelated['name']; ?></p>
+			<p style="font-size: 12px; color: #999; text-transform: uppercase; margin-bottom: 30px;"><?php echo $glassRelated['color2']; ?></p>
 		</a>
 	</div>
 	<?php endforeach; ?>

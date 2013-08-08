@@ -31,7 +31,9 @@
 				height: 660
 			});
 
-			$(".colorbox-image").colorbox();
+			$(".colorbox-image").colorbox({
+				photo: true
+			});
 
 			$(".colorbox-armacao").colorbox({
 				iframe: true,
@@ -145,7 +147,7 @@
 
 				<div id="header-meta" class="span5 offset2">
 					
-					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho" style="font-size: 12px; margin-top: 19px;"><?php echo $this->Html->image('oculos-carrinho.jpg', array('style' => 'margin-right: 8px;') ); ?> [<?php echo count($orderItems); ?> <?php if(count($orderItems) > 1) { ?>armações<?php } else { ?>armação<?php } ?>]</a> <!-- #btn-carrinho -->
+					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho" style="font-size: 12px; margin-top: 19px;"><?php echo $this->Html->image('oculos-carrinho.jpg', array('style' => 'margin-left: 5px;') ); ?> [<?php echo count($orderItems); ?> <?php if(count($orderItems) > 1) { ?>armações<?php } else { ?>armação<?php } ?>]</a> <!-- #btn-carrinho -->
 
 					<?php if(!AuthComponent::user()) { ?>
 
@@ -201,7 +203,7 @@
 
 										<div class="clear clearfix"></div>
 
-										<?php echo $this->Html->image('FEMININO_GRAU.jpg', array('style' => 'width: 80px;') ); ?>
+										<?php echo $this->Html->image('FEMININO_GRAU.png', array('style' => 'width: 80px;') ); ?>
 
 										<div class="clear clearfix"></div>
 									</a>
@@ -212,7 +214,7 @@
 
 										<div class="clear clearfix"></div>
 
-										<?php echo $this->Html->image('FEMININO_SOLAR.jpg', array('style' => 'width: 80px;') ); ?>
+										<?php echo $this->Html->image('FEMININO_SOLAR.png', array('style' => 'width: 80px;') ); ?>
 
 										<div class="clear clearfix"></div>
 									</a>
@@ -228,7 +230,7 @@
 
 									<div class="clear clearfix"></div>
 
-									<?php echo $this->Html->image('MASCULINO_GRAU.jpg', array('style' => 'width: 80px;') ); ?>
+									<?php echo $this->Html->image('MASCULINO_GRAU.png', array('style' => 'width: 80px;') ); ?>
 
 									<div class="clear clearfix"></div>
 									</a>
@@ -239,7 +241,7 @@
 
 									<div class="clear clearfix"></div>
 
-									<?php echo $this->Html->image('MASCULINO_SOLAR.jpg', array('style' => 'width: 80px;') ); ?>
+									<?php echo $this->Html->image('MASCULINO_SOLAR.png', array('style' => 'width: 80px;') ); ?>
 
 										<div class="clear clearfix"></div>
 									</a>
@@ -289,7 +291,7 @@
 					<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'all', 'feminino', 'solar') ); ?>">Óculos de Sol Feminino</a>
 				</div>
 
-				<div class="span2" style="position: relative; left: 38px;">
+				<div class="span2" style="position: relative; left: 38px; width: 157px;">
 					<h3 class="footer-title">Sobre</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'quem-somos') ); ?>">Quem Somos</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'testemonials', 'action' => 'index') ); ?>">Depoimentos</a>

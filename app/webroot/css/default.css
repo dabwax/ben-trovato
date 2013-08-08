@@ -3,12 +3,53 @@
   font-style: normal;
   font-weight: 400;
   src: local('Nothing You Could Do'), local('NothingYouCouldDo'), url(http://themes.googleusercontent.com/static/fonts/nothingyoucoulddo/v3/jpk1K3jbJoyoK0XKaSyQAZsYoLsUhJo8DEpooYVMXYU.woff) format('woff');
+}@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
   src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxh_xHqYgAV9Bl_ZQbYUxnQU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxn5HxGBcBvicCpTp6spHfNo.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
 }
 * {
 	font-family: 'Open Sans';
@@ -291,7 +332,7 @@ footer .ultimo-bloco-footer div.socialite {
 .oculos-sidebar a p {
 	font-weight: bold;
 	font-size: 16px;
-	color: #000;
+	color: #464646;
 	text-transform: uppercase;
 	margin-bottom: 6px;
 }
@@ -420,7 +461,7 @@ color: #000;
 #informacoes-do-oculos #nome-do-oculos {
 	text-align: center;
 	width: 100%;
-	font-size: 22px;
+	font-size: 27px;
 	line-height: 24px;
 	margin: 0px;
 	color: #706c6c;
@@ -432,7 +473,7 @@ color: #000;
 	text-align: center;
 	margin: 0px;
 	line-height: 24px;
-	font-size: 20px;
+	font-size: 15px;
 	text-transform: uppercase;
 	color: #bfbfbf;
 	margin-top: 4px;
@@ -443,17 +484,19 @@ color: #000;
 	width: 100%;
 	text-align: center;
 	position: relative;
+	top: -6px;
 }
 .linha-com-titulo .preco {
 	display: inline-block;
 	text-align: center;
 	background: #FFF;
-	padding: 6px;
+	padding: 11px;
 	position: relative;
 	z-index: 999;
 	color: #a4c400;
 	font-size: 24px;
-	top: 4px;
+	padding-left: 20px;
+	padding-right: 22px;
 }
 .linha-com-titulo hr {
 	position: absolute;
@@ -461,7 +504,7 @@ color: #000;
 	top: 0px;
 	width: 100%;
 	clear: both;
-	height: 3px;
+	height: 1px;
 	background: #CCC;
 }
 .linha-com-titulo .texto {
@@ -471,7 +514,7 @@ color: #000;
 	padding: 6px;
 	position: relative;
 	z-index: 999;
-	font-size: 16px;
+	font-size: 14px;
 	top: 4px;
 }
 #vantagens-do-oculos {
@@ -481,12 +524,15 @@ color: #000;
 	float: left;
 	display: inline;
 	width: 100%;
-	margin-left: 32px;
+	margin-left: 2px;
 	margin-bottom: 4px;
 }
 #vantagens-do-oculos li.cinza {
 	color: #a4a4a4;
 	font-size: 13px;
+}
+#vantagens-do-oculos li img {
+	margin-right: 6px;
 }
 #btn-adicionar-ao-carrinho {
 	margin-top: 10px;
@@ -507,10 +553,15 @@ color: #000;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 14px;
+	font-style: italic;
 }
 #vistas-oculos a {
 	color: #a4c400;
 	font-weight: bold;
+	margin-left: 8px;
+	margin-right: 8px;
+	display: inline-block;
+	font-style: italic;
 }
 .oculos-outras-cores a {
 	float: left;
@@ -557,20 +608,23 @@ hr.linha {
 }
 #estilo-do-oculos {
 	font-size: 18px;
-	line-height: 26px;
+	line-height: 38px;
 	color: #a3a3a3;
 	text-transform: uppercase;
 	text-align: left;
 	margin-bottom: 30px;
 }
 .texto-caracteristicas {
-	font-size: 12px;
+	font-size: 11px;
+}
+.texto-caracteristicas p {
+	margin: 0px;
 }
 #foto-efeito-hover {
 	float: left;
 	display: inline;
-	width: 340px;
-	height: 280px;
+	width: 400px;
+	height: 400px;
 	overflow: hidden;
 }
 #foto-efeito-hover .shape {
@@ -578,8 +632,8 @@ hr.linha {
 	display: inline;
 	position: relative;
 	z-index: 999;
-	width: 68px;
-	height: 280px;
+	width: 20%;
+	height: 100%;
 }
 .order-block-content {
 	display: none;
