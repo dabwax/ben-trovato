@@ -1,12 +1,17 @@
 <div id="product_wrap" class="row">
 	<div class="page span12" style="text-align: center;">
 		<?php echo $this->Html->image('Banner_FAQ.jpg'); ?>
-		<h2 style="text-transform: uppercase;">F.A.Q</h2>
 	</div>
+
+
+	<div class="span12 text-center" style="margin-left: 0px; position: relative; width: 960px;">
+	<h2 style="position: relative; margin-top: 40px; margin-bottom: 40px; font-size: 23px;"><span style="position: absolute; left: 0px; top: 9px; width: 100%; height: 1px; background: #CCC;"></span> <span style="background: #FFF; position: relative; z-index: 999; padding: 26px; left: 0px; text-transform: uppercase; top: -10px; font-size: 18px;">FAQ - Perguntas Frequentes</span> </h2>
+</div>
+
 	<div class="page span12">
-		<ul style="list-style: none;">
+		<ul style="list-style: none; margin-bottom: 36px;">
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Receita
 				</a>
 				<ul>
@@ -98,7 +103,7 @@
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Lentes
 				</a>
 				<ul>
@@ -213,7 +218,7 @@ proteção UVA/UVB (mesma proteção das lentes com grau).</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Armações
 				</a>
 				<ul>
@@ -324,7 +329,7 @@ para uso!</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Óculos de sol
 				</a>
 				<ul>
@@ -393,7 +398,7 @@ você!</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Garantia
 				</a>
 				<ul>
@@ -468,7 +473,7 @@ perfeito estado. Veja aqui mais detalhes.</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Espelho virtual
 				</a>
 				<ul>
@@ -546,7 +551,7 @@ ficaremos felizes em te ajudar a escolher qual estilo veste melhor em você!</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Fazer, alterar ou cancelar pedido
 				</a>
 				<ul>
@@ -585,7 +590,7 @@ fazer tudo o que for pedido!</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Pagamento
 				</a>
 				<ul>
@@ -686,7 +691,7 @@ informações veja FAQ – Quais são as opções de lentes disponíveis?</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Envio
 				</a>
 				<ul>
@@ -732,7 +737,7 @@ contato@bentrovato.com.br, nós ficaremos felizes em te ajudar!</p>
 									</ul>
 			</li>
 <li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 16px;">
+				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Troca e devolução
 				</a>
 				<ul>
@@ -797,7 +802,7 @@ mais, nos diga o motivo.</p>
 }
 .parent li a {
 	color: #000;
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: bold !important;
 	margin-top: 12px;
 }
@@ -805,7 +810,8 @@ mais, nos diga o motivo.</p>
 	margin-top: 12px;
 }
 .parent li div p {
-	font-size: 13px;
+	font-size: 12px;
+	margin-top: 10px;
 }
 	.page .parent ul {
 		display: none;

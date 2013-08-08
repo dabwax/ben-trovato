@@ -4,34 +4,35 @@
 
 <?php echo $this->Html->css('http://glyphicons.getbootstrap.com/css/bootstrap-glyphicons.css'); ?>
 
-<div class="row" style="margin-top: 20px;">
+<div class="row" style="margin-top: 20px; margin-bottom: 40px;">
 	<div class="span6">
-		<h2>Informações Úteis</h2>
+		<h2 style="font-size: 20px; margin-bottom: 22px;">Informações Úteis</h2>
 
-		<ul style="margin: 0px; border-right: 1px solid #CCC;">
+		<ul style="margin: 0px; border-right: 1px solid #CCC; margin-right: -5px;">
 			<li style="list-style: none;">
-				<span class="glyphicon glyphicon-map-marker" style="font-size: 32px; float: left; display: inline; height: 80px; margin-top: 14px; margin-right: 10px;"></span>
-				<p>
+
+				<?php echo $this->Html->image('LOCALIZADOR_CINZA.png', array('style' => 'float: left; display: inline; margin-right: 24px;margin-top: 5px;width: 18px;margin-bottom: 10px;') ); ?>
+				<p style="font-size: 13px;">
 					 Av. das Américas, 700 – Bloco 8 – Loja 108 B<br />
 					Barra da Tijuca – Rio de Janeiro - Brasil<br />
 					CEP: 22640-100<br />
 				</p>
 			</li>
 			<li style="list-style: none; clear: both;">
-				<span class="glyphicon glyphicon-envelope" style="font-size: 32px; float: left; display: inline; height: 80px; margin-top: -6px; margin-right: 10px;"></span>
-				<p>
-					<a href="mailto:contato@bentrovato.com.br" style="text-decoration: underline; color: #000;">contato@bentrovato.com.br</a>
+				<?php echo $this->Html->image('EMAIL_CINZA.png', array('style' => 'float: left; display: inline; margin-right: 19px;margin-top: 5px;width: 22px;margin-bottom: 10px;') ); ?>
+				<p style="font-size: 13px;">
+					<a href="mailto:contato@bentrovato.com.br" style="text-decoration: underline; color: #333; text-decoration: none;">contato@bentrovato.com.br</a>
 				</p>
 			</li>
 		</ul>
 	</div>
 
-	<div class="span6">
+	<div class="span5" style="margin-top: 9px;">
 
 		<ul style="margin: 0px; margin-top: 58px;">
 			<li style="list-style: none; clear: both;">
-				<span class="glyphicon glyphicon-time" style="font-size: 32px; float: left; display: inline; height: 80px; margin-top: 4px; margin-right: 10px;"></span>
-				<p>
+				<?php echo $this->Html->image('RELOGIO_CINZA.png', array('style' => 'float: left; display: inline; margin-right: 19px;margin-top: 5px;width: 22px;margin-bottom: 10px;') ); ?>
+				<p style="font-size: 13px;">
 					Segunda a Sexta<br />
 					10h - 18h<br />
 				</p>

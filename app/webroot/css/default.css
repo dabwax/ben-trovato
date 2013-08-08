@@ -626,8 +626,8 @@ hr.linha {
 .parent-toggle {
 	text-transform: uppercase;
 }
-.parent-toggle-ativo {
-	color: #4fa4da !important;
+.parent-toggle:hover, .parent-toggle-ativo {
+	color: #A4C400 !important;
 }
 .sidebar-nav {
     padding: 9px 0;
