@@ -17,7 +17,7 @@
 
 		<div class="order-block-content" style="display: block;">
 
-			<table class="table-bordered table table-hover">
+			<table class="table table-hover">
 				<tbody>
 					<?php foreach($orderItems as $orderItem) : ?>
 					<tr>
@@ -44,7 +44,7 @@
 							<!-- Preço -->
 							<?php echo $this->Loja->preco($orderItem['price']); ?>
 
-							<?php echo $this->Html->link('excluir', array('action' => 'delete_order_item', $orderItem['OrderItem']['id']), array('class' => 'btn btn-small btn-danger') ); ?>
+							<?php echo $this->Html->link('excluir', array('action' => 'delete_order_item', $orderItem['OrderItem']['id']), array('class' => 'btn btn-small btn-danger', 'style' => 'background: #c0392b; border: none;') ); ?>
 						</td>
 					</tr>
 					<?php endforeach; ?>
@@ -55,25 +55,23 @@
 							
 						</td>
 						<td>
-							Total: <?php echo $this->Loja->preco($totalPrice); ?>
 						</td>
-						<td>
+						<td style="text-align: center;">
+							<strong style="font-size: 16px;">Total: <?php echo $this->Loja->preco($totalPrice); ?></strong>
 						</td>
 					</tr>
-					<tr>
-						<td>
-							
+					<tr style="border: none;">
+						<td style="border: none;">
+							<?php echo $this->Html->link('<span class="icone-continuar" style="margin-right: 4px;"><</span> escolher + óculos', '/', array('class' => 'btn btn-small', 'style' => 'border: none;text-shadow: none;font-size: 12px;padding-top: 3px;color: #333;background: #afafaf;text-transform: uppercase;width: 140px;', 'escape' => false) ); ?>
 						</td>
-						<td>
+						<td style="border: none;">
+						</td>
+						<td style="border: none;">
 							<?php if(AuthComponent::user()) { ?>
-							<?php echo $this->Html->link('Finalizar Compra', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.endereco-de-entrega') ); ?>
+							<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.endereco-de-entrega', 'style' => 'width: 114px;', 'escape' => false) ); ?>
 							<?php } else { ?>
-							<?php echo $this->Html->link('Finalizar Compra', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.detalhes-da-sua-conta') ); ?>
+							<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.detalhes-da-sua-conta', 'style' => 'width: 114px;', 'escape' => false) ); ?>
 							<?php } ?>
-							<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn btn-small') ); ?>
-						</td>
-						<td>
-							
 						</td>
 					</tr>
 				</tfoot>
@@ -100,10 +98,10 @@
 		</p>
 
 		<p>
-			Você pode editar seu nome ou seu endereço de e-mail qualquer hora, <a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>">visitando esta página</a>.
+			Você pode editar seu nome ou seu endereço de e-mail qualquer hora, <a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" style="color: #A4C400;">visitando esta página</a>.
 		</p>
 
-		<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.endereco-de-entrega', 'escape' => false) ); ?>
+		<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir pull-right', 'style' => 'width: 114px;', 'data-target' => '.endereco-de-entrega', 'escape' => false) ); ?>
 
 		<?php } ?>
 		<!-- Fim - Se o usuário estiver logado -->
@@ -262,11 +260,10 @@
 
 			<?php echo $this->Form->input('Client.delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;', 'class' => 'required obrigatorio') ); ?>
 
-
-			<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.cupom-de-desconto', 'escape' => false) ); ?>
-
-
 		</div> <!-- .span6 -->
+
+
+			<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir pull-right', 'style' => 'width: 114px;', 'data-target' => '.cupom-de-desconto', 'escape' => false) ); ?>
 
 		</div>
 
@@ -279,11 +276,11 @@
 
 		<h3 class="order-block-title cupom-de-desconto">Cupom de Desconto</h3>
 
-		<div class="order-block-content">
+		<div class="order-block-content" style="text-align: center;">
 
 		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:') ); ?>
 
-		<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.pagamento', 'escape' => false) ); ?>
+		<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir pull-right', 'style' => 'width: 114px;', 'data-target' => '.pagamento', 'escape' => false) ); ?>
 
 		</div>
 
@@ -297,7 +294,7 @@
 
 		<div class="order-block-content">
 
-		<?php echo $this->Form->button('Finalizar Pedido', array('class' => 'btn btn-success btn-large', 'style' => 'margin-top: 20px; margin-bottom: 20px;') ); ?>
+		<?php echo $this->Form->button('Finalizar Pedido', array('class' => 'btn btn-success btn-large pull-right', 'style' => 'margin-top: 20px; margin-bottom: 20px;') ); ?>
 
 		</div>
 
