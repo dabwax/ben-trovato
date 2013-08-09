@@ -32,7 +32,7 @@
 		<div class="banners-embaixo">
 			<?php foreach($bannersEmbaixo as $banner) : ?>
 			<a <?php if($banner['Banner']['link'] != '') { ?>href="<?php echo $banner['Banner']['link']; ?>"<?php } ?>>
-				<?php echo $this->Loja->imagem($banner['Banner']['image'], array('w' => '300', 'h' => '433') ); ?>
+				<?php echo $this->Loja->imagem($banner['Banner']['image'], array('w' => '300', 'h' => '415') ); ?>
 			</a>
 			<?php endforeach; ?>
 		</div> <!-- .banners-embaixo -->

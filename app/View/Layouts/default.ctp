@@ -27,8 +27,8 @@
 		$(document).ready(function() {
 			$(".colorbox-iframe").colorbox({
 				iframe: true,
-				width: 860,
-				height: 660
+				width: 890,
+				height: 690
 			});
 
 			$(".colorbox-image").colorbox({
@@ -37,8 +37,8 @@
 
 			$(".colorbox-armacao").colorbox({
 				iframe: true,
-				width: 830,
-				height: 530
+				width: 860,
+				height: 560
 			});
 		});
 	</script>
@@ -299,7 +299,7 @@
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>">Termos de Uso e Condições</a>
 				</div>
 
-				<div class="span2" style="position: relative; left: 33px;">
+				<div class="span2" style="position: relative; left: 66px;">
 					<h3 class="footer-title">Siga</h3>
 					<a href="http://www.facebook.com/byBenTrovato">Facebook</a>
 					<a href="http://twitter.com/byBenTrovato">Twitter</a>

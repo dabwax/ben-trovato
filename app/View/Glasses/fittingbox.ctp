@@ -9,7 +9,7 @@
 <div class="row">
 	<div id="espelho-virtual-principal" class="span6">
 
-		<h3 id="voce-esta-experimentando">
+		<h3 id="voce-esta-experimentando" style="margin-top: 20px;">
 			Você está experimentando este modelo:
 		</h3> <!-- #voce-esta-experimentando -->
 
@@ -38,19 +38,25 @@
 				<hr />
 			</div> <!-- .texto-com-linha -->
 
-			<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-comprar" class="btn btn-inverse btn-large">
-				<i class="icon icon-shopping-cart icon-white"></i> Adicionar ao Carrinho
+			<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-comprar" class="btn-lente btn btn-inverse" style="text-align: left; position: relative; background: #353535; border-radius: 0px; border: none; width: 130px;">
+
+				<span style="float: left; display: inline; margin-right: 6px; margin-top: 8px; color: #A4C400; font-weight: bold; font-size: 29px; margin-left: 7px;">+</span>
+
+				<p style="float: left; display: inline; text-align: center; text-transform: uppercase; margin: 0px; font-size: 13px;">
+					Adicionar Ao<br>Carrinho
+				</p>
+
 			</a> <!-- #btn-comprar -->
 
 			<p id="consulte-nossos-parametros">
-				* consulte nossos parâmetros
+				* Consulte termos de uso e condições
 			</p> <!-- #consulte-nossos-parametros -->
 
 		</div> <!-- #sobre-o-oculos -->
 
 		<div class="clear clearfix"></div>
 
-		<div id="outras-cores">
+		<div id="outras-cores" style="margin-top: 74px;">
 
 			<div class="texto-com-linha">
 
@@ -195,6 +201,12 @@
 				}
 			});
 		</script>
+
+		<div class="clear clearfix"></div>
+
+		<p style="font-weight: bold; margin-top: 6px; font-size: 9px; margin-bottom: 0px; color: #a4c400;">COMPARTILHE NO FACEBOOK PARA UMA SEGUNDA OPINIÃO!</p>
+
+		<p style="font-size: 10px; line-height: 14px;">Para cada foto compartilhada em nossa página do Facebook, nós iremos dar opinião sobre qual o melhor estilo para você!</p>
 		
 	</div> <!-- #espelho-virtual-lateral -->
 </div>

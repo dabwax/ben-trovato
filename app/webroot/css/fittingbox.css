@@ -48,6 +48,7 @@
 	top: 38%;
 	width: 100%;
 	margin: 0px;
+	border-top: 1px solid #CCC;
 }
 #btn-comprar {
 	padding: 0px;
@@ -83,7 +84,8 @@
 .carousel-outras-cores li {
 	float: left;
 	display: inline;
-	width: 120px;
+	width: 135px;
+	height: 60px;
 }
 .outras-cores-prev {
 	float: left;
@@ -113,7 +115,8 @@
 .carousel-produtos-relacionados li {
 	float: left;
 	display: inline;
-	width: 120px;
+	width: 135px;
+	height: 60px;
 }
 .produtos-relacionados-prev {
 	float: left;

@@ -6,12 +6,12 @@
 
 		<div class="clear clearfix"></div>
 
-		<p id="vistas-oculos" class="text-center" style="position: relative;">
+		<p id="vistas-oculos" class="text-center" style="position: relative; font-weight: 400;">
 			Vistas
 			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">01</a>
 			<a data-large="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '820', 'url' => true, 'zc' => '0') ); ?>" href="<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '620', 'h' => '280', 'url' => true) ); ?>">02</a>
 
-			<span style="position: absolute; text-transform: uppercase; color: #999; right: 40px; top: 0px; font-size: 13px;">Clique para zoom</span>
+			<span style="position: absolute; text-transform: uppercase; color: #999; right: 40px; top: 0px; font-size: 13px; font-weight: 400;">Clique para zoom</span>
 		</p> <!-- #vistas-oculos -->
 
 	</div> <!-- #fotos-do-oculos -->
@@ -32,7 +32,7 @@
 
 			<hr />
 
-			<span style="position: absolute; top: 34px; left: 37px; color: #A4C400; z-index: 999;">
+			<span style="position: absolute; top: 34px; left: 37px; color: #A4C400; z-index: 999; font-weight: 600;">
 				ou em até 3x sem juros de <?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'] / 3)); echo $preco[0]; ?>
 			</span>
 		</div> <!-- .linha-com-titulo -->
@@ -198,7 +198,7 @@
 <div class="row">
 	<div class="span12" style="margin-left: 0px;">
 		<div class="linha-com-titulo" style="margin-top: 40px; margin-bottom: 30px;">
-			<p class="texto" style="text-transform: uppercase;">
+			<p class="texto" style="text-transform: uppercase; padding-left: 14px; padding-right: 14px;">
 				Qualidade na Fabricação
 			</p> <!-- .texto -->
 			<hr />

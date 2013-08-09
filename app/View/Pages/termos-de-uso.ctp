@@ -1,6 +1,15 @@
-<div class="page" style="text-align: center;">
+<div class="page" style="text-align: left;">
 	<p></p><p></p><p><b>TERMOS DE
 USO E CONDIÇÕES</b></p>
+
+<br>
+
+<p>
+	Veja também:
+	<br />
+	Nossa <a href="#politica-de-privacidade" style="color: #A4C400;">política de privacidade</a>, e<br />
+	Nossa <a href="#newsletter" style="color: #A4C400;">política para o newsletter</a>.
+</p>
 
 <p><br></p><p>Estes TERMOS
 DE USO E CONDIÇÕES aplicam-se a todo o site BenTrovato.com.br e a todos os
@@ -103,7 +112,7 @@ por boleto bancário, a BenTrovato.com.br solicitará informações de dados
 bancários como: nome do banco, agência e conta de seus clientes por e-mail,
 para o devido ressarcimento. Portanto, pedimos que o usuário que eventualmente
 receba um e-mail com conteúdo inapropriado ou duvidoso, não responda,
-desconsidere-o e se possível encaminhe-o para contato@bentrovato.com.br.<a href="mailto:sac@centauro.com.br"></a></p>
+desconsidere-o e se possível encaminhe-o para contato@bentrovato.com.br.</p>
 
 <p><br></p><p><b>3.<span>&nbsp; </span>RESPONSABILIDADES DO CLIENTE</b></p>
 
@@ -239,8 +248,8 @@ deve verificar os mesmos previamente cada vez que visitá-lo.</p><p><br></p>
 <p><b>8.<span>&nbsp; </span>DÚVIDAS</b></p>
 
 <p>8.1.<span>&nbsp; </span>Caso tenha qualquer dúvida em relação
-ao presente documento, favor entrar em contato enviando um e-mail para <a href="mailto:contato@bentrovato.com.br">contato@bentrovato.com.br</a>.</p>
-<p>POLÍTICA DE
+ao presente documento, favor entrar em contato enviando um e-mail para contato@bentrovato.com.br.</p>
+<p id="politica-de-privacidade" style="font-weight: bold; margin-top: 10px;">POLÍTICA DE
 PRIVACIDADE</p>
 
 <p>Esta
@@ -292,7 +301,7 @@ suas informações pessoais para terceiros sem relação com nosso negócio, a m
 que tal divulgação seja autorizada ou requerida por lei, ou o cliente ter expressamente
 concordado com essa divulgação.</p>
 
-<p>Se optou por
+<p id="newsletter">Se optou por
 receber nosso Newsletter, poderemos enviar tais materiais periodicamente,
 inclusive anúncios da empresa. O cliente pode cancelar a inscrição do
 Newsletter a qualquer momento.</p>

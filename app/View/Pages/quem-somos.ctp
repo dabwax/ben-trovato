@@ -11,7 +11,7 @@
 		<h2 style="position: relative; margin-top: 40px; margin-bottom: 40px; font-size: 23px;"><span style="position: absolute; left: 0px; top: 9px; width: 100%; height: 1px; background: #CCC;"></span> <span style="background: #FFF; position: relative; z-index: 999; padding: 26px; left: 0px; text-transform: uppercase; top: -10px; font-size: 18px;">Quem Somos</span> </h2>
 
 		<p style="font-size: 13px; text-align: justify !important; line-height: 26px; text-align: left;">
-			<?php echo $this->Html->image('Sobre_Foto01.jpg', array('style' => 'float: left; margin: 0px 50px 20px 0px; width: 360px; height: 345px; margin-top: 8px;') ); ?>
+			<?php echo $this->Html->image('Sobre_Foto01.jpg', array('style' => 'float: left; margin: 0px 50px 20px 0px; width: 360px; height: 320px; margin-top: 8px;') ); ?>
 
 			Ben Trovato é o destino virtual para amantes da moda. Nós somos apaixonados por óculos e adoramos ter um para cada humor. Estamos cansados de usar apenas um par que custou muito caro, todo dia, até quebrar.</p>
 
@@ -40,9 +40,7 @@
 
 		<h2 style="text-align: left;font-family: 'Nothing You Could Do' !important; font-size: 22px; margin-top: 92px; margin-bottom: 28px; text-align: center;">Como funciona o mercado óptico?</h2>
 
-		<p style="font-size: 13px; text-align: justify !important; line-height: 26px; text-align: left;">Hoje, a maioria das grifes de luxo vendem suas licenças para poucas empresas multinacionais que ficam responsáveis pelo desenho, fabricação e venda das armações em troca de contratos milionários e royalties sobre as vendas.</p>
-
-		<p style="font-size: 13px; text-align: justify !important; line-height: 26px; text-align: left;">Essas poucas multinacionais controlam todas as licenças das grandes marcas, às vezes até mesmo os seus distribuidores, mantendo os preços artificialmente elevados.</p>
+		<p style="font-size: 13px; text-align: justify !important; line-height: 26px; text-align: left;">Hoje, a maioria das grifes de luxo vendem suas licenças para poucas empresas multinacionais que ficam responsáveis pelo desenho, fabricação e venda das armações em troca de contratos milionários e royalties sobre as vendas. Essas poucas multinacionais controlam todas as licenças das grandes marcas, às vezes até mesmo os seus distribuidores, mantendo os preços artificialmente elevados.</p>
 
 		<p style="font-size: 13px; text-align: justify !important; line-height: 26px; text-align: left;">Além disso, a grande maioria das óticas vende estas armações por preços entre 3 a 4 vezes o valor de compra, inclusive adicionando uma margem (muito) confortável nas lentes oftálmicas.</p>
 
