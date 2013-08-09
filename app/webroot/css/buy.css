@@ -9,8 +9,12 @@
 .lente {
 	float: left;
 	display: inline;
-	width: 240px;
+	width: 238px;
 	margin-right: 20px;
+	border-right: 1px solid #CCC;
+}
+.lente:last-child {
+	border-right: none;
 }
 .lente .titulo-da-lente {
 	text-align: center;
@@ -24,7 +28,7 @@
 	text-align: center;
 	width: 100%;
 	min-height: 50px;
-	color: rgb(150, 150, 150);
+	color: #777;
 	font-size: 12px;
 }
 .lente .preco-da-lente {

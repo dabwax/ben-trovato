@@ -18,8 +18,8 @@
 	</h2>
 
 	<div style="float: left; display: inline; width: 100%; text-align: center;">
-			<h3 style="margin-top: 0px; margin-bottom: 30px;width: 100%;font-size: 23px;color: #999;font-style: italic;">
-		Nosso preço: R$ 237. Por este preço, você pode escolher qualquer armação com lentes de grau. <small>(consulte termos de uso e condições)</small>
+			<h3 style="margin-top: 0px; margin-bottom: 30px;width: 100%;font-size: 23px;color: #999;font-style: italic;font-weight: 600;">
+		Nosso preço: R$ 237. Por este preço, você pode escolher qualquer armação com<br />lentes de grau. <small><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #999;">(consulte termos de uso e condições)</a></small>
 			</h3>
 	</div>
 
@@ -91,10 +91,12 @@
 
 	<p style="font-size: 13px; text-align: justify !important; line-height: 26px; text-align: left;">Precisa de grau nas lentes de sol? Nós colocamos para você, porém temos que cobrar R$40 a mais pela coloração das lentes. Elas são produzidas em resina orgânica com proteção UVA/UBB e atendem receitas de miopia até -4 ou hipermetropia até +4, com astigmatismo até -4. Para entender melhor, entre no nosso FAQ ou fale conosco, que ficaremos felizes em te ajudar!</p>
 
-	<h2 style="position: relative; margin-top: 40px; margin-bottom: 26px; font-size: 23px;"><span style="position: absolute; left: 0px; top: 9px; width: 100%; height: 1px; background: #CCC;"></span> <span style="background: #FFF; position: relative; z-index: 999; padding: 26px; left: 0px; text-transform: uppercase; top: -10px; font-size: 18px;">FRETE 100% GRÁTIS PARA TODO CANTO DO BRASIL</span> </h2>
+	<div class="clear clearfix"></div>
+
+	<h2 style="position: relative; margin-bottom: 26px; font-size: 23px;"><span style="position: absolute; left: 0px; top: 9px; width: 100%; height: 1px; background: #CCC;"></span> <span style="background: #FFF; position: relative; z-index: 999; padding: 26px; left: 0px; text-transform: uppercase; top: -10px; font-size: 18px;">FRETE 100% GRÁTIS PARA TODO CANTO DO BRASIL</span> </h2>
 
 	<div style="float: left; display: inline; width: 100%; text-align: center;">
-		<h3 style="margin-top: 0px; margin-bottom: 30px; width: 100%;font-size: 23px;color: #999;font-style: italic;">A entrega em todo o Brasil está incluída no preço de seus óculos - sem surpresas desagradáveis ao finalizar a compra.</h3>
+		<h3 style="margin-top: 0px; margin-bottom: 30px; width: 100%;font-size: 23px;color: #999;font-style: italic;font-weight: 600;">A entrega em todo o Brasil está incluída no preço de seus óculos - sem surpresas desagradáveis ao finalizar a compra.</h3>
 	</div>
 
 	<p style="font-size: 13px; text-align: justify !important; line-height: 26px; text-align: left; margin-top: 20px; margin-bottom: 46px;">O prazo da entrega será informado ao final de sua compra e será válido a partir do momento da entrega da receita. Você pode verificar o status do pedido em sua conta, ou apenas entrar em contato conosco a qualquer momento que nós iremos informar como está o processo.</p>

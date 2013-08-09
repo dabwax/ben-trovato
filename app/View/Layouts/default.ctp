@@ -157,7 +157,7 @@
 
 					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'logout') ); ?>" class="pull-right" id="btn-login" style="font-size: 11px; margin-top: 20px; margin-right: 14px;">(Sair)</a> <!-- #btn-login -->
 
-					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" class="pull-right" id="btn-minha-conta" style="margin-top: 20px; font-size: 12px;">Minha Conta</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>" class="pull-right" id="btn-minha-conta" style="margin-top: 20px; font-size: 12px;">Olá, <?php echo AuthComponent::user('name'); ?>! Minha Conta</a>
 
 					<?php } ?>
 

@@ -289,6 +289,7 @@
 	</div>
 </div>
 
+<?php if(count($glass['Related']) > 0) { ?>
 <div class="row">
 	<div class="span12" style="margin-left: 0px;">
 		<div class="linha-com-titulo" style="margin-top: 10px;">
@@ -312,3 +313,5 @@
 	</div>
 	<?php endforeach; ?>
 </div>
+
+<?php } ?>

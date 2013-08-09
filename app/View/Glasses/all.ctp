@@ -80,7 +80,7 @@
 
 			<div class="produto" data-cor="<?php echo $glass['Glass']['color']; ?>" data-formato="<?php echo $glass['Glass']['format']; ?>" data-tamanho="<?php echo $glass['Glass']['size']; ?>" data-material="<?php echo $glass['Glass']['material']; ?>">
 
-				<a href="<?php echo $this->Html->url( array('action' => 'view', $glass['Glass']['id']) ); ?>">
+				<a href="<?php echo $this->Html->url( array('action' => 'view', $glass['Glass']['id']) ); ?>" style="float: left; display: inline; width: 100%; height: 170px;">
 
 					<?php echo $this->Loja->imagem($glass['Glass']['photo_1'], array('w' => '370', 'h' => '210', 'zc' => '0') ); ?>
 					<?php echo $this->Loja->imagem($glass['Glass']['photo_2'], array('w' => '370', 'h' => '210', 'zc' => '0'), array('style' => 'display: none;') ); ?>

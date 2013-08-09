@@ -20,5 +20,7 @@ $(document).ready(function() {
 	  	$(this).attr('disabled', 'disabled');
 
 	  	$("#OrderItemLenseId").val(lense_id);
+
+	  	$("#OrderItemBuyForm").submit();
 	  });
 });

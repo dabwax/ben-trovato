@@ -3,7 +3,7 @@
 		<?php echo $this->Html->image('Banner_Sobre.jpg', array('style' => 'width: 100%;') ); ?>
 
 		<div style="float: left; display: inline; width: 100%; text-align: center;">
-			<h3 style="margin-top: 30px;width: 100%;font-size: 23px;color: #999;font-style: italic;">“Nós fundamos a Ben Trovato a partir de uma idéia forte: alta<br />qualidade, praticidade na compra e preço baixo.”</h3>
+			<h3 style="margin-top: 30px;width: 100%;font-size: 23px;color: #999;font-style: italic;font-weight: 600;">“Nós fundamos a Ben Trovato a partir de uma idéia forte: alta<br />qualidade, praticidade na compra e preço baixo.”</h3>
 		</div>
 
 		<div class="clear clearfix"></div>
@@ -35,7 +35,7 @@
 		<h2 style="position: relative; margin-top: 40px; margin-bottom: 18px; font-size: 23px;"><span style="position: absolute; left: 0px; top: 9px; width: 100%; height: 1px; background: #CCC;"></span> <span style="background: #FFF; position: relative; z-index: 999; padding: 26px; left: 0px; text-transform: uppercase; top: -10px; font-size: 18px;">Nosso Segredo</span> </h2>
 
 		<div style="float: left; display: inline; width: 100%; text-align: center;">
-			<h3 style="width: 100%;font-size: 23px;color: #999;font-style: italic;">"Segredo? Na verdade, não temos. Isto nós deixamos para as multinacionais."</h3>
+			<h3 style="width: 100%;font-size: 23px;color: #999;font-style: italic;font-weight: 600;">"Segredo? Na verdade, não temos. Isto nós deixamos para as multinacionais."</h3>
 		</div>
 
 		<h2 style="text-align: left;font-family: 'Nothing You Could Do' !important; font-size: 22px; margin-top: 92px; margin-bottom: 28px; text-align: center;">Como funciona o mercado óptico?</h2>
@@ -48,8 +48,8 @@
 
 		<?php echo $this->Html->image('grafico.png', array('style' => 'margin-bottom: 30px; margin-top: 30px;') ); ?>
 
-		<h3 style="margin-top: 16px; margin-bottom: 20px; width: 100%;text-align: center;font-size: 18px; line-height: 22px; color: #999;font-style: italic;">NÓS DISPENSAMOS OS INTERMEDIÁRIOS.</h3>
-		<h3 style="margin-top: 10px; margin-bottom: 42px; width: 100%;text-align: center;font-size: 18px; line-height: 22px; color: #999;font-style: italic;">DESENHAMOS, FABRICAMOS E VENDEMOS NOSSO PRÓPRIOS ÓCULOS.</h3>
+		<h3 style="margin-top: 16px; margin-bottom: 20px; width: 100%;text-align: center;font-size: 18px; line-height: 22px; color: #999;font-style: italic;font-weight: 600;">NÓS DISPENSAMOS OS INTERMEDIÁRIOS.</h3>
+		<h3 style="margin-top: 10px; margin-bottom: 42px; width: 100%;text-align: center;font-size: 18px; line-height: 22px; color: #999;font-style: italic;font-weight: 600;">DESENHAMOS, FABRICAMOS E VENDEMOS NOSSO PRÓPRIOS ÓCULOS.</h3>
 
 	</div>
 </div>

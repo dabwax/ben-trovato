@@ -3,7 +3,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('Nothing You Could Do'), local('NothingYouCouldDo'), url(http://themes.googleusercontent.com/static/fonts/nothingyoucoulddo/v3/jpk1K3jbJoyoK0XKaSyQAZsYoLsUhJo8DEpooYVMXYU.woff) format('woff');
-}@font-face {
+}
+@font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
@@ -202,7 +203,7 @@ header {
 	float: left;
 	display: inline;
 	width: 300px;
-	height: 408px;
+	height: 433px;
 	margin-right: 10px;
 }
 #banner-preco {
@@ -695,6 +696,8 @@ hr.linha {
 }
 .btn {
 	border-radius: 0px;
+	border: none;
+	text-shadow: none;
 }
 .btn-success, .btn-success:hover {
 	background: #A4C400;
@@ -705,4 +708,13 @@ hr.linha {
 #filtros-dos-produtos label {
 	font-size: 12px;
 	margin-bottom: 0px;
+}
+.icone-continuar {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 0px;
+	position: relative;
+	top: 2px;
+	left: 3px;
 }

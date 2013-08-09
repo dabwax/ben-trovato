@@ -65,8 +65,12 @@
 							
 						</td>
 						<td>
-							<?php echo $this->Html->link('Finalizar Compra', 'javascript:;', array('class' => 'btn btn-success btn-finalizar-compra') ); ?>
-							<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn') ); ?>
+							<?php if(AuthComponent::user()) { ?>
+							<?php echo $this->Html->link('Finalizar Compra', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.endereco-de-entrega') ); ?>
+							<?php } else { ?>
+							<?php echo $this->Html->link('Finalizar Compra', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.detalhes-da-sua-conta') ); ?>
+							<?php } ?>
+							<?php echo $this->Html->link('Continuar Comprando', '/', array('class' => 'btn btn-small') ); ?>
 						</td>
 						<td>
 							
@@ -98,6 +102,8 @@
 		<p>
 			Você pode editar seu nome ou seu endereço de e-mail qualquer hora, <a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'account') ); ?>">visitando esta página</a>.
 		</p>
+
+		<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.endereco-de-entrega', 'escape' => false) ); ?>
 
 		<?php } ?>
 		<!-- Fim - Se o usuário estiver logado -->
@@ -183,7 +189,7 @@
 <div class="row order-block">
 	<div class="span12" style="margin-left: 0px;">
 
-		<h3 class="order-block-title">Endereço de Entrega</h3>
+		<h3 class="order-block-title endereco-de-entrega">Endereço de Entrega</h3>
 
 		<div class="order-block-content">
 
@@ -256,6 +262,10 @@
 
 			<?php echo $this->Form->input('Client.delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;', 'class' => 'required obrigatorio') ); ?>
 
+
+			<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.cupom-de-desconto', 'escape' => false) ); ?>
+
+
 		</div> <!-- .span6 -->
 
 		</div>
@@ -267,11 +277,13 @@
 <div class="row order-block">
 	<div class="span12" style="margin-left: 0px;">
 
-		<h3 class="order-block-title">Cupom de Desconto</h3>
+		<h3 class="order-block-title cupom-de-desconto">Cupom de Desconto</h3>
 
 		<div class="order-block-content">
 
 		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:') ); ?>
+
+		<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir', 'data-target' => '.pagamento', 'escape' => false) ); ?>
 
 		</div>
 
@@ -281,7 +293,7 @@
 <div class="row order-block">
 	<div class="span12 text-center" style="margin-left: 0px;">
 
-		<h3 class="order-block-title">Pagamento</h3>
+		<h3 class="order-block-title pagamento">Pagamento</h3>
 
 		<div class="order-block-content">
 
@@ -304,11 +316,15 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		$(".btn-finalizar-compra").click(function() {
-			$(".detalhes-da-sua-conta").click();
+		$(".btn-prosseguir").click(function() {
+			var target = $(this).data('target');
+
+			$(target).click();
 		});
 
 		$(".order-block-title").click(function() {
+
+			$("div.order-block-content").hide();
 
 			var content = $(this).parent().find('div.order-block-content');
 

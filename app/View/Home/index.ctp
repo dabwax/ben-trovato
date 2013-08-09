@@ -32,7 +32,7 @@
 		<div class="banners-embaixo">
 			<?php foreach($bannersEmbaixo as $banner) : ?>
 			<a <?php if($banner['Banner']['link'] != '') { ?>href="<?php echo $banner['Banner']['link']; ?>"<?php } ?>>
-				<?php echo $this->Loja->imagem($banner['Banner']['image'], array('w' => '300', 'h' => '408') ); ?>
+				<?php echo $this->Loja->imagem($banner['Banner']['image'], array('w' => '300', 'h' => '433') ); ?>
 			</a>
 			<?php endforeach; ?>
 		</div> <!-- .banners-embaixo -->
@@ -43,26 +43,26 @@
 		
 		<div id="banner-preco" style="border: none; position: relative; left: 0px; top: -18px;">
 	        <div id="descricao-preco">
-	           <h2 style="font-size: 24px !important;">Qualquer Armação</h2>
-	           <h3 style="font-size: 16px; color: #8e8e8e;">+ lentes com grau ou solares</h3>
+	           <h2 style="font-size: 24px !important; font-weight: 600;">Qualquer Armação</h2>
+	           <h3 style="font-size: 16px; color: #8e8e8e; font-weight: 600;">+ lentes com grau ou solares</h3>
 	        </div>
 	        <div id="valor-banner">
 	           <div class="valor-banner-linha-left">
 	              <hr>
 	           </div>
 	           <div class="valor-banner-money">
-	              <h2>R$ 237</h2>
+	              <h2 style="font-weight: 600;">R$ 237</h2>
 	           </div>
-	           <span style="position: absolute; top: 44px; left: 37px; color: #A4C400;">ou em até 3x sem juros de R$ 79</span>
+	           <span style="position: absolute; top: 44px; left: 37px; color: #A4C400; font-weight: 700;">ou em até 3x sem juros de R$ 79</span>
 	           <div class="valor-banner-linha-right">
 	              <hr>
 	           </div>
 	       </div>
 	       <div id="detalhes-banner">
-	          <h3 style="margin: 0px; margin-top: 16px; font-size: 12px; line-height: 18px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Lentes com grau com antirreflexo, antirrisco<br /><span style="width: 14px; height: 10px; display: inline-block;"></span>e UVA/UVB ou lentes solares com UVA/UVB</h3>
-	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Frete grátis (entrega, troca ou devolução)</h3>
-	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 20px; text-align: left;"><?php echo $this->Html->image('tick.png'); ?> Reembolso integral até 30 dias</h3>
-	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 33px; text-align: left; color: #999;"><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #999;">* Consulte termos de uso e condições</a></h3>
+	          <h3 style="margin: 0px; margin-top: 16px; font-size: 12px; line-height: 18px; margin-left: 20px; text-align: left; font-weight: 400;"><?php echo $this->Html->image('tick.png'); ?> Lentes com grau com antirreflexo, antirrisco<br /><span style="width: 14px; height: 10px; display: inline-block;"></span>e UVA/UVB ou lentes solares com UVA/UVB</h3>
+	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 20px; text-align: left; font-weight: 400;"><?php echo $this->Html->image('tick.png'); ?> Frete grátis (entrega, troca ou devolução)</h3>
+	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 20px; text-align: left; font-weight: 400;"><?php echo $this->Html->image('tick.png'); ?> Reembolso integral até 30 dias</h3>
+	          <h3 style="margin: 0px; line-height: 18px; font-size: 12px; margin-left: 33px; text-align: left; color: #999; font-weight: 400;"><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #999;">* Consulte termos de uso e condições</a></h3>
 	       </div>
 	     </div> <!-- #banner-preco -->
 
