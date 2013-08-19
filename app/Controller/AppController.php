@@ -193,7 +193,7 @@ class AppController extends Controller {
  * Define as actions públicas (qualquer um pode acessar).
  */
 	public function setPublicActions() {
-		$this->Auth->allow('index', 'view', 'display', 'ajax_add', 'ajax_forgot', 'all', 'cart');
+		$this->Auth->allow('index', 'view', 'display', 'ajax_add', 'ajax_forgot', 'all', 'cart', 'payment_notification');
 	}
 
 /**

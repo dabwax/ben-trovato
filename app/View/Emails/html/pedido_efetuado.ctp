@@ -6,28 +6,36 @@
 
 <p>Os produtos que você comprou foram:</p>
 
-<table class="table-bordered table table-hover">
+<table class="table-bordered table table-hover" style="width: 100%; border: 1px solid #000;">
 	<tbody>
 		<?php foreach($orderItems as $orderItem) : ?>
 		<tr>
 			<td>
 				<!-- Informações Gerais -->
 				<p class="nome-do-oculos">
-					<?php echo $orderItem['Glass']['name']; ?>
+					<strong>Óculos:</strong> <?php echo $orderItem['Glass']['name']; ?>
 
-					<?php echo $orderItem['Glass']['color2']; ?>
+					<strong>Cor:</strong> <?php echo $orderItem['Glass']['color2']; ?>
+
+					<strong>Lente:</strong> <?php echo $orderItem['Lense']['name']; ?>
 				</p> <!-- .nome-do-oculos -->
-
-				<p class="descricao-da-lente">
-					<?php echo $orderItem['Lense']['label']; ?>
-				</p> <!-- .descricao-da-lente -->
 			</td>
 			<td>
 				<!-- Preço -->
-				<?php echo $this->Loja->preco($orderItem['price']); ?>
+				<strong>Preço:</strong> <?php echo $this->Loja->preco($orderItem['price']); ?>
 			</td>
 		</tr>
 		<?php endforeach; ?>
+		<?php if($coupon) { ?>
+		<tr>
+			<td>
+				<strong>Cupom:</strong> <?php echo $coupon['Coupon']['number']; ?>
+			</td>
+			<td>
+				<strong>Desconto:</strong> <?php echo $this->Loja->preco($coupon['Coupon']['discount']); ?>
+			</td>
+		</tr>
+		<?php } ?>
 	</tbody>
 	<tfoot>
 		<tr>
@@ -35,7 +43,7 @@
 				
 			</td>
 			<td>
-				Total: <?php echo $this->Loja->preco($totalPrice); ?>
+				<strong>Total:</strong> <?php echo $this->Loja->preco($totalPrice); ?>
 			</td>
 			<td>
 			</td>

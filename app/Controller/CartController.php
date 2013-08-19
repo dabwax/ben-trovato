@@ -8,6 +8,25 @@ class CartController extends AppController {
 		$this->Auth->allow('delete_order_item', 'ajax_address', 'payment_success', 'payment_notification');
 	}
 
+	public function ajax_coupon() {
+		$this->layout = "ajax";
+		$this->autoRender = false;
+
+		$this->uses = array('Coupon');
+
+		$coupon = $this->Coupon->find('first', array(
+			'conditions' => array(
+				'Coupon.number' => $_POST['coupon']
+			)
+		) );
+
+		if($coupon) {
+			echo $coupon['Coupon']['discount'];
+		} else {
+			echo '';
+		}
+	}
+
 /**
  * Página usada como retorno após pagamento do usuário no PagSeguro.
  */
@@ -25,11 +44,16 @@ class CartController extends AppController {
 		$this->layout = "ajax";
 		$this->autoRender = false;
 
-		$name = APP . 'webroot' . DS . 'pagseguro-log.txt';
-		$text = var_export($_POST, true);
-		$file = fopen($name, 'a');
-		fwrite($file, $text);
-		fclose($file);
+		$this->uses = array('Order');
+
+		$order = $this->Order->findByReference($_POST['Referencia']);
+
+		$this->Order->save( array(
+			'id' => $order['Order']['id'],
+			'payment_type' => $_POST['TipoPagamento'],
+			'payment_status' => $_POST['StatusTransacao'],
+			'payment_date' => $_POST['DataTransacao']
+		) );
 	}
 
 /**
@@ -88,12 +112,15 @@ class CartController extends AppController {
 				$coupon = $this->Coupon->find('first', array('conditions' => array('Coupon.number' => $this->request->data['Order']['coupon'], 'Coupon.is_used' => 0) ) );
 
 				if($coupon) {
-					$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
 
-					$this->Coupon->save( array('id' => $coupon['Coupon']['id'], 'is_used' => 1) );
+					if($coupon['Coupon']['discount'] < $totalPrice) {
+						$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
 
-					// Define o desconto
-					$paymentRequest->addParameter('extraAmount', '-' . number_format($coupon['Coupon']['discount'], 2, '.', ''));
+						$this->Coupon->save( array('id' => $coupon['Coupon']['id'], 'is_used' => 1) );
+
+						// Define o desconto
+						$paymentRequest->setExtraAmount('-' . number_format($coupon['Coupon']['discount'], 2, '.', ''));
+					}
 				}
 			}
 
@@ -180,6 +207,8 @@ class CartController extends AppController {
 			// Define a URL de Retorno Automático (Notification URL) ao objeto do PagSeguro
 			$paymentRequest->setNotificationURL(Router::url( array('controller' => 'cart', 'action' => 'payment_notification'), true));
 
+			$paymentRequest->addParameter('senderCPF', str_replace('-', '', filter_var($userLogged['Client']['cpf'], FILTER_SANITIZE_NUMBER_INT))); 
+
 			// Define as credenciais do PagSeguro ao objeto do PagSeguro
 			$settings = $this->setSettings();
 
@@ -199,7 +228,7 @@ class CartController extends AppController {
 
 			$email->template('pedido_efetuado', 'default');
 
-			$email->viewVars( array('reference' => $reference, 'orderItems' => $orderItems, 'userLogged' => $userLogged, 'totalPrice' => $totalPrice) );
+			$email->viewVars( array('reference' => $reference, 'orderItems' => $orderItems, 'userLogged' => $userLogged, 'totalPrice' => $totalPrice, 'coupon' => $coupon) );
 
 			$email->send();
 
@@ -219,8 +248,34 @@ class CartController extends AppController {
 			// Exclui a Sessão dos Itens de Pedido
 			$this->Session->delete('OrderItemId');
 
-			return $this->redirect($url);
+			$url = parse_url($url);
+
+			$url = explode("code=", $url['query']);
+
+			$token = $url[1];
+
+			$this->Order->save(
+				array(
+					'id' => $this->Order->getInsertID(),
+					'token' => $token
+				)
+			);
+
+			return $this->redirect( array('action' => 'payment', $token) );
 		}
+	}
+
+	public function payment($token = '') {
+		$this->uses = array('Order');
+
+		$order = $this->Order->findByToken($token);
+
+		if(!$order) {
+			$this->Session->setFlash('O pedido que você tentou acessar não existe mais.', 'error');
+			$this->redirect('/');
+		}
+
+		$this->set(compact('token'));
 	}
 
 /**

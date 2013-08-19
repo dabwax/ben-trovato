@@ -261,7 +261,19 @@
 
 		<div class="order-block-content" style="text-align: center;">
 
-		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:') ); ?>
+		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:', 'div' => false, 'maxlength' => '8') ); ?>
+
+		<?php echo $this->Html->image('ajax-loader.gif', array('style' => 'display: inline-block; margin-top: -12px; margin-left: 12px; display: none;', 'class' => 'ajax-loader-coupon') ); ?>
+
+		<p id="desconto-total" class="hide" style="font-size: 11px; color: #468847; font-weight: bold;">
+			O desconto deste cupom é de R$ <span></span> reais.
+		</p> <!-- #desconto-total -->
+
+		<p id="erro-de-desconto" class="hide" style="font-size: 11px; color: #d9534f; font-weight: bold;">
+			O cupom inserido não é válido.
+		</p> <!-- #erro-de-desconto -->
+
+		<div class="clear clearfix"></div>
 
 		<?php echo $this->Html->link('Continuar <span class="icone-continuar">></span>', 'javascript:;', array('class' => 'btn btn-success btn-prosseguir pull-right', 'style' => 'width: 114px;', 'data-target' => '.pagamento', 'escape' => false) ); ?>
 
@@ -295,6 +307,43 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+
+		$("#OrderCoupon").keyup(function() {
+			var val = $(this).val();
+
+			if(val.length >= 8) {
+
+				$(".ajax-loader-coupon").fadeIn(100);
+
+				$.ajax({
+					type: 'POST',
+					url: '<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'ajax_coupon') ); ?>',
+					data: {'coupon': val},
+					success: function(data) {
+						$(".ajax-loader-coupon").fadeOut(100);
+
+						if (parseFloat(data) > <?php echo number_format($totalPrice, 2, '.', ''); ?>) {
+							$("#desconto-total,#erro-de-desconto").hide();
+							$("#erro-de-desconto").html('O cupom inserido tem um desconto maior que o valor total do seu carrinho (R$ ' + data + '). Ele não será utilizado.');
+							$("#erro-de-desconto").fadeIn(100);
+
+							return false;
+						}
+
+						if(data != '') {
+							$("#desconto-total").find('span').html(data);
+							$("#desconto-total").fadeIn(100);
+							$("#erro-de-desconto").hide();
+						} else {
+							$("#desconto-total").hide();
+							$("#erro-de-desconto").fadeIn(100);
+						}
+					}
+				});
+			} else {
+				$("#desconto-total,#erro-de-desconto").hide();
+			}
+		});
 
 		$(".campo-de-cpf").mask("999.999.999-99");
 

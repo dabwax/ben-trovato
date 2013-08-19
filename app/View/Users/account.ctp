@@ -12,6 +12,8 @@
 
 		<?php echo $this->Form->input('Client.email', array('label' => 'Seu E-mail') ); ?>
 
+		<?php echo $this->Form->input('Client.cpf', array('label' => 'Seu CPF') ); ?>
+
 		<?php echo $this->Form->input('Client.phone', array('label' => 'Seu Telefone') ); ?>
 
 		<?php echo $this->Form->input('password', array('label' => 'Sua Senha') ); ?>
