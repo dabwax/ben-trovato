@@ -112,27 +112,27 @@ class Glass extends AppModel {
 				'rule' => array('validateEnum', 'type'),
 			)
 		),
-		'photo_1' => array(
-			'extension' => array(
-				'rule' => array('extension'),
-				'message' => 'Forneça uma imagem num formato válido (jpg, png ou gif).',
-				'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'photo_2' => array(
-			'extension' => array(
-				'rule' => array('extension'),
-				'message' => 'Forneça uma imagem num formato válido (jpg, png ou gif).',
-				'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'image_hover' => array(
-			'extension' => array(
-				'rule' => array('extension'),
-				'message' => 'Forneça uma imagem num formato válido (jpg, png ou gif).',
-				'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		// 'photo_1' => array(
+		// 	'extension' => array(
+		// 		'rule' => array('extension'),
+		// 		'message' => 'Forneça uma imagem num formato válido (jpg, png ou gif).',
+		// 		'on' => 'create', // Limit validation to 'create' or 'update' operations
+		// 	),
+		// ),
+		// 'photo_2' => array(
+		// 	'extension' => array(
+		// 		'rule' => array('extension'),
+		// 		'message' => 'Forneça uma imagem num formato válido (jpg, png ou gif).',
+		// 		'on' => 'create', // Limit validation to 'create' or 'update' operations
+		// 	),
+		// ),
+		// 'image_hover' => array(
+		// 	'extension' => array(
+		// 		'rule' => array('extension'),
+		// 		'message' => 'Forneça uma imagem num formato válido (jpg, png ou gif).',
+		// 		'on' => 'create', // Limit validation to 'create' or 'update' operations
+		// 	),
+		// ),
 	);
 
 /**

@@ -198,6 +198,8 @@ class GlassesController extends AppController {
 
 		$this->request->data = $this->Glass->find('first', array('conditions' => array('Glass.id' => $id) ) );
 
+		$this->Glass->Behaviors->detach('Uploader.Attachment');
+
 		unset($this->request->data['Glass']['id']);
 
 		$this->Glass->save($this->request->data);
