@@ -76,7 +76,7 @@
 						<li class="divider"></li>
 						<li class="dropdown-header"><span class="glyphicon glyphicon-barcode"></span> Pedidos</li>
 			    		<li>
-			    			<a href="<?php echo $this->Html->url( array('controller' => 'glasses', 'action' => 'index') ); ?>">Listar</a>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'orders', 'action' => 'index') ); ?>">Listar</a>
 			    		</li>
 			    	</ul>
 			    </li>

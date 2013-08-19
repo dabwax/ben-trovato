@@ -40,6 +40,20 @@ class UsersController extends AppController {
 		$this->set(compact('role'));
 	}
 
+	public function admin_view($id = null) {
+		$this->User->id = $id;
+
+		if(!$this->User->exists()) {
+			$this->Session->setFlash(__('Invalid user'));
+
+			return $this->redirect( array('action' => 'index', 'client') );
+		}
+
+		$user = $this->User->read();
+
+		$this->set(compact('user'));
+	}
+
 	public function admin_add($role = 'admin') {
 
 		if($this->request->is('post')) {

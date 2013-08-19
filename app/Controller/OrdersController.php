@@ -16,6 +16,24 @@ class OrdersController extends AppController {
 		$this->set('orders', $this->paginate());
 	}
 
+	public function admin_view($id = null) {
+		$this->Order->id = $id;
+		if (!$this->Order->exists()) {
+			throw new NotFoundException(__('Invalid order'));
+		}
+
+		$order = $this->Order->find('first', array(
+			'conditions' => array(
+				'Order.id' => $id,
+			),
+			'contain' => array(
+				'User' => array('Client'),
+			)
+		) );
+
+		$this->set(compact('order'));
+	}
+
 	public function admin_delete($id = null) {
 		$this->Order->id = $id;
 		if (!$this->Order->exists()) {

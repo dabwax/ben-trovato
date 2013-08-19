@@ -47,6 +47,8 @@
 							<td><?php $data = new DateTime($order['Order']['created']); echo $data->format('d/m/Y h:i:s'); ?>&nbsp;</td>
 							<td class="actions">
 
+								<?php echo $this->Html->link(__('Informações'), array('action' => 'view', $order['Order']['id']), array('class' => 'btn btn-success') ); ?>
+
 								<?php if(AuthComponent::user('username') == 'marketingshop') { ?>
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?>
 								<?php } ?>

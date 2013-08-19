@@ -15,7 +15,7 @@ class CouponsController extends AppController {
 	}
 
 	public function admin_add() {
-		$number = (int) uniqid(rand(), true);
+		$number = substr(number_format(time() * rand(),0,'',''),0,8);
 
 		$this->request->data['Coupon']['number'] = $number;
 		$this->request->data['Coupon']['is_used'] = 0;

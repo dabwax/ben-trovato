@@ -73,7 +73,13 @@ class CartController extends AppController {
 		if($this->request->is('post')) {
 
 			// Gera um código de referência único
-			$reference = (int) uniqid(rand(), true);
+			$reference = substr(number_format(time() * rand(),0,'',''),0,8);
+
+			// Importa a biblioteca oficial do PagSeguro
+			require_once APP . 'Vendor' . DS . 'pagseguro' . DS . 'PagSeguroLibrary.php';
+
+			// Gera um objeto do tipo PagSeguroPaymentRequest
+			$paymentRequest = new PagSeguroPaymentRequest();
 
 			// Verifica se foi digitado um cupom. Se tiver sido, verifica se ele existe e qual o valor de desconto dele.
 			if(isset($this->request->data['Order']['coupon'])) {
@@ -85,6 +91,9 @@ class CartController extends AppController {
 					$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
 
 					$this->Coupon->save( array('id' => $coupon['Coupon']['id'], 'is_used' => 1) );
+
+					// Define o desconto
+					$paymentRequest->addParameter('extraAmount', '-' . number_format($coupon['Coupon']['discount'], 2, '.', ''));
 				}
 			}
 
@@ -117,12 +126,6 @@ class CartController extends AppController {
 
 			// Salva os dados do pedido
 			$this->Order->save($this->request->data);
-
-			// Importa a biblioteca oficial do PagSeguro
-			require_once APP . 'Vendor' . DS . 'pagseguro' . DS . 'PagSeguroLibrary.php';
-
-			// Gera um objeto do tipo PagSeguroPaymentRequest
-			$paymentRequest = new PagSeguroPaymentRequest();
 
 			// Define a moeda a ser utilizada pelo objedo do PagSeguro
 			$paymentRequest->setCurrency("BRL");

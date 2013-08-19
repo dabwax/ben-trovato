@@ -14,7 +14,7 @@
 				<div class="form">
 				<?php echo $this->Form->create('Coupon', array('type' => 'file') ); ?>
 					<fieldset>
-						<legend><?php echo __('Edit Coupon'); ?></legend>
+						<legend><?php echo __('Editar Cupom'); ?></legend>
 					<?php
 						echo $this->Form->input('id');
 

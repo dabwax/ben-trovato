@@ -113,7 +113,7 @@
 				<h3 style="text-align: left; font-size: 22px;">LOGIN</h3>
 				<?php echo $this->Form->create('User', array('class' => 'form-horizontal', 'url' => array('controller' => 'users', 'action' => 'login') ) ); ?>
 
-				<?php echo $this->Form->hidden('redirect', array('value' => Router::url( array('controller' => 'cart', 'action' => 'index'), true ) ) ); ?>
+				<?php echo $this->Form->hidden('redirect', array('value' => Router::url( array('controller' => 'cart', 'action' => 'index'), true ) . '#detalhes-da-sua-conta' ) ); ?>
 
 				<div class="control-group">
 					<?php echo $this->Form->input('username', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
@@ -143,31 +143,9 @@
 
 				<?php echo $this->Form->create('User', array('class' => 'form-horizontal form-criacao-de-conta', 'url' => array('controller' => 'users', 'action' => 'ajax_add') ) ); ?>
 
-				<?php echo $this->Form->hidden('redirect', array('value' => $this->Html->url( array('controller' => 'cart', 'action' => 'index') ) ) ); ?>
+				<?php echo $this->Form->hidden('redirect', array('value' => Router::url( array('controller' => 'cart', 'action' => 'index'), true ) . '#detalhes-da-sua-conta' ) ); ?>
 
-				<div class="control-group">
-					<?php echo $this->Form->input('name', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
-				</div>
-
-				<div class="control-group">
-					<?php echo $this->Form->input('username', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
-				</div>
-
-				<div class="control-group">
-					<?php echo $this->Form->input('password', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
-				</div>
-
-				<div class="control-group">
-					<?php echo $this->Form->input('Client.phone', array('class' => 'campo-de-telefone', 'div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
-				</div>
-
-				<div class="control-group">
-					<?php echo $this->Form->input('Client.email', array('div' => array('class' => 'controls'), 'label' => array('class' => 'control-label') ) ); ?>
-				</div>
-
-				<div class="control-group">
-					<?php echo $this->Form->submit('Cadastrar', array('class' => 'btn btn-large btn-success', 'div' => array('class' => 'controls', 'style' => 'margin-left: 180px;') ) ); ?>
-				</div>
+				<?php echo $this->element('user_form'); ?>
 
 				<?php echo $this->Form->end(); ?>
 			</div>
@@ -202,7 +180,6 @@
 
 				<div class="clear clearfix" style="margin-top: 20px;"></div>
 
-				<?php echo $this->Form->input('Client.billing_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['billing_company'], 'class' => 'required obrigatorio') ); ?>
 
 				<?php echo $this->Form->input('Client.billing_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['billing_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio' ) ); ?>
 
@@ -226,6 +203,10 @@
 
 				<?php echo $this->Form->input('Client.billing_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['billing_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;', 'class' => 'required obrigatorio' ) ); ?>
 
+				<div class="clear clearfix"></div>
+
+				<?php echo $this->Form->input('Client.billing_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['billing_company'], 'class' => 'required obrigatorio') ); ?>
+
 			</div> <!-- .formulario-de-cobranca -->
 
 
@@ -235,8 +216,6 @@
 			<h4>Endereço de Entrega</h4>
 
 			<div class="clear clearfix" style="margin-top: 60px;"></div>
-
-			<?php echo $this->Form->input('Client.delivery_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['delivery_company']) ); ?>
 
 			<?php echo $this->Form->input('Client.delivery_cep', array('label' => 'CEP:', 'value' => $userLogged['Client']['delivery_cep'], 'div' => array('class' => 'span2', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio') ); ?>
 
@@ -259,6 +238,10 @@
 			<?php echo $this->Form->input('Client.delivery_state', array('label' => 'Estado:', 'value' => $userLogged['Client']['delivery_state'], 'div' => array('class' => 'span1', 'style' => 'margin-left: 0px;'), 'class' => 'required obrigatorio') ); ?>
 
 			<?php echo $this->Form->input('Client.delivery_city', array('label' => 'Cidade:', 'value' => $userLogged['Client']['delivery_city'], 'div' => array('class' => 'span3'), 'style' => 'width: 102%;', 'class' => 'required obrigatorio') ); ?>
+
+			<div class="clear clearfix"></div>
+			
+			<?php echo $this->Form->input('Client.delivery_company', array('label' => 'Nome da Empresa / Escritório (opcional):', 'value' => $userLogged['Client']['delivery_company']) ); ?>
 
 		</div> <!-- .span6 -->
 
@@ -313,8 +296,14 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
+		$(".campo-de-cpf").mask("999.999.999-99");
+
 		$(".btn-prosseguir").click(function() {
 			var target = $(this).data('target');
+			
+			var hash = target.replace('.', '#');
+
+			window.location.hash = hash;
 
 			$(target).click();
 		});
@@ -401,5 +390,15 @@
 	 		}
 	 	});
 
+	});
+
+	$(window).load(function() {
+
+		if(window.location.hash) {
+			var hash = window.location.hash.substring(1);
+			hash = '.' + hash;
+
+			$(hash).click();
+		}
 	});
 </script>
