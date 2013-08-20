@@ -193,7 +193,7 @@ lugar de sua preferência.</p>
 
 lentes em outro lugar de sua preferência, nós vendemos apenas armação e
 
-oferecemos um desconto de R$ 21. Para isto, basta escolher a opção “Lentes
+oferecemos um desconto de R$ 23. Para isto, basta escolher a opção “Lentes
 
 de demonstração” quando adicionar sua armação escolhida ao carrinho. A 
 

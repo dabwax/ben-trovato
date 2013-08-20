@@ -37,12 +37,12 @@
 
 				<hr />
 
-				<p class="preco" style="font-size: 13px; position: absolute; left: 10px; bottom: -16px; background: none;">
-					ou 3x sem juros
+				<p class="preco" style="font-size: 13px; position: absolute; left: 10px; bottom: -38px; background: none;">
+					ou em até 3x sem juros de <?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'] / 3)); echo $preco[0]; ?>
 				</p>
 			</div> <!-- .texto-com-linha -->
 
-			<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-comprar" class="btn-lente btn btn-inverse" style="text-align: left; position: relative; background: #353535; border-radius: 0px; border: none; width: 130px;">
+			<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-comprar" class="btn-lente btn btn-inverse" style="text-align: left; position: relative; background: #353535; border-radius: 0px; border: none; width: 130px; margin-top: 18px;">
 
 				<span style="float: left; display: inline; margin-right: 6px; margin-top: 8px; color: #A4C400; font-weight: bold; font-size: 29px; margin-left: 7px;">+</span>
 

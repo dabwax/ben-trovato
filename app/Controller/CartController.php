@@ -48,12 +48,34 @@ class CartController extends AppController {
 
 		$order = $this->Order->findByReference($_POST['Referencia']);
 
+		$user = $this->Order->User->findById($order['User']['id']);
+
 		$this->Order->save( array(
 			'id' => $order['Order']['id'],
 			'payment_type' => $_POST['TipoPagamento'],
 			'payment_status' => $_POST['StatusTransacao'],
 			'payment_date' => $_POST['DataTransacao']
 		) );
+
+		App::uses('CakeEmail', 'Network/Email');
+
+		$email = new CakeEmail('smtp');
+
+		$email->emailFormat('html');
+
+		$email->from(array('no-reply@bentrovato.com.br' => 'Ben Trovato'));
+
+		$email->to($user['Client']['email']);
+
+		$subject = $_POST['StatusTransacao'];
+
+		$email->subject('Pedido ' . $subject . ' - Loja Ben Trovato');
+
+		$email->template('pedido_change_status', 'default');
+
+		$email->viewVars( array('user' => $user, 'order' => $order, 'type' => $subject) );
+
+		$email->send();
 	}
 
 /**

@@ -641,7 +641,8 @@ hr.linha {
 	height: 100%;
 }
 .order-block-content {
-	display: none;
+	overflow: hidden;
+	height: 0px;
 }
 .order-block-title {
 	cursor: pointer;

@@ -26,6 +26,7 @@
 						<th>Itens</th>
 						<th><?php echo $this->Paginator->sort('total_items', 'Total de Itens'); ?></th>
 						<th><?php echo $this->Paginator->sort('coupon', 'Cupom'); ?></th>
+						<th><?php echo $this->Paginator->sort('tracking_code', 'Cód. Rastreio'); ?></th>
 						<th><?php echo $this->Paginator->sort('created', 'Data de Criação'); ?></th>
 						<th class="actions"><?php echo __('Ações'); ?></th>
 					</tr>
@@ -68,6 +69,7 @@
 							</td>
 							<td><?php echo h($order['Order']['total_items']); ?>&nbsp;</td>
 							<td><?php echo h($order['Order']['coupon']); ?>&nbsp;</td>
+							<td><?php echo h($order['Order']['tracking_code']); ?>&nbsp;</td>
 							<td><?php $data = new DateTime($order['Order']['created']); echo $data->format('d/m/Y h:i:s'); ?>&nbsp;</td>
 							<td class="actions">
 

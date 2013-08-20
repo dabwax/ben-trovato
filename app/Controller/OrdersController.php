@@ -16,6 +16,53 @@ class OrdersController extends AppController {
 		$this->set('orders', $this->paginate());
 	}
 
+	public function admin_change_payment_status($id, $type) {
+		if (!$this->Order->exists($id)) {
+			throw new NotFoundException(__('Invalid order'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Order->save($this->request->data)) {
+				$this->Session->setFlash(__('The order has been saved'), 'success');
+
+				$order = $this->Order->findById($id);
+
+				$user = $this->Order->User->findById($order['User']['id']);
+
+				App::uses('CakeEmail', 'Network/Email');
+
+				$email = new CakeEmail('smtp');
+
+				$email->emailFormat('html');
+
+				$email->from(array('no-reply@bentrovato.com.br' => 'Ben Trovato'));
+
+				$email->to($user['Client']['email']);
+
+				if($type == 'sent') {
+					$subject = 'Enviado com Sucesso';
+				} else if ($type == 'processing') {
+					$subject = 'Em Processo';
+				}
+
+				$email->subject('Pedido ' . $subject . ' - Loja Ben Trovato');
+
+				$email->template('pedido_change_status', 'default');
+
+				$email->viewVars( array('user' => $user, 'order' => $order, 'type' => $type) );
+
+				$email->send();
+
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The order could not be saved. Please, try again.'), 'error');
+			}
+		} else {
+			$options = array('conditions' => array('Order.' . $this->Order->primaryKey => $id));
+			$this->request->data = $this->Order->find('first', $options);
+		}
+		$this->set(compact('type'));
+	}
+
 	public function admin_view($id = null) {
 		$this->Order->id = $id;
 		if (!$this->Order->exists()) {

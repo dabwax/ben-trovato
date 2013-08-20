@@ -357,14 +357,17 @@
 
 		$(".order-block-title").click(function() {
 
-			$("div.order-block-content").hide();
+			$("div.order-block-content").css('overflow', 'hidden');
+			$("div.order-block-content").css('height', '0px');
 
 			var content = $(this).parent().find('div.order-block-content');
 
-			if(content.is(':visible')) {
-				content.hide();
+			if(content.css('height') == 'auto') {
+				content.css('overflow', 'hidden');
+				content.css('height', '0px');
 			} else {
-				content.show();
+				content.css('overflow', 'visible');
+				content.css('height', 'auto');
 			}
 		});
 
@@ -373,6 +376,11 @@
 
 				$(form).find('button').attr('disabled');
 				form.submit();
+			},
+			invalidHandler: function(form, validator) {
+				alert('Ocorreram erros de validação!');
+
+				$(".endereco-de-entrega").click();
 			}
 		});
 
@@ -446,6 +454,8 @@
 			hash = '.' + hash;
 
 			$(hash).click();
+		} else {
+			$(".order-block-title").first().click();
 		}
 	});
 </script>
