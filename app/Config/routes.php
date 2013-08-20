@@ -35,6 +35,7 @@
 	Router::connect('/oculos-feminino/*', array('controller' => 'glasses', 'action' => 'all', 'feminino') );
 	Router::connect('/quem-somos', array('controller' => 'pages', 'action' => 'display', 'quem-somos') );
 	Router::connect('/preco', array('controller' => 'pages', 'action' => 'display', 'preco') );
+	Router::connect('/termos-de-uso-e-condicoes', array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') );
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'display', 'faq') );
 	Router::connect('/contato', array('controller' => 'pages', 'action' => 'display', 'contato') );
 	Router::connect('/carrinho-de-compras', array('controller' => 'cart', 'action' => 'index') );

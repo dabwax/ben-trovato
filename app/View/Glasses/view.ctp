@@ -129,7 +129,7 @@
 <div class="row">
 
 
-	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem($glass['Glass']['image_hover'], array('h' => '280', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -723px;">
+	<div class="span5" id="foto-efeito-hover" style="background: url('<?php echo $this->Loja->imagem($glass['Glass']['image_hover'], array('h' => '400', 'zc' => '0', 'url' => true) ); ?>'); margin-left: 0px; background-position-x: -800px;">
 
 		<span class="shape shape-1"></span>
 		<span class="shape shape-2"></span>
@@ -149,25 +149,25 @@
 				}
 
 				if($(this).hasClass('shape-2')) {
-					div.css('background-position-x', '-360px');
+					div.css('background-position-x', '-400px');
 				}
 
 				if($(this).hasClass('shape-3')) {
-					div.css('background-position-x', '-723px');
+					div.css('background-position-x', '-800px');
 				}
 
 				if($(this).hasClass('shape-4')) {
-					div.css('background-position-x', '-1086px');
+					div.css('background-position-x', '-1200px');
 				}
 
 				if($(this).hasClass('shape-5')) {
-					div.css('background-position-x', '-1450px');
+					div.css('background-position-x', '-1600px');
 				}
 
 			}, function() {
 				var div = $(this).parent();
 
-				div.css('background-position-x', '-723px');
+				div.css('background-position-x', '-800px');
 			});
 		});
 	</script>

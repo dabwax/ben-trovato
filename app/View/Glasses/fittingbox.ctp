@@ -29,13 +29,17 @@
 				<?php echo $glass['Glass']['color2']; ?>
 			</h3> <!-- cor-do-oculos -->
 
-			<div class="texto-com-linha">
+			<div class="texto-com-linha" style="position: relative; top: -6px;">
 
-				<p class="preco">
+				<p class="preco" style="font-size: 18px;">
 					<?php $preco = explode(',', $this->Loja->preco($glass['Glass']['price'])); echo $preco[0]; ?>
 				</p> <!-- .preco -->
 
 				<hr />
+
+				<p class="preco" style="font-size: 13px; position: absolute; left: 10px; bottom: -16px; background: none;">
+					ou 3x sem juros
+				</p>
 			</div> <!-- .texto-com-linha -->
 
 			<a href="<?php echo $this->Html->url( array('action' => 'buy', $glass['Glass']['id']) ); ?>" id="btn-comprar" class="btn-lente btn btn-inverse" style="text-align: left; position: relative; background: #353535; border-radius: 0px; border: none; width: 130px;">
@@ -49,14 +53,14 @@
 			</a> <!-- #btn-comprar -->
 
 			<p id="consulte-nossos-parametros">
-				* Consulte termos de uso e condições
+				<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #adadad; text-decoration: none;">* Consulte termos de uso e condições</a>
 			</p> <!-- #consulte-nossos-parametros -->
 
 		</div> <!-- #sobre-o-oculos -->
 
 		<div class="clear clearfix"></div>
 
-		<div id="outras-cores" style="margin-top: 74px;">
+		<div id="outras-cores" style="margin-top: 46px;">
 
 			<div class="texto-com-linha">
 
@@ -192,9 +196,18 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
+
+				$("#consulte-nossos-parametros a").click(function() {
+					var url = $(this).attr('href');
+
+					window.parent.location.replace(url);
+
+					return false;
+				});
+
 				window.onload = function () {
 					FitPhoto.create ('fitphoto', {
-						width: 300,
+						width: 280,
 						glassID: '<?php echo $glass['Glass']['sku'] ?>',
 						localeChain: 'pt_BR'
 					});

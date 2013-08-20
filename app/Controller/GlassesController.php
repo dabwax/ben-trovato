@@ -82,8 +82,10 @@ class GlassesController extends AppController {
 		// Recupera óculos com o mesmo nome e de cor diferente do atual
 		$glassesWithOtherColors = $this->Glass->find('all', array(
 			'conditions' => array(
-				'Glass.name LIKE' => '%' . $glass['Glass']['name'] . '%',
-				'Glass.color !=' => $glass['Glass']['color']
+				'Glass.name' => $glass['Glass']['name'],
+				'Glass.id !=' => $glass['Glass']['id'],
+				'Glass.type' => $glass['Glass']['type'],
+				'Glass.sex' => $glass['Glass']['sex']
 			),
 			'order' => 'rand()'
 		) );
@@ -116,8 +118,10 @@ class GlassesController extends AppController {
 		// Recupera óculos com o mesmo nome e de cor diferente do atual
 		$glassesWithOtherColors = $this->Glass->find('all', array(
 			'conditions' => array(
-				'Glass.name LIKE' => '%' . $glass['Glass']['name'] . '%',
-				'Glass.color !=' => $glass['Glass']['color']
+				'Glass.name' => $glass['Glass']['name'],
+				'Glass.id !=' => $glass['Glass']['id'],
+				'Glass.type' => $glass['Glass']['type'],
+				'Glass.sex' => $glass['Glass']['sex']
 			),
 			'order' => 'rand()'
 		) );
@@ -165,7 +169,7 @@ class GlassesController extends AppController {
 		$options['related'] = array();
 
 		foreach($glasses_all as $glass) {
-			$options['related'][$glass['Glass']['id']] = $glass['Glass']['name'] . ' - ' . $glass['Glass']['color2'];
+			$options['related'][$glass['Glass']['id']] = $glass['Glass']['name'] . ' - ' . $glass['Glass']['color2'] . ' - ' . $glass['Glass']['type'] . ' - ' . $glass['Glass']['sex'];
 		}
 
 		// Envia os atributos do model para a view

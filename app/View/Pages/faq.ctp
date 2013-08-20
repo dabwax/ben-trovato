@@ -56,21 +56,21 @@
 							<p>Se você tiver qualquer dúvida sobre o que está escrito na sua 
 							receita, envie uma foto ou digitalização dela para o nosso e-mail 
 							receita@bentrovato.com.br, que nós iremos te ajudar.
-							<br>
+							<br><br>
 							OD ou OE – As letras "OD" e "OE" são para identificar o olho direito e esquerdo respectivamente.
-							<br>
+							<br><br>
 							Esférico (.esf) – são valores referentes ao grau de miopia (se for negativo)
 							ou de hipermetropia (se for positivo). Resumindo: Esférico com sinal + é 
 							hipermetropia e com sinal - é miopia. Às vezes, o valor é multiplicado por 100
 							(ex. -325 ao invés de -3,25). Atualmente, atendemos receita para miopia até -
 							10 e hipermetropia até +4.
-							<br>
+							<br><br>
 							Cilindro (.cyl ou .cil) – é o valor refere ao grau de astigmatismo (quem não 
 							tem astigmatismo ficará com o valor zero ou sem valor). No Brasil, o grau 
 							de cilindro (astigmatismo) é sempre precedido de um sinal negativo (-). Às 
 							vezes, o valor é multiplicado por 100 (ex. -125 ao invés de -1,25). Atualmente, 
 							atendemos receita para astigmatismo até -4.
-							<br>
+							<br><br>
 							Eixo – o grau de astigmatismo não é colocado em toda a superfície da lente
 							mas só e um determinado eixo. Por isso, ao lado desse número aparece um
 							outro número que determina o eixo do astigmatismo. Ele varia de 0 a 180 
@@ -97,7 +97,7 @@
 							ficaremos muito felizes em tentar resolver o que for possível. Se ainda assim 
 							não for possível, não se preocupe – você poderá comprar apenas a armação e 
 							colocar as lentes de grau em outro lugar de sua preferência.
-							<br>Para as lentes de sol com grau, é um pouco diferente – nós atendemos receitas para miopia até -4, hipermetropia até +4, com astigmatismo até -4.</p>
+							<br><br>Para as lentes de sol com grau, é um pouco diferente – nós atendemos receitas para miopia até -4, hipermetropia até +4, com astigmatismo até -4.</p>
 						</div>
 					</li>
 									</ul>
@@ -134,7 +134,7 @@
 							Quais são as opções de lentes disponíveis?						</a>
 						<div>
 							<p>Para que suas lentes fiquem sempre finas, disponibilizamos duas opções de lentes:
-							<br>LENTE FINA 1.56 – produzida em resina orgânica, leve e resistente, ela é 
+							<br><br>LENTE FINA 1.56 – produzida em resina orgânica, leve e resistente, ela é 
 
 mais fina que a CR-39 (lentes mais utilizadas nas óticas) e possui tratamento
 
@@ -148,7 +148,7 @@ hipermetropia até +4, com astigmatismo até -2. Para receitas com intervalo de
 
 + a -4, porém com o astigmatismo superior a -2, nós precisamos utilizar a lente 
 
-fina 1.56 para astigmatismo superior a -2 e cobramos mais R$ 40 por isto.<br>LENTE SUPER FINA 1.67 – produzida em resina orgânica, é mais fina que 
+fina 1.56 para astigmatismo superior a -2 e cobramos mais R$ 40 por isto.<br><br>LENTE SUPER FINA 1.67 – produzida em resina orgânica, é mais fina que 
 
 a lente com índice de refração 1.56 e possui a mesma qualidade, além do 
 
@@ -156,7 +156,7 @@ tratamento antirreflexo, antirrisco e proteção UVA/UVB. Uma das lentes mais
 
 finas do mercado, possui índice de refração 1.67 e atende receitas de miopia 
 
-superiores a -4 e até -10. Para esta lente, cobramos mais R$140.<br>LENTE DE SOL -  produzida em resina orgânica, é feita com alta qualidade e 
+superiores a -4 e até -10. Para esta lente, cobramos mais R$140.<br><br>LENTE DE SOL -  produzida em resina orgânica, é feita com alta qualidade e 
 
 possui proteção UVA/UVB testada em laboratório.<br>
 LENTE DE SOL COM GRAU – produzida em resina orgânica, é feita com alta
@@ -228,7 +228,7 @@ proteção UVA/UVB (mesma proteção das lentes com grau).</p>
 						<div>
 							<p>Para que você tenha a exata ideia do tamanho da armação escolhida, nós
 
-disponibilizamos no site 4 medidas: frente, ponte, altura e hastes.<br>FRENTE – Largura máxima da face frontal da armação em milímetros.<br>PONTE – Espaço entre as lentes e onde a armação apoia no nariz.<br>ALTURA – Altura máxima da armação em milímetros medida pela face frontal.<br>HASTES – Comprimento máximo da face lateral da armação.<br>Além disto, todas nossas armações possuem três medidas em milímetros 
+disponibilizamos no site 4 medidas: frente, ponte, altura e hastes.<br><br>FRENTE – Largura máxima da face frontal da armação em milímetros.<br><br>PONTE – Espaço entre as lentes e onde a armação apoia no nariz.<br><br>ALTURA – Altura máxima da armação em milímetros medida pela face frontal.<br><br>HASTES – Comprimento máximo da face lateral da armação.<br><br>Além disto, todas nossas armações possuem três medidas em milímetros 
 
 impressas na parte interior. O primeiro número é a largura de uma lente, a 
 
@@ -517,27 +517,27 @@ fotos, basta clicar no "X" no canto direito inferior da foto.</p>
 						<div>
 							<p>Após acessar o Espelho Virtual, você poderá escolher duas formas de
 
-experimentar virtualmente os óculos: EXPERIMENTAR NO SEU ROSTO – Nesta opção, você pode carregar uma foto
+experimentar virtualmente os óculos:<br><br>EXPERIMENTAR NO SEU ROSTO – Nesta opção, você pode carregar uma foto
 
-(parecida com uma 3x4) de três maneiras diferentes: i. Webcam – Você tira uma foto sua através da webcam do seu 
+(parecida com uma 3x4) de três maneiras diferentes:<br>i. Webcam – Você tira uma foto sua através da webcam do seu 
 
-computador, celular ou tablet.
+computador, celular ou tablet.<br>
 
 ii.Foto salva – Você seleciona uma foto já salva em seu computador, 
 
-celular ou tablet, e carrega na ferramenta.
+celular ou tablet, e carrega na ferramenta.<br>
 
 iii. Facebook – Você importa sua foto principal do facebook para 
 
 experimentar virtualmente os óculos. Nenhuma informação da sua 
 
-conta do facebook será gravada. EXPERIMENTAR EM MODELOS – Nesta opção, nós disponibilizamos seis
+conta do facebook será gravada.<br><br>EXPERIMENTAR EM MODELOS – Nesta opção, nós disponibilizamos seis
 
 modelos para que você possa ter ideia de como os óculos ficam nas pessoas. 
 
 Nossa sugestão é procurar alguém com o formato de rosto mais parecido com 
 
-o seu! O Espelho virtual permite que você salve a foto com o óculos Ben Trovato
+o seu!<br><br>O Espelho virtual permite que você salve a foto com o óculos Ben Trovato
 
 ou compartilhe no Facebook e Twitter. Se você precisar de ajuda e quiser 
 
@@ -605,7 +605,7 @@ oferecido pelo UOL (maior portal da América Latina) e não precisa fazer
 cadastro para usar. Esta ferramenta é segura, fácil e rápida, além de grátis, é
 
 claro!
-<br>
+<br><br>
 Com o PagSeguro, você pode optar por pagar com cartão de crédito (ex. VISA,
 
 MasterCard, Diners, American Express, entre outros), débito bancário, boleto 
@@ -652,7 +652,7 @@ elevados. Além disso, a grande maioria das óticas vende estas armações
 
 por preços entre 2 a 3 vezes o valor de compra, inclusive adicionando uma 
 
-margem (muito) confortável nas lentes oftálmicas.<br>Nós dispensamos os intermediários. Desenhamos, fabricamos e vendemos
+margem (muito) confortável nas lentes oftálmicas.<br><br>Nós dispensamos os intermediários. Desenhamos, fabricamos e vendemos
 
 nossos próprios óculos, o que nos torna independentes e nos permite 
 
@@ -679,13 +679,6 @@ Receitas fora do parâmetro e óculos de sol com grau terão seu valor
 final acrescido de um valor de acordo com a necessidade. Para maiores 
 
 informações veja FAQ – Quais são as opções de lentes disponíveis?</p>
-						</div>
-					</li>
-										<li>
-						<a href="javascript:;">
-							0						</a>
-						<div>
-							<p></p>
 						</div>
 					</li>
 									</ul>
@@ -723,7 +716,7 @@ possível. Utilizamos o serviço e-sedex dos correios para garantir velocidade n
 
 entrega, porém quando não é possível, enviamos por PAC. O prazo estimado 
 
-para entrega será informado no seu carrinho de compra.<br>Para os óculos de grau e óculos de sol com grau, o prazo para entrega
+para entrega será informado no seu carrinho de compra.<br><br>Para os óculos de grau e óculos de sol com grau, o prazo para entrega
 
 só começa a valer depois que a receita for entregue com todos os dados 
 
@@ -774,7 +767,7 @@ por um novo par ou reembolso completo. Nós pagaremos o frete de qualquer
 
 lugar do Brasil. Apenas pedimos que você garanta que os óculos não tenham 
 
-sinal de uso e estejam em perfeito estado.<br>Se você quiser devolver seus óculos, mande um e-mail para nós com o título
+sinal de uso e estejam em perfeito estado.<br><br>Se você quiser devolver seus óculos, mande um e-mail para nós com o título
 
 DEVOLUÇÃO para o e-mail contato@bentrovato.com.br. É importante que 
 

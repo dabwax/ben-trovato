@@ -112,6 +112,9 @@
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'subscriptions', 'action' => 'export') ); ?>">Newsletter</a>
 			    		</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'export') ); ?>">Clientes</a>
+			    		</li>
 			    	</ul>
 			    </li>
 			    <li>

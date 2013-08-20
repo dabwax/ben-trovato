@@ -24,7 +24,7 @@ class Glass extends AppModel {
 		'castanho' => 'Castanho',
 		'cinza' => 'Cinza',
 		'amarelo' => 'Amarelo',
-		'crystal' => 'Crystal',
+		'crystal' => 'Cristal',
 	);
 
 /**

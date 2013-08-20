@@ -29,6 +29,24 @@ class UsersController extends AppController {
 		}
 	}
 
+	public function admin_export() {
+		$this->layout = "xls";
+
+		$users = $this->User->find('all', array(
+			'conditions' => array(
+				'role' => 'client'
+			),
+			'order' => array(
+				'User.created DESC'
+			),
+			'contain' => array(
+				'Client'
+			)
+		) );
+
+		$this->set(compact('users'));
+	}
+
 	public function admin_index($role = 'admin') {
 		$this->paginate = array(
 			'conditions' => array(

@@ -29,17 +29,20 @@
 			$(".colorbox-iframe").colorbox({
 				iframe: true,
 				width: 890,
-				height: 690
+				height: 630,
+				overlayClose: false
 			});
 
 			$(".colorbox-image").colorbox({
-				photo: true
+				photo: true,
+				overlayClose: false
 			});
 
 			$(".colorbox-armacao").colorbox({
 				iframe: true,
 				width: 860,
-				height: 560
+				height: 560,
+				overlayClose: false
 			});
 		});
 	</script>
