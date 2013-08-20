@@ -345,8 +345,6 @@
 			}
 		});
 
-		$(".campo-de-cpf").mask("999.999.999-99");
-
 		$(".btn-prosseguir").click(function() {
 			var target = $(this).data('target');
 			

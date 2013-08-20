@@ -33,7 +33,31 @@
 						<tr>
 							<td><?php echo h($order['User']['name']); ?> - <?php echo h($order['User']['Client']['email']); ?> </td>
 							<td><?php echo h($order['Order']['reference']); ?>&nbsp;</td>
-							<td><?php if($order['Order']['payment_status'] == '') { echo 'Aguardando'; } else { echo $order['Order']['payment_status']; } ?>&nbsp;</td>
+							<td>
+								<?php
+									switch($order['Order']['payment_status']) {
+										case 'Completo':
+										case 'Aprovado':
+										case 'Enviado':
+											$label = 'label-success';
+											break;
+										case 'Aguardando Pagto':
+										case 'Em Processo':
+										case 'Em Análise':
+											$label = 'label-warning';
+											break;
+										case 'Cancelado':
+											$label = 'label-danger';
+											break;
+										default:
+											$label = '';
+											break;
+									}
+								?>
+								<p class="label <?php echo $label; ?>">
+									<?php if($order['Order']['payment_status'] == '') { echo 'Aguardando'; } else { echo $order['Order']['payment_status']; } ?>
+								</p>
+							</td>
 							<td><?php $orderItems = json_decode($order['Order']['json_items']); ?>
 
 								<?php foreach($orderItems as $item) : ?>
@@ -47,7 +71,17 @@
 							<td><?php $data = new DateTime($order['Order']['created']); echo $data->format('d/m/Y h:i:s'); ?>&nbsp;</td>
 							<td class="actions">
 
-								<?php echo $this->Html->link(__('Informações'), array('action' => 'view', $order['Order']['id']), array('class' => 'btn btn-success') ); ?>
+								<?php echo $this->Html->link(__('Informações'), array('action' => 'view', $order['Order']['id']), array('class' => 'btn btn-success btn-small') ); ?>
+
+								<br>	
+								<br>
+
+								<?php echo $this->Html->link(__('Marcar como Enviado'), array('action' => 'change_payment_status', $order['Order']['id'], 'sent'), array('class' => 'btn btn-primary btn-small') ); ?>
+
+								<br>	
+								<br>
+
+								<?php echo $this->Html->link(__('Marcar como Em Processo'), array('action' => 'change_payment_status', $order['Order']['id'], 'processing'), array('class' => 'btn btn-primary btn-small') ); ?>
 
 								<?php if(AuthComponent::user('username') == 'marketingshop') { ?>
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?>

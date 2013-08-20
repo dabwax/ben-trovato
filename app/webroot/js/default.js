@@ -46,10 +46,11 @@ $(document).ready(function() {
 
 	  });
 
-	  /**
-	   * Máscaras de input.
-	   */
-	  $(".campo-de-telefone").mask("(99) 9999-9999?9");
+		/**
+		* Máscaras de input.
+		*/
+		$(".campo-de-telefone").mask("(99) 9999-9999?9");
+		$(".campo-de-cpf").mask("999.999.999-99");
 	  
 	  /**
 	   * AJAX do Formulário de Cadastre-se da Modal de Login.

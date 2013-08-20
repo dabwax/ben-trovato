@@ -21,7 +21,10 @@ class UsersController extends AppController {
 				unset($this->request->data['User']['password']);
 			}
 
-			$this->User->save($this->request->data);
+			$this->request->data['Client']['id'] = $user['Client']['id'];
+			$this->request->data['Client']['user_id'] = $user['User']['id'];
+
+			$this->User->saveAll($this->request->data);
 
 			$this->Session->setFlash('Os seus dados foram atualizados com sucesso.', 'success');
 

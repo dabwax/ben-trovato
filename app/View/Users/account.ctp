@@ -8,11 +8,13 @@
 	<div class="span12 text-left" style="margin-left: 0px;">
 		<?php echo $this->Form->create('User'); ?>
 
+		<?php echo $this->Form->input('id'); ?>
+		
 		<?php echo $this->Form->input('name', array('label' => 'Seu Nome') ); ?>
 
 		<?php echo $this->Form->input('Client.email', array('label' => 'Seu E-mail') ); ?>
 
-		<?php echo $this->Form->input('Client.cpf', array('label' => 'Seu CPF') ); ?>
+		<?php echo $this->Form->input('Client.cpf', array('label' => 'Seu CPF', 'class' => 'campo-de-cpf') ); ?>
 
 		<?php echo $this->Form->input('Client.phone', array('label' => 'Seu Telefone') ); ?>
 

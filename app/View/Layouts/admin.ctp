@@ -115,6 +115,9 @@
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'users', 'action' => 'export') ); ?>">Clientes</a>
 			    		</li>
+			    		<li>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'orders', 'action' => 'export') ); ?>">Pedidos</a>
+			    		</li>
 			    	</ul>
 			    </li>
 			    <li>

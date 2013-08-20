@@ -34,6 +34,21 @@ class OrdersController extends AppController {
 		$this->set(compact('order'));
 	}
 
+	public function admin_export() {
+		$this->layout = "xls";
+
+		$orders = $this->Order->find('all', array(
+			'order' => array(
+				'Order.created DESC'
+			),
+			'contain' => array(
+				'User' => array('Client')
+			)
+		) );
+
+		$this->set(compact('orders'));
+	}
+
 	public function admin_delete($id = null) {
 		$this->Order->id = $id;
 		if (!$this->Order->exists()) {

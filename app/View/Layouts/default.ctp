@@ -127,7 +127,7 @@
 					<?php echo $this->Html->image('logo.png'); ?>
 				</a> <!-- #logo -->
 
-				<div id="header-meta" class="span5 offset2">
+				<div id="header-meta" class="span6 offset1">
 					
 					<a href="<?php echo $this->Html->url( array('controller' => 'cart', 'action' => 'index') ); ?>" class="pull-right verde" id="btn-carrinho" style="font-size: 12px; margin-top: 19px;"><?php echo $this->Html->image('oculos-carrinho.jpg', array('style' => 'margin-left: 5px;') ); ?> [<?php echo count($orderItems); ?> <?php if(count($orderItems) > 1) { ?>armações<?php } else { ?>armação<?php } ?>]</a> <!-- #btn-carrinho -->
 
