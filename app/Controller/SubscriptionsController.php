@@ -15,6 +15,24 @@ class SubscriptionsController extends AppController {
 		} else {
 			$this->Subscription->save($this->request->data);
 			echo 'O e-mail foi cadastrado com sucesso.';
+
+			App::uses('CakeEmail', 'Network/Email');
+
+			$email = new CakeEmail('smtp');
+
+			$email->emailFormat('html');
+
+			$email->from(array('no-reply@bentrovato.com.br' => 'Ben Trovato'));
+
+			$email->to($this->request->data['Subscription']['email']);
+
+			$email->subject('Cadastrado na Newsletter com Sucesso - Loja Ben Trovato');
+
+			$email->template('newsletter_cadastrado', 'default');
+
+			$email->viewVars( array('data' => $this->request->data['Subscription']['email']) );
+
+			$email->send();
 		}
 		
 		exit;

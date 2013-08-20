@@ -23,6 +23,9 @@
 	<title><?php echo $title_for_layout; ?></title>
 </head>
 <body>
+
+	<?php echo $this->Html->image('http://www.bentrovato.com.br/img/logo.png'); ?>
+	
 	<?php echo $this->fetch('content'); ?>
 
 </body>

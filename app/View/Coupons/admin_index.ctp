@@ -37,6 +37,7 @@
 							<td><?php $date = new DateTime($coupon['Coupon']['created']); echo $date->format('d/m/Y H:i:s'); ?>&nbsp;</td>
 							<td class="actions">
 								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $coupon['Coupon']['id']) ); ?>
+								<?php echo $this->Html->link(__('Informações'), array('action' => 'view', $coupon['Coupon']['id']), array('class' => 'btn btn-success') ); ?>
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $coupon['Coupon']['id']), null, __('Are you sure you want to delete # %s?', $coupon['Coupon']['id'])); ?>
 							</td>
 						</tr>

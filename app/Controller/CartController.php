@@ -188,6 +188,22 @@ class CartController extends AppController {
 			// Salva os dados do pedido
 			$this->Order->save($this->request->data);
 
+			if(isset($this->request->data['Order']['coupon'])) {
+				Controller::loadModel('Coupon');
+
+				$coupon = $this->Coupon->find('first', array('contain' => array('UsedCoupon'), 'conditions' => array('Coupon.number' => $this->request->data['Order']['coupon']) ) );
+
+				if($coupon) {
+					if($coupon['Coupon']['discount'] < $totalPrice) {
+						if($coupon['Coupon']['limit'] > count($coupon['UsedCoupon'])) {
+
+							$this->Coupon->UsedCoupon->save( array('id' => $this->Coupon->UsedCoupon->getInsertID(), 'order_id' => $this->Order->getInsertID() ) );
+
+						}
+					}
+				}
+			}
+
 			// Define a moeda a ser utilizada pelo objedo do PagSeguro
 			$paymentRequest->setCurrency("BRL");
 

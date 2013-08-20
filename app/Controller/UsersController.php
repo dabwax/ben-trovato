@@ -218,6 +218,24 @@ class UsersController extends AppController {
 			// É efetuado um login com os dados do usuário
 			$this->Auth->login($this->request->data['User']);
 
+			App::uses('CakeEmail', 'Network/Email');
+
+			$email = new CakeEmail('smtp');
+
+			$email->emailFormat('html');
+
+			$email->from(array('no-reply@bentrovato.com.br' => 'Ben Trovato'));
+
+			$email->to($this->request->data['Client']['email']);
+
+			$email->subject('Cadastrado com Sucesso - Loja Ben Trovato');
+
+			$email->template('usuario_cadastrado', 'default');
+
+			$email->viewVars( array('data' => $this->request->data) );
+
+			$email->send();
+
 			// Retorno de string que é usado na requisição AJAX
 			echo 'sucesso';
 		// Do contrário, se a validação não passar

@@ -47,6 +47,16 @@ class CouponsController extends AppController {
 		}
 	}
 
+	public function admin_view($id = null) {
+		$this->Coupon->id = $id;
+		if (!$this->Coupon->exists()) {
+			throw new NotFoundException(__('Invalid coupon'));
+		}
+		$coupon = $this->Coupon->find('first', array('conditions' => array('Coupon.id' => $id), 'contain' => array('UsedCoupon' => array('User', 'Order') ) ) );
+
+		$this->set(compact('coupon'));
+	}
+
 	public function admin_delete($id = null) {
 		$this->Coupon->id = $id;
 		if (!$this->Coupon->exists()) {
