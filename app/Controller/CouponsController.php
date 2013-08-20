@@ -8,6 +8,9 @@ class CouponsController extends AppController {
 		$this->paginate = array(
 			'order' => array(
 				'Coupon.created' => 'DESC'
+			),
+			'contain' => array(
+				'UsedCoupon'
 			)
 		);
 		

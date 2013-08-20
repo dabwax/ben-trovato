@@ -261,7 +261,7 @@
 				<div class="span2" style="position: relative; left: 0px; width: 105px;">
 					<h3 class="footer-title">Perguntas</h3>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'preco') ); ?>">Preço</a>
-					<a href="javascript:;" onclick="alert('Em breve!'); return false;">Troca e Devolução</a>
+					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq') ); ?>#troca-e-devolucao">Troca e Devolução</a>
 					<a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq') ); ?>">FAQ</a>
 				</div>
 

@@ -21,7 +21,15 @@ class CartController extends AppController {
 		) );
 
 		if($coupon) {
-			echo $coupon['Coupon']['discount'];
+
+			$totalUsed = count($coupon['UsedCoupon']);
+
+			if($totalUsed < $coupon['Coupon']['limit']) {
+				echo $coupon['Coupon']['discount'];
+			} else {
+				echo 'limite';
+			}
+			
 		} else {
 			echo '';
 		}
@@ -118,6 +126,14 @@ class CartController extends AppController {
 		// Se houver requisição POST
 		if($this->request->is('post')) {
 
+			// Define os Models a serem usados
+			Controller::loadModel('Client');
+			Controller::loadModel('Order');
+			Controller::loadModel('OrderItem');
+
+			// Recupera os dados do usuário
+			$userLogged = $this->getUserLoggedInfos();
+
 			// Gera um código de referência único
 			$reference = substr(number_format(time() * rand(),0,'',''),0,8);
 
@@ -131,28 +147,24 @@ class CartController extends AppController {
 			if(isset($this->request->data['Order']['coupon'])) {
 				Controller::loadModel('Coupon');
 
-				$coupon = $this->Coupon->find('first', array('conditions' => array('Coupon.number' => $this->request->data['Order']['coupon'], 'Coupon.is_used' => 0) ) );
+				$coupon = $this->Coupon->find('first', array('contain' => array('UsedCoupon'), 'conditions' => array('Coupon.number' => $this->request->data['Order']['coupon']) ) );
 
 				if($coupon) {
 
 					if($coupon['Coupon']['discount'] < $totalPrice) {
-						$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
 
-						$this->Coupon->save( array('id' => $coupon['Coupon']['id'], 'is_used' => 1) );
+						if($coupon['Coupon']['limit'] > count($coupon['UsedCoupon'])) {
+							$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
 
-						// Define o desconto
-						$paymentRequest->setExtraAmount('-' . number_format($coupon['Coupon']['discount'], 2, '.', ''));
+							$this->Coupon->UsedCoupon->save( array('user_id' => $userLogged['User']['id'], 'coupon_id' => $coupon['Coupon']['id']) );
+
+							// Define o desconto
+							$paymentRequest->setExtraAmount('-' . number_format($coupon['Coupon']['discount'], 2, '.', ''));
+						}
+						
 					}
 				}
 			}
-
-			// Define os Models a serem usados
-			Controller::loadModel('Client');
-			Controller::loadModel('Order');
-			Controller::loadModel('OrderItem');
-
-			// Recupera os dados do usuário
-			$userLogged = $this->getUserLoggedInfos();
 
 			// Define que os dados inseridos no formulário pertencem ao usuário logado
 			$this->request->data['Client']['id'] = $userLogged['Client']['id'];

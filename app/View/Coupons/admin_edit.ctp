@@ -20,7 +20,7 @@
 
 						echo $this->Form->input('discount', array('label' => 'Valor de Desconto', 'type' => 'text') );
 
-						echo $this->Form->input('is_used', array('label' => 'Já foi usado?') );
+						echo $this->Form->input('limit', array('label' => 'Limite de Usos', 'type' => 'text') );
 					?>
 					</fieldset>
 				<?php echo $this->Form->end(__('Submit')); ?>

@@ -2,6 +2,10 @@
 
 class Coupon extends AppModel {
 
+	public $hasMany = array(
+		'UsedCoupon'
+	);
+
 /**
  * Método para tratar a formatação do campo de preço antes do Model ser salvo no banco de dados.
  */

@@ -23,7 +23,8 @@
 					<tr>
 						<th><?php echo $this->Paginator->sort('number', 'Número'); ?></th>
 						<th><?php echo $this->Paginator->sort('discount', 'Valor de Desconto'); ?></th>
-						<th><?php echo $this->Paginator->sort('is_used', 'Já foi usado?'); ?></th>
+						<th><?php echo $this->Paginator->sort('limit', 'Limite de Uso'); ?></th>
+						<th>Usos</th>
 						<th><?php echo $this->Paginator->sort('created', 'Data de Geração'); ?></th>
 						<th class="actions"><?php echo __('Ações'); ?></th>
 					</tr>
@@ -31,7 +32,8 @@
 						<tr>
 							<td><?php echo h($coupon['Coupon']['number']); ?>&nbsp;</td>
 							<td><?php echo $this->Loja->preco($coupon['Coupon']['discount']); ?>&nbsp;</td>
-							<td><?php if($coupon['Coupon']['is_used'] == 0) { echo 'Não'; } else { echo 'Sim'; } ?>&nbsp;</td>
+							<td><?php echo h($coupon['Coupon']['limit']); ?>&nbsp;</td>
+							<td><?php echo count($coupon['UsedCoupon']); ?>&nbsp;</td>
 							<td><?php $date = new DateTime($coupon['Coupon']['created']); echo $date->format('d/m/Y H:i:s'); ?>&nbsp;</td>
 							<td class="actions">
 								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $coupon['Coupon']['id']) ); ?>

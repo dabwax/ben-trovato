@@ -730,7 +730,7 @@ contato@bentrovato.com.br, nós ficaremos felizes em te ajudar!</p>
 									</ul>
 			</li>
 <li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
+				<a class="parent-toggle" id="troca-e-devolucao" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Troca e devolução
 				</a>
 				<ul>
@@ -829,5 +829,14 @@ mais, nos diga o motivo.</p>
 		$(".parent ul li").click(function() {
 			$(this).find('div').toggle();
 		});
+	});
+
+	$(window).load(function() {
+
+		if(window.location.hash) {
+			var hash = window.location.hash;
+
+			$(hash).click();
+		}
 	});
 </script>

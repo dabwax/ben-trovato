@@ -330,10 +330,14 @@
 							return false;
 						}
 
-						if(data != '') {
+						if(data != '' && data != 'limite') {
 							$("#desconto-total").find('span').html(data);
 							$("#desconto-total").fadeIn(100);
 							$("#erro-de-desconto").hide();
+						} else if(data == 'limite') {
+							$("#desconto-total").hide();
+							$("#erro-de-desconto").html('O cupom inserido já estourou seu limite. Ele não será utilizado.');
+							$("#erro-de-desconto").fadeIn(100);
 						} else {
 							$("#desconto-total").hide();
 							$("#erro-de-desconto").fadeIn(100);
