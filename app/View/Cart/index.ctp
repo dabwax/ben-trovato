@@ -261,7 +261,7 @@
 
 		<div class="order-block-content" style="text-align: center;">
 
-		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:', 'div' => false, 'maxlength' => '8') ); ?>
+		<?php echo $this->Form->input('coupon', array('label' => 'Você tem algum cupom de desconto nosso? Se tiver, basta usá-lo:', 'div' => false, 'maxlength' => '255') ); ?>
 
 		<?php echo $this->Html->image('ajax-loader.gif', array('style' => 'display: inline-block; margin-top: -12px; margin-left: 12px; display: none;', 'class' => 'ajax-loader-coupon') ); ?>
 
@@ -302,16 +302,13 @@
 
 <?php } ?>
 
-<?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js'); ?>
-<?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_pt_BR.js'); ?>
-
 <script type="text/javascript">
 	$(document).ready(function() {
 
 		$("#OrderCoupon").keyup(function() {
 			var val = $(this).val();
 
-			if(val.length >= 8) {
+			if(val.length >= 3) {
 
 				$(".ajax-loader-coupon").fadeIn(100);
 

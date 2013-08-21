@@ -10,8 +10,10 @@ class UsersController extends AppController {
 			return $this->redirect('/');
 		}
 
-		$user = $this->User->read(null, AuthComponent::user('id'));
+		$user = $this->User->find('first', array('conditions' => array('User.id' => AuthComponent::user('id')), 'contain' => array('Order', 'Client') ) );
 
+		$this->set(compact('user'));
+		
 		if($this->request->is('get')) {
 			$this->request->data = $user;
 

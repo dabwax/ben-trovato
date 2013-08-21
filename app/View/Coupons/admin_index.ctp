@@ -7,7 +7,7 @@
 					<h3 class="panel-title"><?php echo __('Cupons'); ?> 
 						<small><?php echo __('Gerenciamento do Módulo de Cupons'); ?></small>
 
-						<a href="<?php echo $this->Html->url( array('action' => 'add') ); ?>" class="btn btn-primary">Adicionar</a>
+						<a href="<?php echo $this->Html->url( array('action' => 'edit') ); ?>" class="btn btn-primary">Adicionar</a>
 					</h3> <!-- .panel-title -->
 				</div> <!-- .panel-heading -->
 

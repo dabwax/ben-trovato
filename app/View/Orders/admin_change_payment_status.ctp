@@ -19,9 +19,11 @@
 						echo $this->Form->input('id');
 
 						if($type == 'sent') {
-							$value = 'Enviado';
+							$value = 'Óculos Enviado';
 						} else if($type == 'processing') {
-							$value = 'Processando';
+							$value = 'Preparando Envio';
+						} else if($type == 'waiting') {
+							$value = 'Aguardando Receita';
 						}
 
 						echo $this->Form->input('payment_status', array('label' => 'Status', 'type' => 'select', 'options' => array($value => $value), 'selected' => $value ) );

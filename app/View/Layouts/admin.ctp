@@ -60,7 +60,7 @@
 			    	<ul class="dropdown-menu">
 						<li class="dropdown-header"><span class="glyphicon glyphicon-tags" style="margin-right: 3px;"></span> Cupons</li>
 			    		<li>
-			    			<a href="<?php echo $this->Html->url( array('controller' => 'coupons', 'action' => 'add') ); ?>">Adicionar</a>
+			    			<a href="<?php echo $this->Html->url( array('controller' => 'coupons', 'action' => 'edit') ); ?>">Adicionar</a>
 			    		</li>
 			    		<li>
 			    			<a href="<?php echo $this->Html->url( array('controller' => 'coupons', 'action' => 'index') ); ?>">Listar</a>

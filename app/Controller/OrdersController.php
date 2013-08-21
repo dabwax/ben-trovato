@@ -4,12 +4,21 @@ class OrdersController extends AppController {
 
 	public function admin_index() {
 
+		if(@$this->request->data['Order']['reference']) {
+			$reference = $this->request->data['Order']['reference'];
+		} else {
+			$reference = '';
+		}
+		
 		$this->paginate = array(
 			'order' => array(
 				'Order.created' => 'DESC'
 			),
 			'contain' => array(
 				'User' => array('Client')
+			),
+			'conditions' => array(
+				'Order.reference LIKE' => '%' . $reference . '%'
 			)
 		);
 		
@@ -39,9 +48,11 @@ class OrdersController extends AppController {
 				$email->to($user['Client']['email']);
 
 				if($type == 'sent') {
-					$subject = 'Enviado com Sucesso';
+					$subject = 'Óculos Enviado';
 				} else if ($type == 'processing') {
-					$subject = 'Em Processo';
+					$subject = 'Preparando Envio';
+				} else if($type == 'waiting') {
+					$subject = 'Aguardando Receita';
 				}
 
 				$email->subject('Pedido ' . $subject . ' - Loja Ben Trovato');

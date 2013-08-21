@@ -18,15 +18,25 @@
 				?>
 				</p>
 
+				<div class="clear clearfix" style="margin-top: 12px;"></div>
+
+				<?php echo $this->Form->create('Order'); ?>
+
+				<?php echo $this->Form->input('reference', array('type' => 'text', 'label' => 'Pesquisar Por Código de Referência: ', 'style' => 'margin-left: 12px;') ); ?>
+
+				<?php echo $this->Form->button('Pesquisar', array('class' => 'btn btn-success') ); ?>
+
+				<?php echo $this->Form->end(); ?>
+
 				<table class="table table-bordered table-hover table-index span12">
 					<tr>
 						<th><?php echo $this->Paginator->sort('user_id', 'Usuário'); ?></th>
 						<th><?php echo $this->Paginator->sort('reference', 'Referência'); ?></th>
+						<th><?php echo $this->Paginator->sort('token', 'Token'); ?></th>
 						<th><?php echo $this->Paginator->sort('payment_status', 'Status'); ?></th>
 						<th>Itens</th>
 						<th><?php echo $this->Paginator->sort('total_items', 'Total de Itens'); ?></th>
 						<th><?php echo $this->Paginator->sort('coupon', 'Cupom'); ?></th>
-						<th><?php echo $this->Paginator->sort('tracking_code', 'Cód. Rastreio'); ?></th>
 						<th><?php echo $this->Paginator->sort('created', 'Data de Criação'); ?></th>
 						<th class="actions"><?php echo __('Ações'); ?></th>
 					</tr>
@@ -34,16 +44,17 @@
 						<tr>
 							<td><?php echo h($order['User']['name']); ?> - <?php echo h($order['User']['Client']['email']); ?> </td>
 							<td><?php echo h($order['Order']['reference']); ?>&nbsp;</td>
+							<td><?php echo h($order['Order']['token']); ?>&nbsp;</td>
 							<td>
 								<?php
 									switch($order['Order']['payment_status']) {
 										case 'Completo':
 										case 'Aprovado':
-										case 'Enviado':
+										case 'Óculos Enviado':
 											$label = 'label-success';
 											break;
 										case 'Aguardando Pagto':
-										case 'Em Processo':
+										case 'Preparando Envio':
 										case 'Em Análise':
 											$label = 'label-warning';
 											break;
@@ -69,7 +80,6 @@
 							</td>
 							<td><?php echo h($order['Order']['total_items']); ?>&nbsp;</td>
 							<td><?php echo h($order['Order']['coupon']); ?>&nbsp;</td>
-							<td><?php echo h($order['Order']['tracking_code']); ?>&nbsp;</td>
 							<td><?php $data = new DateTime($order['Order']['created']); echo $data->format('d/m/Y h:i:s'); ?>&nbsp;</td>
 							<td class="actions">
 
@@ -78,16 +88,22 @@
 								<br>	
 								<br>
 
-								<?php echo $this->Html->link(__('Marcar como Enviado'), array('action' => 'change_payment_status', $order['Order']['id'], 'sent'), array('class' => 'btn btn-primary btn-small') ); ?>
+								<?php echo $this->Html->link(__('Enviado'), array('action' => 'change_payment_status', $order['Order']['id'], 'sent'), array('class' => 'btn btn-primary btn-small') ); ?>
 
 								<br>	
 								<br>
 
-								<?php echo $this->Html->link(__('Marcar como Em Processo'), array('action' => 'change_payment_status', $order['Order']['id'], 'processing'), array('class' => 'btn btn-primary btn-small') ); ?>
+								<?php echo $this->Html->link(__('Preparando'), array('action' => 'change_payment_status', $order['Order']['id'], 'processing'), array('class' => 'btn btn-primary btn-small') ); ?>
+								
+								<br>	
+								<br>
 
-								<?php if(AuthComponent::user('username') == 'marketingshop') { ?>
+								<?php echo $this->Html->link(__('Aguardando Receita'), array('action' => 'change_payment_status', $order['Order']['id'], 'waiting'), array('class' => 'btn btn-primary btn-small') ); ?>
+								
+								<br>	
+								<br>
+
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?>
-								<?php } ?>
 							</td>
 						</tr>
 					<?php endforeach; ?>

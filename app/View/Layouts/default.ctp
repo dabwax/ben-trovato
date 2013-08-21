@@ -22,6 +22,8 @@
 	<?php echo $this->Html->script('jquery.maskedinput.min.js'); ?>
 	<?php echo $this->Html->script('jquery.hoverIntent.minified.js'); ?>
 	<?php echo $this->Html->script('jquery.colorbox-min.js'); ?>
+	<?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js'); ?>
+	<?php echo $this->Html->script('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_pt_BR.js'); ?>
 	<?php echo $this->Html->script('https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js'); ?>
 	<?php echo $this->Html->script('default.js'); ?>
 	<script type="text/javascript">

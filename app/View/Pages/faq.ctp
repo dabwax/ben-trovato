@@ -398,7 +398,7 @@ você!</p>
 									</ul>
 			</li>
 			<li class="parent" style="margin-bottom: 8px;">
-				<a class="parent-toggle" href="javascript:;" style="font-size: 15px;">
+				<a id="garantia" class="parent-toggle" href="javascript:;" style="font-size: 15px;">
 					<span class="seta-pai"></span> Garantia
 				</a>
 				<ul>

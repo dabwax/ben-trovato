@@ -18,6 +18,8 @@
 					<?php
 						echo $this->Form->input('id');
 
+						echo $this->Form->input('number', array('label' => 'Número', 'type' => 'text') );
+
 						echo $this->Form->input('discount', array('label' => 'Valor de Desconto', 'type' => 'text') );
 
 						echo $this->Form->input('limit', array('label' => 'Limite de Usos', 'type' => 'text') );

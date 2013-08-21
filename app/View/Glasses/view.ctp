@@ -284,7 +284,7 @@
 		<p style="text-transform: uppercase; margin-top: 16px; display: inline-block; font-size: 13px; font-weight: bold;">Garantia Ben Trovato</p>
 
 		<p style="font-size: 11px; text-align: justify;">
-			Para nós, o mais importante é sua satisfação e se você não se apaixonar pelos seu Ben Trovato, nós oferecemos um política devolução grátis por um período de 30 dias. A armação e lentes também possuem políticas de garantia próprias.<br /><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'termos-de-uso') ); ?>" style="color: #999;">* Consulte nossa política de garantia</a>.
+			Para nós, o mais importante é sua satisfação e se você não se apaixonar pelos seu Ben Trovato, nós oferecemos um política devolução grátis por um período de 30 dias. A armação e lentes também possuem políticas de garantia próprias.<br /><a href="<?php echo $this->Html->url( array('controller' => 'pages', 'action' => 'display', 'faq') ); ?>#garantia" style="color: #999;">* Consulte nossa política de garantia.</a>
 		</p>
 	</div>
 </div>

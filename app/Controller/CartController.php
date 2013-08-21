@@ -154,7 +154,6 @@ class CartController extends AppController {
 					if($coupon['Coupon']['discount'] < $totalPrice) {
 
 						if($coupon['Coupon']['limit'] > count($coupon['UsedCoupon'])) {
-							$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
 
 							$this->Coupon->UsedCoupon->save( array('user_id' => $userLogged['User']['id'], 'coupon_id' => $coupon['Coupon']['id']) );
 
@@ -194,13 +193,16 @@ class CartController extends AppController {
 				$coupon = $this->Coupon->find('first', array('contain' => array('UsedCoupon'), 'conditions' => array('Coupon.number' => $this->request->data['Order']['coupon']) ) );
 
 				if($coupon) {
+
 					if($coupon['Coupon']['discount'] < $totalPrice) {
 						if($coupon['Coupon']['limit'] > count($coupon['UsedCoupon'])) {
 
-							$this->Coupon->UsedCoupon->save( array('id' => $this->Coupon->UsedCoupon->getInsertID(), 'order_id' => $this->Order->getInsertID() ) );
+							$totalPrice = $totalPrice - $coupon['Coupon']['discount'];
 
+							$this->Coupon->UsedCoupon->save( array('id' => $this->Coupon->UsedCoupon->getInsertID(), 'order_id' => $this->Order->getInsertID() ) );
 						}
 					}
+
 				}
 			}
 
@@ -234,14 +236,20 @@ class CartController extends AppController {
 			$paymentRequest->setSenderPhone($ddd, $telefone);
 
 			// Define os dados de entrega ao objeto do PagSeguro
+			if($this->request->data['Client']['billing_is_same_as_delivery_address'] == 1) {
+				$address_type = 'delivery_';
+			} else {
+				$address_type = 'billing_';
+			}
+
 			$paymentRequest->setShippingAddress( array(
-				'postalCode' => $this->request->data['Client']['delivery_cep'],
-				'street' => $this->request->data['Client']['delivery_street1'],
-				'number' => $this->request->data['Client']['delivery_street3'],
-				'complement' => $this->request->data['Client']['delivery_street4'],
-				'district' => $this->request->data['Client']['delivery_street2'],
-				'city' => $this->request->data['Client']['delivery_city'],
-				'state' => $this->request->data['Client']['delivery_state'],
+				'postalCode' => $this->request->data['Client'][$address_type . 'cep'],
+				'street' => $this->request->data['Client'][$address_type . 'street1'],
+				'number' => $this->request->data['Client'][$address_type . 'street3'],
+				'complement' => $this->request->data['Client'][$address_type . 'street4'],
+				'district' => $this->request->data['Client'][$address_type . 'street2'],
+				'city' => $this->request->data['Client'][$address_type . 'city'],
+				'state' => $this->request->data['Client'][$address_type . 'state'],
 				'country' => 'BRA',
 			) );
 
@@ -278,7 +286,7 @@ class CartController extends AppController {
 
 			$email->template('pedido_efetuado', 'default');
 
-			$email->viewVars( array('reference' => $reference, 'orderItems' => $orderItems, 'userLogged' => $userLogged, 'totalPrice' => $totalPrice, 'coupon' => $coupon) );
+			$email->viewVars( array('order' => $this->request->data, 'reference' => $reference, 'orderItems' => $orderItems, 'userLogged' => $userLogged, 'totalPrice' => $totalPrice, 'coupon' => $coupon) );
 
 			$email->send();
 

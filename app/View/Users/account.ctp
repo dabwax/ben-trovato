@@ -57,6 +57,7 @@
 					<th>
 						Data do Pedido
 					</th>
+					<th>Pagar Novamente?</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -85,6 +86,11 @@
 					</td>
 					<td>
 						<?php $data = new DateTime($order['created']); echo $data->format('d/m/Y H:i:s'); ?>
+					</td>
+					<td>
+						<?php if($order['payment_status'] == '' || $order['payment_status'] == 'Aguardando Pgto' && $order['token'] != '') { ?>
+							<?php echo $this->Html->link('Pagar', array('controller' => 'cart', 'action' => 'payment', $order['token']) ); ?>
+						<?php } ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
